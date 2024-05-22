@@ -13,6 +13,21 @@ public class Usuario {
     private String endereco;
     private int numero;
     private String bairro;
+
+    public Usuario(int id, String nome, String cpf, String email, int telefone, String senha, String uf, String cidade, String endereco, int numero, String bairro) {
+        this.id = id;
+        this.nome = nome;
+        this.cpf = cpf;
+        this.email = email;
+        this.telefone = telefone;
+        this.senha = senha;
+        this.uf = uf;
+        this.cidade = cidade;
+        this.endereco = endereco;
+        this.numero = numero;
+        this.bairro = bairro;
+    }
+    
     
     public int getId() {
         return id;
