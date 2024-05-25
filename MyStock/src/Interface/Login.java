@@ -26,21 +26,123 @@ public class Login extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        header = new javax.swing.JLabel();
+        foother = new javax.swing.JLabel();
+        divlogin = new javax.swing.JPanel();
+        soutemail = new javax.swing.JLabel();
+        soutsenha = new javax.swing.JLabel();
+        inputsenha = new javax.swing.JPasswordField();
+        inputemail = new javax.swing.JTextField();
+        blogin = new javax.swing.JButton();
+        checkadm = new javax.swing.JCheckBox();
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMaximumSize(new java.awt.Dimension(0, 0));
+        setMinimumSize(new java.awt.Dimension(1024, 790));
+        setPreferredSize(new java.awt.Dimension(0, 0));
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        header.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Header.png"))); // NOI18N
+        getContentPane().add(header, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        foother.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Foother.png"))); // NOI18N
+        getContentPane().add(foother, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 560, -1, -1));
+
+        divlogin.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(0, 0, 0)));
+
+        soutemail.setText("E-mail:");
+
+        soutsenha.setText("Senha:");
+
+        inputsenha.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                inputsenhaActionPerformed(evt);
+            }
+        });
+
+        inputemail.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                inputemailActionPerformed(evt);
+            }
+        });
+
+        blogin.setText("Login");
+        blogin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bloginActionPerformed(evt);
+            }
+        });
+
+        checkadm.setText("Administrador");
+        checkadm.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                checkadmActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout divloginLayout = new javax.swing.GroupLayout(divlogin);
+        divlogin.setLayout(divloginLayout);
+        divloginLayout.setHorizontalGroup(
+            divloginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(divloginLayout.createSequentialGroup()
+                .addGroup(divloginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(divloginLayout.createSequentialGroup()
+                        .addGap(44, 44, 44)
+                        .addGroup(divloginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(divloginLayout.createSequentialGroup()
+                                .addComponent(soutsenha)
+                                .addGap(18, 18, 18)
+                                .addComponent(inputsenha))
+                            .addGroup(divloginLayout.createSequentialGroup()
+                                .addComponent(soutemail)
+                                .addGap(18, 18, 18)
+                                .addComponent(inputemail, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE))))
+                    .addGroup(divloginLayout.createSequentialGroup()
+                        .addGap(146, 146, 146)
+                        .addComponent(checkadm))
+                    .addGroup(divloginLayout.createSequentialGroup()
+                        .addGap(160, 160, 160)
+                        .addComponent(blogin)))
+                .addContainerGap(107, Short.MAX_VALUE))
         );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+        divloginLayout.setVerticalGroup(
+            divloginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(divloginLayout.createSequentialGroup()
+                .addGap(69, 69, 69)
+                .addGroup(divloginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(soutemail)
+                    .addComponent(inputemail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(36, 36, 36)
+                .addGroup(divloginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(soutsenha)
+                    .addComponent(inputsenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(blogin)
+                .addGap(12, 12, 12)
+                .addComponent(checkadm)
+                .addContainerGap(24, Short.MAX_VALUE))
         );
+
+        getContentPane().add(divlogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 250, 410, 250));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void inputsenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputsenhaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_inputsenhaActionPerformed
+
+    private void inputemailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputemailActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_inputemailActionPerformed
+
+    private void checkadmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkadmActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_checkadmActionPerformed
+
+    private void bloginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bloginActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_bloginActionPerformed
 
     /**
      * @param args the command line arguments
@@ -78,5 +180,14 @@ public class Login extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton blogin;
+    private javax.swing.JCheckBox checkadm;
+    private javax.swing.JPanel divlogin;
+    private javax.swing.JLabel foother;
+    private javax.swing.JLabel header;
+    private javax.swing.JTextField inputemail;
+    private javax.swing.JPasswordField inputsenha;
+    private javax.swing.JLabel soutemail;
+    private javax.swing.JLabel soutsenha;
     // End of variables declaration//GEN-END:variables
 }
