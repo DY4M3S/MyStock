@@ -4,29 +4,21 @@
  */
 package Interface;
 
-import javax.swing.Box;
-import javax.swing.BoxLayout;
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author Jason
  */
-public class MenuAdm extends javax.swing.JFrame {
+public class Login extends javax.swing.JFrame {
 
     /**
-     * Creates new form MenuAdm
+     * Creates new form Login
      */
-    public MenuAdm() {
+    public Login() {
         initComponents();
-        customizeMenuBar();
     }
 
-    private void customizeMenuBar() {
-        jMenuBar1.setLayout(new BoxLayout(jMenuBar1, BoxLayout.X_AXIS));
-        jMenuBar1.add(Box.createHorizontalGlue());
-        jMenuBar1.add(jMenu2); // Readicione o menu que deseja alinhar à direita
-    }    
-    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -36,74 +28,65 @@ public class MenuAdm extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        divMenuAdm = new javax.swing.JPanel();
+        divLogin = new javax.swing.JPanel();
         divBotoes = new javax.swing.JPanel();
-        botaoAddUsuário = new javax.swing.JButton();
-        botaoAddProduto = new javax.swing.JButton();
-        botaoAddEstoque = new javax.swing.JButton();
-        botaoGerenciarVenda = new javax.swing.JButton();
-        botaoGerarRela = new javax.swing.JButton();
+        inputEmail = new javax.swing.JTextField();
+        soutEmail = new javax.swing.JLabel();
+        soutSenha = new javax.swing.JLabel();
+        inputSenha = new javax.swing.JPasswordField();
+        botaoLogin = new javax.swing.JButton();
+        checkAdm = new javax.swing.JCheckBox();
         header = new javax.swing.JPanel();
         logo = new javax.swing.JLabel();
         foother = new javax.swing.JPanel();
         MyStock = new javax.swing.JLabel();
         Todos = new javax.swing.JLabel();
         c = new javax.swing.JLabel();
-        jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu2 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Menu");
-        setBackground(new java.awt.Color(255, 255, 255));
+        setTitle("Login");
         setMaximumSize(new java.awt.Dimension(1012, 800));
         setMinimumSize(new java.awt.Dimension(700, 680));
         setPreferredSize(new java.awt.Dimension(800, 700));
 
-        divMenuAdm.setBackground(new java.awt.Color(255, 255, 255));
-        divMenuAdm.setMaximumSize(new java.awt.Dimension(0, 0));
-        divMenuAdm.setMinimumSize(new java.awt.Dimension(0, 0));
-        divMenuAdm.setPreferredSize(new java.awt.Dimension(800, 700));
+        divLogin.setBackground(new java.awt.Color(255, 255, 255));
+        divLogin.setMaximumSize(new java.awt.Dimension(0, 0));
+        divLogin.setPreferredSize(new java.awt.Dimension(800, 700));
 
         divBotoes.setBackground(new java.awt.Color(255, 255, 255));
         divBotoes.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
 
-        botaoAddUsuário.setFont(new java.awt.Font("Consolas", 0, 14)); // NOI18N
-        botaoAddUsuário.setText("Adicionar um novo usuário");
-        botaoAddUsuário.addActionListener(new java.awt.event.ActionListener() {
+        inputEmail.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botaoAddUsuárioActionPerformed(evt);
+                inputEmailActionPerformed(evt);
             }
         });
 
-        botaoAddProduto.setFont(new java.awt.Font("Consolas", 0, 14)); // NOI18N
-        botaoAddProduto.setText("Adicionar um novo produto");
-        botaoAddProduto.addActionListener(new java.awt.event.ActionListener() {
+        soutEmail.setFont(new java.awt.Font("Consolas", 0, 14)); // NOI18N
+        soutEmail.setText("E-mail:");
+
+        soutSenha.setFont(new java.awt.Font("Consolas", 0, 14)); // NOI18N
+        soutSenha.setText("Senha:");
+
+        inputSenha.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botaoAddProdutoActionPerformed(evt);
+                inputSenhaActionPerformed(evt);
             }
         });
 
-        botaoAddEstoque.setFont(new java.awt.Font("Consolas", 0, 14)); // NOI18N
-        botaoAddEstoque.setText("Gerenciar vendas");
-        botaoAddEstoque.addActionListener(new java.awt.event.ActionListener() {
+        botaoLogin.setFont(new java.awt.Font("Consolas", 0, 14)); // NOI18N
+        botaoLogin.setText("Login");
+        botaoLogin.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        botaoLogin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botaoAddEstoqueActionPerformed(evt);
+                botaoLoginActionPerformed(evt);
             }
         });
 
-        botaoGerenciarVenda.setFont(new java.awt.Font("Consolas", 0, 14)); // NOI18N
-        botaoGerenciarVenda.setText("Adicionar um novo estoque");
-        botaoGerenciarVenda.addActionListener(new java.awt.event.ActionListener() {
+        checkAdm.setText("Administrador");
+        checkAdm.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botaoGerenciarVendaActionPerformed(evt);
-            }
-        });
-
-        botaoGerarRela.setFont(new java.awt.Font("Consolas", 0, 14)); // NOI18N
-        botaoGerarRela.setText("Gerar relatório ");
-        botaoGerarRela.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botaoGerarRelaActionPerformed(evt);
+                checkAdmActionPerformed(evt);
             }
         });
 
@@ -112,29 +95,40 @@ public class MenuAdm extends javax.swing.JFrame {
         divBotoesLayout.setHorizontalGroup(
             divBotoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, divBotoesLayout.createSequentialGroup()
-                .addGap(0, 72, Short.MAX_VALUE)
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(botaoLogin)
+                .addGap(131, 131, 131))
+            .addGroup(divBotoesLayout.createSequentialGroup()
+                .addGap(0, 46, Short.MAX_VALUE)
                 .addGroup(divBotoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(botaoGerenciarVenda, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(botaoAddProduto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(botaoAddUsuário, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(botaoAddEstoque, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(botaoGerarRela, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 72, Short.MAX_VALUE))
+                    .addComponent(soutEmail, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(soutSenha, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addGroup(divBotoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(inputEmail, javax.swing.GroupLayout.DEFAULT_SIZE, 204, Short.MAX_VALUE)
+                    .addComponent(inputSenha))
+                .addGap(0, 56, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, divBotoesLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(checkAdm)
+                .addGap(116, 116, 116))
         );
         divBotoesLayout.setVerticalGroup(
             divBotoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, divBotoesLayout.createSequentialGroup()
-                .addGap(0, 51, Short.MAX_VALUE)
-                .addComponent(botaoAddUsuário)
+            .addGroup(divBotoesLayout.createSequentialGroup()
+                .addGap(0, 35, Short.MAX_VALUE)
+                .addGroup(divBotoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(soutEmail)
+                    .addComponent(inputEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(botaoAddProduto)
+                .addGroup(divBotoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(soutSenha)
+                    .addComponent(inputSenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(botaoGerenciarVenda)
+                .addComponent(botaoLogin)
                 .addGap(18, 18, 18)
-                .addComponent(botaoAddEstoque)
-                .addGap(18, 18, 18)
-                .addComponent(botaoGerarRela)
-                .addGap(0, 51, Short.MAX_VALUE))
+                .addComponent(checkAdm)
+                .addGap(0, 35, Short.MAX_VALUE))
         );
 
         header.setBackground(new java.awt.Color(40, 203, 58));
@@ -183,7 +177,7 @@ public class MenuAdm extends javax.swing.JFrame {
                 .addComponent(c)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(Todos)
-                .addContainerGap(314, Short.MAX_VALUE))
+                .addContainerGap(102, Short.MAX_VALUE))
         );
         footherLayout.setVerticalGroup(
             footherLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -196,20 +190,20 @@ public class MenuAdm extends javax.swing.JFrame {
                 .addContainerGap(47, Short.MAX_VALUE))
         );
 
-        javax.swing.GroupLayout divMenuAdmLayout = new javax.swing.GroupLayout(divMenuAdm);
-        divMenuAdm.setLayout(divMenuAdmLayout);
-        divMenuAdmLayout.setHorizontalGroup(
-            divMenuAdmLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout divLoginLayout = new javax.swing.GroupLayout(divLogin);
+        divLogin.setLayout(divLoginLayout);
+        divLoginLayout.setHorizontalGroup(
+            divLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(header, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(foother, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, divMenuAdmLayout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, divLoginLayout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(divBotoes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
-        divMenuAdmLayout.setVerticalGroup(
-            divMenuAdmLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(divMenuAdmLayout.createSequentialGroup()
+        divLoginLayout.setVerticalGroup(
+            divLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(divLoginLayout.createSequentialGroup()
                 .addComponent(header, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(divBotoes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -217,45 +211,43 @@ public class MenuAdm extends javax.swing.JFrame {
                 .addComponent(foother, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        jMenu2.setText("Opções");
-        jMenuBar1.add(jMenu2);
-
-        setJMenuBar(jMenuBar1);
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(divMenuAdm, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(divLogin, javax.swing.GroupLayout.DEFAULT_SIZE, 588, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(divMenuAdm, javax.swing.GroupLayout.DEFAULT_SIZE, 677, Short.MAX_VALUE)
+            .addComponent(divLogin, javax.swing.GroupLayout.DEFAULT_SIZE, 569, Short.MAX_VALUE)
         );
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void botaoGerarRelaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoGerarRelaActionPerformed
+    private void inputEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputEmailActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_botaoGerarRelaActionPerformed
+    }//GEN-LAST:event_inputEmailActionPerformed
 
-    private void botaoGerenciarVendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoGerenciarVendaActionPerformed
+    private void inputSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputSenhaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_botaoGerenciarVendaActionPerformed
+    }//GEN-LAST:event_inputSenhaActionPerformed
 
-    private void botaoAddEstoqueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoAddEstoqueActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botaoAddEstoqueActionPerformed
+    private void botaoLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoLoginActionPerformed
+        
+        if(inputEmail.getText().equals("d")&& inputSenha.getText().equals("1")){
+            
+           JOptionPane.showMessageDialog(this, "Acesso concedido!");
+        } else {
+        
+            JOptionPane.showMessageDialog(this, "Usuário não cadastrado!");
+        } 
+    }//GEN-LAST:event_botaoLoginActionPerformed
 
-    private void botaoAddProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoAddProdutoActionPerformed
+    private void checkAdmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkAdmActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_botaoAddProdutoActionPerformed
-
-    private void botaoAddUsuárioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoAddUsuárioActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botaoAddUsuárioActionPerformed
+    }//GEN-LAST:event_checkAdmActionPerformed
 
     /**
      * @param args the command line arguments
@@ -274,20 +266,20 @@ public class MenuAdm extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(MenuAdm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(MenuAdm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(MenuAdm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(MenuAdm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new MenuAdm().setVisible(true);
+                new Login().setVisible(true);
             }
         });
     }
@@ -295,20 +287,17 @@ public class MenuAdm extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel MyStock;
     private javax.swing.JLabel Todos;
-    private javax.swing.JButton botaoAddEstoque;
-    private javax.swing.JButton botaoAddProduto;
-    private javax.swing.JButton botaoAddUsuário;
-    private javax.swing.JButton botaoGerarRela;
-    private javax.swing.JButton botaoGerenciarVenda;
+    private javax.swing.JButton botaoLogin;
     private javax.swing.JLabel c;
+    private javax.swing.JCheckBox checkAdm;
     private javax.swing.JPanel divBotoes;
-    private javax.swing.JPanel divMenuAdm;
+    private javax.swing.JPanel divLogin;
     private javax.swing.JPanel foother;
-    private javax.swing.JPanel h1;
-    private javax.swing.JPanel h2;
     private javax.swing.JPanel header;
-    private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JTextField inputEmail;
+    private javax.swing.JPasswordField inputSenha;
     private javax.swing.JLabel logo;
+    private javax.swing.JLabel soutEmail;
+    private javax.swing.JLabel soutSenha;
     // End of variables declaration//GEN-END:variables
 }
