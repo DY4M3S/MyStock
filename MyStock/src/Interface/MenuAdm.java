@@ -18,14 +18,15 @@ public class MenuAdm extends javax.swing.JFrame {
      */
     public MenuAdm() {
         initComponents();
-        customizeMenuBar();
+      //  customizeMenuBar();
     }
 
-    private void customizeMenuBar() {
+   /* private void customizeMenuBar() {
         jMenuBar1.setLayout(new BoxLayout(jMenuBar1, BoxLayout.X_AXIS));
         jMenuBar1.add(Box.createHorizontalGlue());
         jMenuBar1.add(jMenu2); // Readicione o menu que deseja alinhar à direita
-    }    
+    }    */
+    
     
     /**
      * This method is called from within the constructor to initialize the form.
@@ -36,74 +37,71 @@ public class MenuAdm extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        divMenuAdm = new javax.swing.JPanel();
+        DivMenuAdm = new javax.swing.JPanel();
         divBotoes = new javax.swing.JPanel();
-        botaoAddUsuário = new javax.swing.JButton();
-        botaoAddProduto = new javax.swing.JButton();
-        botaoAddEstoque = new javax.swing.JButton();
-        botaoGerenciarVenda = new javax.swing.JButton();
-        botaoGerarRela = new javax.swing.JButton();
-        header = new javax.swing.JPanel();
+        BotaoAddUsuário = new javax.swing.JButton();
+        BotaoAddProduto = new javax.swing.JButton();
+        BotaoAddEstoque = new javax.swing.JButton();
+        BotaoGerenciarVenda = new javax.swing.JButton();
+        BotaoGerarRelatorio = new javax.swing.JButton();
+        Header = new javax.swing.JPanel();
         logo = new javax.swing.JLabel();
-        foother = new javax.swing.JPanel();
+        Foother = new javax.swing.JPanel();
         MyStock = new javax.swing.JLabel();
         Todos = new javax.swing.JLabel();
         c = new javax.swing.JLabel();
-        jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu2 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Menu");
         setBackground(new java.awt.Color(255, 255, 255));
         setMaximumSize(new java.awt.Dimension(1012, 800));
         setMinimumSize(new java.awt.Dimension(700, 680));
-        setPreferredSize(new java.awt.Dimension(800, 700));
 
-        divMenuAdm.setBackground(new java.awt.Color(255, 255, 255));
-        divMenuAdm.setMaximumSize(new java.awt.Dimension(0, 0));
-        divMenuAdm.setMinimumSize(new java.awt.Dimension(0, 0));
-        divMenuAdm.setPreferredSize(new java.awt.Dimension(800, 700));
+        DivMenuAdm.setBackground(new java.awt.Color(255, 255, 255));
+        DivMenuAdm.setMaximumSize(new java.awt.Dimension(0, 0));
+        DivMenuAdm.setMinimumSize(new java.awt.Dimension(0, 0));
+        DivMenuAdm.setPreferredSize(new java.awt.Dimension(800, 700));
 
         divBotoes.setBackground(new java.awt.Color(255, 255, 255));
         divBotoes.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
 
-        botaoAddUsuário.setFont(new java.awt.Font("Consolas", 0, 14)); // NOI18N
-        botaoAddUsuário.setText("Adicionar um novo usuário");
-        botaoAddUsuário.addActionListener(new java.awt.event.ActionListener() {
+        BotaoAddUsuário.setFont(new java.awt.Font("Consolas", 0, 14)); // NOI18N
+        BotaoAddUsuário.setText("Adicionar um novo usuário");
+        BotaoAddUsuário.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botaoAddUsuárioActionPerformed(evt);
+                BotaoAddUsuárioActionPerformed(evt);
             }
         });
 
-        botaoAddProduto.setFont(new java.awt.Font("Consolas", 0, 14)); // NOI18N
-        botaoAddProduto.setText("Adicionar um novo produto");
-        botaoAddProduto.addActionListener(new java.awt.event.ActionListener() {
+        BotaoAddProduto.setFont(new java.awt.Font("Consolas", 0, 14)); // NOI18N
+        BotaoAddProduto.setText("Adicionar um novo produto");
+        BotaoAddProduto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botaoAddProdutoActionPerformed(evt);
+                BotaoAddProdutoActionPerformed(evt);
             }
         });
 
-        botaoAddEstoque.setFont(new java.awt.Font("Consolas", 0, 14)); // NOI18N
-        botaoAddEstoque.setText("Gerenciar vendas");
-        botaoAddEstoque.addActionListener(new java.awt.event.ActionListener() {
+        BotaoAddEstoque.setFont(new java.awt.Font("Consolas", 0, 14)); // NOI18N
+        BotaoAddEstoque.setText("Gerenciar vendas");
+        BotaoAddEstoque.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botaoAddEstoqueActionPerformed(evt);
+                BotaoAddEstoqueActionPerformed(evt);
             }
         });
 
-        botaoGerenciarVenda.setFont(new java.awt.Font("Consolas", 0, 14)); // NOI18N
-        botaoGerenciarVenda.setText("Adicionar um novo estoque");
-        botaoGerenciarVenda.addActionListener(new java.awt.event.ActionListener() {
+        BotaoGerenciarVenda.setFont(new java.awt.Font("Consolas", 0, 14)); // NOI18N
+        BotaoGerenciarVenda.setText("Adicionar um novo estoque");
+        BotaoGerenciarVenda.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botaoGerenciarVendaActionPerformed(evt);
+                BotaoGerenciarVendaActionPerformed(evt);
             }
         });
 
-        botaoGerarRela.setFont(new java.awt.Font("Consolas", 0, 14)); // NOI18N
-        botaoGerarRela.setText("Gerar relatório ");
-        botaoGerarRela.addActionListener(new java.awt.event.ActionListener() {
+        BotaoGerarRelatorio.setFont(new java.awt.Font("Consolas", 0, 14)); // NOI18N
+        BotaoGerarRelatorio.setText("Gerar relatório ");
+        BotaoGerarRelatorio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botaoGerarRelaActionPerformed(evt);
+                BotaoGerarRelatorioActionPerformed(evt);
             }
         });
 
@@ -114,54 +112,54 @@ public class MenuAdm extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, divBotoesLayout.createSequentialGroup()
                 .addGap(0, 72, Short.MAX_VALUE)
                 .addGroup(divBotoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(botaoGerenciarVenda, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(botaoAddProduto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(botaoAddUsuário, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(botaoAddEstoque, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(botaoGerarRela, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(BotaoGerenciarVenda, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(BotaoAddProduto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(BotaoAddUsuário, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(BotaoAddEstoque, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(BotaoGerarRelatorio, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(0, 72, Short.MAX_VALUE))
         );
         divBotoesLayout.setVerticalGroup(
             divBotoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, divBotoesLayout.createSequentialGroup()
                 .addGap(0, 51, Short.MAX_VALUE)
-                .addComponent(botaoAddUsuário)
+                .addComponent(BotaoAddUsuário)
                 .addGap(18, 18, 18)
-                .addComponent(botaoAddProduto)
+                .addComponent(BotaoAddProduto)
                 .addGap(18, 18, 18)
-                .addComponent(botaoGerenciarVenda)
+                .addComponent(BotaoGerenciarVenda)
                 .addGap(18, 18, 18)
-                .addComponent(botaoAddEstoque)
+                .addComponent(BotaoAddEstoque)
                 .addGap(18, 18, 18)
-                .addComponent(botaoGerarRela)
+                .addComponent(BotaoGerarRelatorio)
                 .addGap(0, 51, Short.MAX_VALUE))
         );
 
-        header.setBackground(new java.awt.Color(40, 203, 58));
-        header.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
-        header.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        Header.setBackground(new java.awt.Color(40, 203, 58));
+        Header.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        Header.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Logo_dark-removebg-preview 2.png"))); // NOI18N
 
-        javax.swing.GroupLayout headerLayout = new javax.swing.GroupLayout(header);
-        header.setLayout(headerLayout);
-        headerLayout.setHorizontalGroup(
-            headerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, headerLayout.createSequentialGroup()
+        javax.swing.GroupLayout HeaderLayout = new javax.swing.GroupLayout(Header);
+        Header.setLayout(HeaderLayout);
+        HeaderLayout.setHorizontalGroup(
+            HeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, HeaderLayout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(logo)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
-        headerLayout.setVerticalGroup(
-            headerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, headerLayout.createSequentialGroup()
+        HeaderLayout.setVerticalGroup(
+            HeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, HeaderLayout.createSequentialGroup()
                 .addContainerGap(10, Short.MAX_VALUE)
                 .addComponent(logo, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(10, Short.MAX_VALUE))
         );
 
-        foother.setBackground(new java.awt.Color(40, 203, 58));
-        foother.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        Foother.setBackground(new java.awt.Color(40, 203, 58));
+        Foother.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
 
         MyStock.setFont(new java.awt.Font("Consolas", 0, 18)); // NOI18N
         MyStock.setText("MyStock ");
@@ -172,11 +170,11 @@ public class MenuAdm extends javax.swing.JFrame {
         c.setFont(new java.awt.Font("Consolas", 0, 18)); // NOI18N
         c.setText("©");
 
-        javax.swing.GroupLayout footherLayout = new javax.swing.GroupLayout(foother);
-        foother.setLayout(footherLayout);
-        footherLayout.setHorizontalGroup(
-            footherLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(footherLayout.createSequentialGroup()
+        javax.swing.GroupLayout FootherLayout = new javax.swing.GroupLayout(Foother);
+        Foother.setLayout(FootherLayout);
+        FootherLayout.setHorizontalGroup(
+            FootherLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(FootherLayout.createSequentialGroup()
                 .addGap(50, 50, 50)
                 .addComponent(MyStock)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -185,77 +183,72 @@ public class MenuAdm extends javax.swing.JFrame {
                 .addComponent(Todos)
                 .addContainerGap(314, Short.MAX_VALUE))
         );
-        footherLayout.setVerticalGroup(
-            footherLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(footherLayout.createSequentialGroup()
+        FootherLayout.setVerticalGroup(
+            FootherLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(FootherLayout.createSequentialGroup()
                 .addContainerGap(47, Short.MAX_VALUE)
-                .addGroup(footherLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(FootherLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Todos)
                     .addComponent(c)
                     .addComponent(MyStock))
                 .addContainerGap(47, Short.MAX_VALUE))
         );
 
-        javax.swing.GroupLayout divMenuAdmLayout = new javax.swing.GroupLayout(divMenuAdm);
-        divMenuAdm.setLayout(divMenuAdmLayout);
-        divMenuAdmLayout.setHorizontalGroup(
-            divMenuAdmLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(header, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(foother, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, divMenuAdmLayout.createSequentialGroup()
+        javax.swing.GroupLayout DivMenuAdmLayout = new javax.swing.GroupLayout(DivMenuAdm);
+        DivMenuAdm.setLayout(DivMenuAdmLayout);
+        DivMenuAdmLayout.setHorizontalGroup(
+            DivMenuAdmLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(Header, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(Foother, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, DivMenuAdmLayout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(divBotoes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
-        divMenuAdmLayout.setVerticalGroup(
-            divMenuAdmLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(divMenuAdmLayout.createSequentialGroup()
-                .addComponent(header, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        DivMenuAdmLayout.setVerticalGroup(
+            DivMenuAdmLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(DivMenuAdmLayout.createSequentialGroup()
+                .addComponent(Header, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(divBotoes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(foother, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(Foother, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
-
-        jMenu2.setText("Opções");
-        jMenuBar1.add(jMenu2);
-
-        setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(divMenuAdm, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(DivMenuAdm, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(divMenuAdm, javax.swing.GroupLayout.DEFAULT_SIZE, 677, Short.MAX_VALUE)
+            .addComponent(DivMenuAdm, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void botaoGerarRelaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoGerarRelaActionPerformed
+    private void BotaoGerarRelatorioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoGerarRelatorioActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_botaoGerarRelaActionPerformed
+    }//GEN-LAST:event_BotaoGerarRelatorioActionPerformed
 
-    private void botaoGerenciarVendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoGerenciarVendaActionPerformed
+    private void BotaoGerenciarVendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoGerenciarVendaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_botaoGerenciarVendaActionPerformed
+    }//GEN-LAST:event_BotaoGerenciarVendaActionPerformed
 
-    private void botaoAddEstoqueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoAddEstoqueActionPerformed
+    private void BotaoAddEstoqueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoAddEstoqueActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_botaoAddEstoqueActionPerformed
+    }//GEN-LAST:event_BotaoAddEstoqueActionPerformed
 
-    private void botaoAddProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoAddProdutoActionPerformed
+    private void BotaoAddProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoAddProdutoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_botaoAddProdutoActionPerformed
+    }//GEN-LAST:event_BotaoAddProdutoActionPerformed
 
-    private void botaoAddUsuárioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoAddUsuárioActionPerformed
+    private void BotaoAddUsuárioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoAddUsuárioActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_botaoAddUsuárioActionPerformed
+    }//GEN-LAST:event_BotaoAddUsuárioActionPerformed
 
     /**
      * @param args the command line arguments
@@ -293,22 +286,18 @@ public class MenuAdm extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BotaoAddEstoque;
+    private javax.swing.JButton BotaoAddProduto;
+    private javax.swing.JButton BotaoAddUsuário;
+    private javax.swing.JButton BotaoGerarRelatorio;
+    private javax.swing.JButton BotaoGerenciarVenda;
+    private javax.swing.JPanel DivMenuAdm;
+    private javax.swing.JPanel Foother;
+    private javax.swing.JPanel Header;
     private javax.swing.JLabel MyStock;
     private javax.swing.JLabel Todos;
-    private javax.swing.JButton botaoAddEstoque;
-    private javax.swing.JButton botaoAddProduto;
-    private javax.swing.JButton botaoAddUsuário;
-    private javax.swing.JButton botaoGerarRela;
-    private javax.swing.JButton botaoGerenciarVenda;
     private javax.swing.JLabel c;
     private javax.swing.JPanel divBotoes;
-    private javax.swing.JPanel divMenuAdm;
-    private javax.swing.JPanel foother;
-    private javax.swing.JPanel h1;
-    private javax.swing.JPanel h2;
-    private javax.swing.JPanel header;
-    private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JLabel logo;
     // End of variables declaration//GEN-END:variables
 }
