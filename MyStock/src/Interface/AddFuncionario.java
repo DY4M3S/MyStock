@@ -40,6 +40,20 @@ public class AddFuncionario extends javax.swing.JFrame {
         inputCpf = new javax.swing.JTextField();
         soutEmail = new javax.swing.JLabel();
         inputEmail = new javax.swing.JTextField();
+        soutSenhaAcesso = new javax.swing.JLabel();
+        inputSenhaAcesso = new javax.swing.JTextField();
+        soutUf = new javax.swing.JLabel();
+        soutSenhaAcesso1 = new javax.swing.JLabel();
+        soutBairro = new javax.swing.JLabel();
+        soutEndereco = new javax.swing.JLabel();
+        soutCidade1 = new javax.swing.JLabel();
+        soutNumero = new javax.swing.JLabel();
+        inputTelefone = new javax.swing.JTextField();
+        inputUf = new javax.swing.JTextField();
+        inputCidade = new javax.swing.JTextField();
+        inputBairro = new javax.swing.JTextField();
+        inputEndereco1 = new javax.swing.JTextField();
+        inputBairro1 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Funcionário");
@@ -141,31 +155,131 @@ public class AddFuncionario extends javax.swing.JFrame {
             }
         });
 
+        soutSenhaAcesso.setFont(new java.awt.Font("Consolas", 0, 14)); // NOI18N
+        soutSenhaAcesso.setText("Senha de acesso:");
+
+        inputSenhaAcesso.setFont(new java.awt.Font("Consolas", 0, 14)); // NOI18N
+        inputSenhaAcesso.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                inputSenhaAcessoActionPerformed(evt);
+            }
+        });
+
+        soutUf.setFont(new java.awt.Font("Consolas", 0, 14)); // NOI18N
+        soutUf.setText("UF:");
+
+        soutSenhaAcesso1.setFont(new java.awt.Font("Consolas", 0, 14)); // NOI18N
+        soutSenhaAcesso1.setText("Telefone:");
+
+        soutBairro.setFont(new java.awt.Font("Consolas", 0, 14)); // NOI18N
+        soutBairro.setText("Bairro:");
+
+        soutEndereco.setFont(new java.awt.Font("Consolas", 0, 14)); // NOI18N
+        soutEndereco.setText("Endereço:");
+
+        soutCidade1.setFont(new java.awt.Font("Consolas", 0, 14)); // NOI18N
+        soutCidade1.setText("Cidade:");
+
+        soutNumero.setFont(new java.awt.Font("Consolas", 0, 14)); // NOI18N
+        soutNumero.setText("Número:");
+
+        inputTelefone.setFont(new java.awt.Font("Consolas", 0, 14)); // NOI18N
+        inputTelefone.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                inputTelefoneActionPerformed(evt);
+            }
+        });
+
+        inputUf.setFont(new java.awt.Font("Consolas", 0, 14)); // NOI18N
+        inputUf.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                inputUfActionPerformed(evt);
+            }
+        });
+
+        inputCidade.setFont(new java.awt.Font("Consolas", 0, 14)); // NOI18N
+        inputCidade.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                inputCidadeActionPerformed(evt);
+            }
+        });
+
+        inputBairro.setFont(new java.awt.Font("Consolas", 0, 14)); // NOI18N
+        inputBairro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                inputBairroActionPerformed(evt);
+            }
+        });
+
+        inputEndereco1.setFont(new java.awt.Font("Consolas", 0, 14)); // NOI18N
+        inputEndereco1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                inputEndereco1ActionPerformed(evt);
+            }
+        });
+
+        inputBairro1.setFont(new java.awt.Font("Consolas", 0, 14)); // NOI18N
+        inputBairro1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                inputBairro1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout DivBotoesAddFuncionarioLayout = new javax.swing.GroupLayout(DivBotoesAddFuncionario);
         DivBotoesAddFuncionario.setLayout(DivBotoesAddFuncionarioLayout);
         DivBotoesAddFuncionarioLayout.setHorizontalGroup(
             DivBotoesAddFuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(DivBotoesAddFuncionarioLayout.createSequentialGroup()
-                .addGap(50, 50, 50)
-                .addGroup(DivBotoesAddFuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(DivBotoesAddFuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(DivBotoesAddFuncionarioLayout.createSequentialGroup()
-                        .addComponent(soutEmail)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(inputEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(DivBotoesAddFuncionarioLayout.createSequentialGroup()
-                        .addComponent(soutNome1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(inputNome, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(DivBotoesAddFuncionarioLayout.createSequentialGroup()
-                        .addComponent(soutCpf)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(inputCpf, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(215, Short.MAX_VALUE))
+                        .addContainerGap()
+                        .addComponent(soutNumero)
+                        .addGap(18, 18, 18)
+                        .addComponent(inputBairro1, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(DivBotoesAddFuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, DivBotoesAddFuncionarioLayout.createSequentialGroup()
+                            .addGap(110, 110, 110)
+                            .addGroup(DivBotoesAddFuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, DivBotoesAddFuncionarioLayout.createSequentialGroup()
+                                    .addComponent(soutCpf)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(inputCpf, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, DivBotoesAddFuncionarioLayout.createSequentialGroup()
+                                    .addComponent(soutEmail)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(inputEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGroup(DivBotoesAddFuncionarioLayout.createSequentialGroup()
+                            .addGap(0, 120, Short.MAX_VALUE)
+                            .addGroup(DivBotoesAddFuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(DivBotoesAddFuncionarioLayout.createSequentialGroup()
+                                    .addComponent(soutNome1)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(inputNome, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, DivBotoesAddFuncionarioLayout.createSequentialGroup()
+                                    .addComponent(soutSenhaAcesso)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(inputSenhaAcesso, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, DivBotoesAddFuncionarioLayout.createSequentialGroup()
+                                    .addGroup(DivBotoesAddFuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addComponent(soutCidade1)
+                                        .addComponent(soutSenhaAcesso1)
+                                        .addComponent(soutUf)
+                                        .addComponent(soutEndereco)
+                                        .addComponent(soutBairro))
+                                    .addGap(18, 18, 18)
+                                    .addGroup(DivBotoesAddFuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(inputBairro, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGroup(DivBotoesAddFuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(inputTelefone, javax.swing.GroupLayout.DEFAULT_SIZE, 248, Short.MAX_VALUE)
+                                            .addComponent(inputUf)
+                                            .addComponent(inputCidade)
+                                            .addComponent(inputEndereco1))))))))
+                .addGap(0, 120, Short.MAX_VALUE))
         );
         DivBotoesAddFuncionarioLayout.setVerticalGroup(
             DivBotoesAddFuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(DivBotoesAddFuncionarioLayout.createSequentialGroup()
-                .addGap(45, 45, 45)
+                .addGap(0, 89, Short.MAX_VALUE)
                 .addGroup(DivBotoesAddFuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(inputNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(soutNome1))
@@ -173,11 +287,39 @@ public class AddFuncionario extends javax.swing.JFrame {
                 .addGroup(DivBotoesAddFuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(inputCpf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(soutCpf))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addGroup(DivBotoesAddFuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(inputEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(soutEmail))
-                .addContainerGap(220, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addGroup(DivBotoesAddFuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(inputSenhaAcesso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(soutSenhaAcesso))
+                .addGap(18, 18, 18)
+                .addGroup(DivBotoesAddFuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(inputTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(soutSenhaAcesso1))
+                .addGap(18, 18, 18)
+                .addGroup(DivBotoesAddFuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(inputUf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(soutUf))
+                .addGap(18, 18, 18)
+                .addGroup(DivBotoesAddFuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(soutCidade1)
+                    .addComponent(inputCidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(DivBotoesAddFuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(inputEndereco1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(soutEndereco))
+                .addGap(18, 18, 18)
+                .addGroup(DivBotoesAddFuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(inputBairro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(soutBairro))
+                .addGap(18, 18, 18)
+                .addGroup(DivBotoesAddFuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(inputBairro1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(soutNumero))
+                .addGap(0, 90, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout DivAddFuncionarioLayout = new javax.swing.GroupLayout(DivAddFuncionario);
@@ -187,17 +329,17 @@ public class AddFuncionario extends javax.swing.JFrame {
             .addComponent(Foother, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(Header, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, DivAddFuncionarioLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(DivBotoesAddFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(164, 164, 164))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         DivAddFuncionarioLayout.setVerticalGroup(
             DivAddFuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, DivAddFuncionarioLayout.createSequentialGroup()
                 .addComponent(Header, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(81, 81, 81)
+                .addGap(0, 50, Short.MAX_VALUE)
                 .addComponent(DivBotoesAddFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 81, Short.MAX_VALUE)
+                .addGap(0, 50, Short.MAX_VALUE)
                 .addComponent(Foother, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -227,6 +369,34 @@ public class AddFuncionario extends javax.swing.JFrame {
     private void inputEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputEmailActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_inputEmailActionPerformed
+
+    private void inputSenhaAcessoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputSenhaAcessoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_inputSenhaAcessoActionPerformed
+
+    private void inputTelefoneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputTelefoneActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_inputTelefoneActionPerformed
+
+    private void inputUfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputUfActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_inputUfActionPerformed
+
+    private void inputCidadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputCidadeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_inputCidadeActionPerformed
+
+    private void inputBairroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputBairroActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_inputBairroActionPerformed
+
+    private void inputEndereco1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputEndereco1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_inputEndereco1ActionPerformed
+
+    private void inputBairro1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputBairro1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_inputBairro1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -271,12 +441,26 @@ public class AddFuncionario extends javax.swing.JFrame {
     private javax.swing.JLabel MyStock;
     private javax.swing.JLabel Todos;
     private javax.swing.JLabel c;
+    private javax.swing.JTextField inputBairro;
+    private javax.swing.JTextField inputBairro1;
+    private javax.swing.JTextField inputCidade;
     private javax.swing.JTextField inputCpf;
     private javax.swing.JTextField inputEmail;
+    private javax.swing.JTextField inputEndereco1;
     private javax.swing.JTextField inputNome;
+    private javax.swing.JTextField inputSenhaAcesso;
+    private javax.swing.JTextField inputTelefone;
+    private javax.swing.JTextField inputUf;
     private javax.swing.JLabel logo;
+    private javax.swing.JLabel soutBairro;
+    private javax.swing.JLabel soutCidade1;
     private javax.swing.JLabel soutCpf;
     private javax.swing.JLabel soutEmail;
+    private javax.swing.JLabel soutEndereco;
     private javax.swing.JLabel soutNome1;
+    private javax.swing.JLabel soutNumero;
+    private javax.swing.JLabel soutSenhaAcesso;
+    private javax.swing.JLabel soutSenhaAcesso1;
+    private javax.swing.JLabel soutUf;
     // End of variables declaration//GEN-END:variables
 }

@@ -56,9 +56,9 @@
               <Component id="Foother" alignment="0" max="32767" attributes="0"/>
               <Component id="Header" alignment="0" max="32767" attributes="0"/>
               <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace max="32767" attributes="0"/>
+                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                   <Component id="DivBotoesAddFuncionario" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="164" max="-2" attributes="0"/>
+                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -66,9 +66,9 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="1" attributes="0">
                   <Component id="Header" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="81" max="-2" attributes="0"/>
+                  <EmptySpace min="0" pref="50" max="32767" attributes="0"/>
                   <Component id="DivBotoesAddFuncionario" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="81" max="32767" attributes="0"/>
+                  <EmptySpace min="0" pref="50" max="32767" attributes="0"/>
                   <Component id="Foother" min="-2" max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -203,32 +203,73 @@
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Group type="103" groupAlignment="1" attributes="0">
                           <Group type="102" attributes="0">
-                              <Component id="soutEmail" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="32767" attributes="0"/>
-                              <Component id="inputEmail" min="-2" pref="248" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" attributes="0">
-                              <Component id="soutNome1" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="inputNome" min="-2" pref="248" max="-2" attributes="0"/>
+                              <Component id="soutNumero" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="inputBairro1" min="-2" pref="248" max="-2" attributes="0"/>
                           </Group>
-                          <Group type="102" attributes="0">
-                              <Component id="soutCpf" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="32767" attributes="0"/>
-                              <Component id="inputCpf" min="-2" pref="248" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" alignment="1" attributes="0">
+                                  <EmptySpace min="-2" pref="110" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="102" alignment="1" attributes="0">
+                                          <Component id="soutCpf" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                                          <Component id="inputCpf" min="-2" pref="248" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" alignment="1" attributes="0">
+                                          <Component id="soutEmail" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                                          <Component id="inputEmail" min="-2" pref="248" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                              </Group>
+                              <Group type="102" attributes="0">
+                                  <EmptySpace min="0" pref="120" max="32767" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Component id="soutNome1" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                                          <Component id="inputNome" min="-2" pref="248" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" alignment="1" attributes="0">
+                                          <Component id="soutSenhaAcesso" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                                          <Component id="inputSenhaAcesso" min="-2" pref="248" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" alignment="1" attributes="0">
+                                          <Group type="103" groupAlignment="1" attributes="0">
+                                              <Component id="soutCidade1" min="-2" max="-2" attributes="0"/>
+                                              <Component id="soutSenhaAcesso1" min="-2" max="-2" attributes="0"/>
+                                              <Component id="soutUf" min="-2" max="-2" attributes="0"/>
+                                              <Component id="soutEndereco" min="-2" max="-2" attributes="0"/>
+                                              <Component id="soutBairro" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="inputBairro" alignment="1" min="-2" pref="248" max="-2" attributes="0"/>
+                                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                                  <Component id="inputTelefone" pref="248" max="32767" attributes="0"/>
+                                                  <Component id="inputUf" alignment="0" max="32767" attributes="0"/>
+                                                  <Component id="inputCidade" alignment="0" max="32767" attributes="0"/>
+                                                  <Component id="inputEndereco1" alignment="0" max="32767" attributes="0"/>
+                                              </Group>
+                                          </Group>
+                                      </Group>
+                                  </Group>
+                              </Group>
                           </Group>
                       </Group>
-                      <EmptySpace pref="215" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="120" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
+                      <EmptySpace min="0" pref="89" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="inputNome" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="soutNome1" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -238,12 +279,47 @@
                           <Component id="inputCpf" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="soutCpf" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="inputEmail" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="soutEmail" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="220" max="32767" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="inputSenhaAcesso" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="soutSenhaAcesso" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="inputTelefone" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="soutSenhaAcesso1" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="inputUf" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="soutUf" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="soutCidade1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="inputCidade" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="inputEndereco1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="soutEndereco" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="inputBairro" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="soutBairro" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="inputBairro1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="soutNumero" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="0" pref="90" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -301,6 +377,132 @@
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="inputEmailActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JLabel" name="soutSenhaAcesso">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Consolas" size="14" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Senha de acesso:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="inputSenhaAcesso">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Consolas" size="14" style="0"/>
+                </Property>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="inputSenhaAcessoActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JLabel" name="soutUf">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Consolas" size="14" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="UF:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="soutSenhaAcesso1">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Consolas" size="14" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Telefone:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="soutBairro">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Consolas" size="14" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Bairro:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="soutEndereco">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Consolas" size="14" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Endere&#xe7;o:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="soutCidade1">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Consolas" size="14" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Cidade:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="soutNumero">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Consolas" size="14" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="N&#xfa;mero:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="inputTelefone">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Consolas" size="14" style="0"/>
+                </Property>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="inputTelefoneActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JTextField" name="inputUf">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Consolas" size="14" style="0"/>
+                </Property>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="inputUfActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JTextField" name="inputCidade">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Consolas" size="14" style="0"/>
+                </Property>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="inputCidadeActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JTextField" name="inputBairro">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Consolas" size="14" style="0"/>
+                </Property>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="inputBairroActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JTextField" name="inputEndereco1">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Consolas" size="14" style="0"/>
+                </Property>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="inputEndereco1ActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JTextField" name="inputBairro1">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Consolas" size="14" style="0"/>
+                </Property>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="inputBairro1ActionPerformed"/>
               </Events>
             </Component>
           </SubComponents>
