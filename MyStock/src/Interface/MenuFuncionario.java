@@ -260,18 +260,12 @@ public class MenuFuncionario extends javax.swing.JFrame {
     private javax.swing.JButton BotaoAddProduto;
     private javax.swing.JButton BotaoGerarRelatorio;
     private javax.swing.JButton BotaoGerenciarVenda;
-    private javax.swing.JPanel DivBotoes;
     private javax.swing.JPanel DivBotoesFuncionario;
     private javax.swing.JPanel DivMenuFuncionario;
     private javax.swing.JPanel Foother;
     private javax.swing.JPanel Header;
     private javax.swing.JLabel MyStock;
     private javax.swing.JLabel Todos;
-    private javax.swing.JButton botaoAddEstoque;
-    private javax.swing.JButton botaoAddProduto;
-    private javax.swing.JButton botaoAddUsuário;
-    private javax.swing.JButton botaoGerarRela;
-    private javax.swing.JButton botaoGerenciarVenda;
     private javax.swing.JLabel c;
     private javax.swing.JLabel logo;
     // End of variables declaration//GEN-END:variables
