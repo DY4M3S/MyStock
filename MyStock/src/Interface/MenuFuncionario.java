@@ -41,9 +41,7 @@ public class MenuFuncionario extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Menu");
-        setMaximumSize(new java.awt.Dimension(1012, 800));
         setMinimumSize(new java.awt.Dimension(700, 680));
-        setPreferredSize(new java.awt.Dimension(800, 700));
 
         DivMenuFuncionario.setBackground(new java.awt.Color(255, 255, 255));
 

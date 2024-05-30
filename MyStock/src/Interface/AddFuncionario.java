@@ -55,12 +55,14 @@ public class AddFuncionario extends javax.swing.JFrame {
         inputEndereco = new javax.swing.JTextField();
         inputNumero = new javax.swing.JTextField();
         botaoExcluir = new javax.swing.JButton();
+        botaoEditar = new javax.swing.JButton();
+        botaoVoltar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Funcionário");
         setMaximumSize(new java.awt.Dimension(1012, 800));
-        setMinimumSize(new java.awt.Dimension(700, 680));
-        setPreferredSize(new java.awt.Dimension(800, 700));
+        setMinimumSize(new java.awt.Dimension(800, 865));
+        setPreferredSize(new java.awt.Dimension(900, 865));
 
         DivAddFuncionario.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -87,7 +89,7 @@ public class AddFuncionario extends javax.swing.JFrame {
                 .addComponent(c)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(Todos)
-                .addContainerGap(353, Short.MAX_VALUE))
+                .addContainerGap(403, Short.MAX_VALUE))
         );
         FootherLayout.setVerticalGroup(
             FootherLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -226,8 +228,40 @@ public class AddFuncionario extends javax.swing.JFrame {
             }
         });
 
+        botaoExcluir.setBackground(new java.awt.Color(237, 70, 70));
+        botaoExcluir.setFont(new java.awt.Font("Consolas", 0, 14)); // NOI18N
         botaoExcluir.setText("Excluir");
-        botaoExcluir.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, null, new java.awt.Color(0, 0, 0)));
+        botaoExcluir.setBorder(null);
+        botaoExcluir.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        botaoExcluir.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        botaoExcluir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoExcluirActionPerformed(evt);
+            }
+        });
+
+        botaoEditar.setBackground(new java.awt.Color(40, 203, 58));
+        botaoEditar.setFont(new java.awt.Font("Consolas", 0, 14)); // NOI18N
+        botaoEditar.setText("Editar");
+        botaoEditar.setBorder(null);
+        botaoEditar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        botaoEditar.setMaximumSize(new java.awt.Dimension(60, 21));
+        botaoEditar.setMinimumSize(new java.awt.Dimension(60, 21));
+        botaoEditar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoEditarActionPerformed(evt);
+            }
+        });
+
+        botaoVoltar.setFont(new java.awt.Font("Consolas", 0, 14)); // NOI18N
+        botaoVoltar.setText("Voltar");
+        botaoVoltar.setBorder(null);
+        botaoVoltar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        botaoVoltar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoVoltarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout DivBotoesAddFuncionarioLayout = new javax.swing.GroupLayout(DivBotoesAddFuncionario);
         DivBotoesAddFuncionario.setLayout(DivBotoesAddFuncionarioLayout);
@@ -235,54 +269,56 @@ public class AddFuncionario extends javax.swing.JFrame {
             DivBotoesAddFuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(DivBotoesAddFuncionarioLayout.createSequentialGroup()
                 .addGroup(DivBotoesAddFuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, DivBotoesAddFuncionarioLayout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGroup(DivBotoesAddFuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(DivBotoesAddFuncionarioLayout.createSequentialGroup()
+                                .addComponent(soutNome)
+                                .addGap(18, 18, 18)
+                                .addComponent(inputNome, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, DivBotoesAddFuncionarioLayout.createSequentialGroup()
+                                .addComponent(soutSenhaAcesso)
+                                .addGap(18, 18, 18)
+                                .addComponent(inputSenhaAcesso, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, DivBotoesAddFuncionarioLayout.createSequentialGroup()
+                                .addGroup(DivBotoesAddFuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(soutCidade)
+                                    .addComponent(soutSenhaAcesso1)
+                                    .addComponent(soutUf)
+                                    .addComponent(soutEndereco)
+                                    .addComponent(soutBairro))
+                                .addGap(18, 18, 18)
+                                .addGroup(DivBotoesAddFuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(inputBairro, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(DivBotoesAddFuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(inputTelefone, javax.swing.GroupLayout.DEFAULT_SIZE, 248, Short.MAX_VALUE)
+                                        .addComponent(inputUf)
+                                        .addComponent(inputCidade)
+                                        .addComponent(inputEndereco))))))
                     .addGroup(DivBotoesAddFuncionarioLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(soutNumero)
-                        .addGap(18, 18, 18)
-                        .addComponent(inputNumero, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(DivBotoesAddFuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, DivBotoesAddFuncionarioLayout.createSequentialGroup()
-                            .addGap(110, 110, 110)
-                            .addGroup(DivBotoesAddFuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, DivBotoesAddFuncionarioLayout.createSequentialGroup()
-                                    .addComponent(soutCpf)
-                                    .addGap(18, 18, 18)
-                                    .addComponent(inputCpf, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, DivBotoesAddFuncionarioLayout.createSequentialGroup()
-                                    .addComponent(soutEmail)
-                                    .addGap(18, 18, 18)
-                                    .addComponent(inputEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addGroup(DivBotoesAddFuncionarioLayout.createSequentialGroup()
-                            .addGap(0, 50, Short.MAX_VALUE)
-                            .addGroup(DivBotoesAddFuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(DivBotoesAddFuncionarioLayout.createSequentialGroup()
-                                    .addComponent(soutNome)
-                                    .addGap(18, 18, 18)
-                                    .addComponent(inputNome, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, DivBotoesAddFuncionarioLayout.createSequentialGroup()
-                                    .addComponent(soutSenhaAcesso)
-                                    .addGap(18, 18, 18)
-                                    .addComponent(inputSenhaAcesso, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, DivBotoesAddFuncionarioLayout.createSequentialGroup()
-                                    .addGroup(DivBotoesAddFuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addComponent(soutCidade)
-                                        .addComponent(soutSenhaAcesso1)
-                                        .addComponent(soutUf)
-                                        .addComponent(soutEndereco)
-                                        .addComponent(soutBairro))
-                                    .addGap(18, 18, 18)
-                                    .addGroup(DivBotoesAddFuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(inputBairro, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGroup(DivBotoesAddFuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(inputTelefone, javax.swing.GroupLayout.DEFAULT_SIZE, 248, Short.MAX_VALUE)
-                                            .addComponent(inputUf)
-                                            .addComponent(inputCidade)
-                                            .addComponent(inputEndereco))))))))
-                .addGap(0, 169, Short.MAX_VALUE))
+                        .addContainerGap(120, Short.MAX_VALUE)
+                        .addGroup(DivBotoesAddFuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(DivBotoesAddFuncionarioLayout.createSequentialGroup()
+                                .addComponent(soutNumero)
+                                .addGap(18, 18, 18)
+                                .addComponent(inputNumero, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(DivBotoesAddFuncionarioLayout.createSequentialGroup()
+                                .addComponent(soutCpf)
+                                .addGap(18, 18, 18)
+                                .addComponent(inputCpf, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(DivBotoesAddFuncionarioLayout.createSequentialGroup()
+                                .addComponent(soutEmail)
+                                .addGap(18, 18, 18)
+                                .addComponent(inputEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addGap(169, 169, 169))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, DivBotoesAddFuncionarioLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(botaoExcluir, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(46, 46, 46))
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(botaoVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(botaoExcluir, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(botaoEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(51, 51, 51))
         );
         DivBotoesAddFuncionarioLayout.setVerticalGroup(
             DivBotoesAddFuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -328,8 +364,11 @@ public class AddFuncionario extends javax.swing.JFrame {
                     .addComponent(inputNumero, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(soutNumero))
                 .addGap(18, 18, 18)
-                .addComponent(botaoExcluir)
-                .addGap(0, 15, Short.MAX_VALUE))
+                .addGroup(DivBotoesAddFuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(botaoVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(botaoExcluir, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(botaoEditar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(15, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout DivAddFuncionarioLayout = new javax.swing.GroupLayout(DivAddFuncionario);
@@ -339,17 +378,17 @@ public class AddFuncionario extends javax.swing.JFrame {
             .addComponent(Foother, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(Header, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, DivAddFuncionarioLayout.createSequentialGroup()
-                .addContainerGap(111, Short.MAX_VALUE)
+                .addContainerGap(137, Short.MAX_VALUE)
                 .addComponent(DivBotoesAddFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(111, Short.MAX_VALUE))
+                .addContainerGap(137, Short.MAX_VALUE))
         );
         DivAddFuncionarioLayout.setVerticalGroup(
             DivAddFuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, DivAddFuncionarioLayout.createSequentialGroup()
                 .addComponent(Header, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 91, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 92, Short.MAX_VALUE)
                 .addComponent(DivBotoesAddFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 91, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 92, Short.MAX_VALUE)
                 .addComponent(Foother, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -408,6 +447,18 @@ public class AddFuncionario extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_inputNumeroActionPerformed
 
+    private void botaoExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoExcluirActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botaoExcluirActionPerformed
+
+    private void botaoEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoEditarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botaoEditarActionPerformed
+
+    private void botaoVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoVoltarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botaoVoltarActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -450,7 +501,9 @@ public class AddFuncionario extends javax.swing.JFrame {
     private javax.swing.JPanel Header;
     private javax.swing.JLabel MyStock;
     private javax.swing.JLabel Todos;
+    private javax.swing.JButton botaoEditar;
     private javax.swing.JButton botaoExcluir;
+    private javax.swing.JButton botaoVoltar;
     private javax.swing.JLabel c;
     private javax.swing.JTextField inputBairro;
     private javax.swing.JTextField inputCidade;

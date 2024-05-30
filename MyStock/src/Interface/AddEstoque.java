@@ -8,12 +8,12 @@ package Interface;
  *
  * @author Jason
  */
-public class MenuAdm extends javax.swing.JFrame {
+public class AddEstoque extends javax.swing.JFrame {
 
     /**
-     * Creates new form MenuAdm
+     * Creates new form AddEstoque
      */
-    public MenuAdm() {
+    public AddEstoque() {
         initComponents();
     }
 
@@ -26,14 +26,14 @@ public class MenuAdm extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        DivMenuAdm = new javax.swing.JPanel();
+        DivMenuEstoque = new javax.swing.JPanel();
         Header = new javax.swing.JPanel();
         logo = new javax.swing.JLabel();
         Foother = new javax.swing.JPanel();
         MyStock = new javax.swing.JLabel();
         Todos = new javax.swing.JLabel();
         c = new javax.swing.JLabel();
-        DivBotoesFuncionario = new javax.swing.JPanel();
+        DivBotoesEstoque = new javax.swing.JPanel();
         BotaoAddUsuario = new javax.swing.JButton();
         BotaoAddEstoque = new javax.swing.JButton();
         BotaoGerenciarVenda = new javax.swing.JButton();
@@ -41,12 +41,12 @@ public class MenuAdm extends javax.swing.JFrame {
         BotaoAddProduto = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Menu");
+        setTitle("Estoque");
         setMaximumSize(new java.awt.Dimension(1012, 800));
         setMinimumSize(new java.awt.Dimension(700, 680));
         setPreferredSize(new java.awt.Dimension(800, 700));
 
-        DivMenuAdm.setBackground(new java.awt.Color(255, 255, 255));
+        DivMenuEstoque.setBackground(new java.awt.Color(255, 255, 255));
 
         Header.setBackground(new java.awt.Color(40, 203, 58));
         Header.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
@@ -94,7 +94,7 @@ public class MenuAdm extends javax.swing.JFrame {
                 .addComponent(c)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(Todos)
-                .addContainerGap(314, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         FootherLayout.setVerticalGroup(
             FootherLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -107,8 +107,8 @@ public class MenuAdm extends javax.swing.JFrame {
                 .addContainerGap(47, Short.MAX_VALUE))
         );
 
-        DivBotoesFuncionario.setBackground(new java.awt.Color(255, 255, 255));
-        DivBotoesFuncionario.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        DivBotoesEstoque.setBackground(new java.awt.Color(255, 255, 255));
+        DivBotoesEstoque.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
 
         BotaoAddUsuario.setFont(new java.awt.Font("Consolas", 0, 14)); // NOI18N
         BotaoAddUsuario.setText("Adicionar um novo usuário");
@@ -150,13 +150,13 @@ public class MenuAdm extends javax.swing.JFrame {
             }
         });
 
-        javax.swing.GroupLayout DivBotoesFuncionarioLayout = new javax.swing.GroupLayout(DivBotoesFuncionario);
-        DivBotoesFuncionario.setLayout(DivBotoesFuncionarioLayout);
-        DivBotoesFuncionarioLayout.setHorizontalGroup(
-            DivBotoesFuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, DivBotoesFuncionarioLayout.createSequentialGroup()
+        javax.swing.GroupLayout DivBotoesEstoqueLayout = new javax.swing.GroupLayout(DivBotoesEstoque);
+        DivBotoesEstoque.setLayout(DivBotoesEstoqueLayout);
+        DivBotoesEstoqueLayout.setHorizontalGroup(
+            DivBotoesEstoqueLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, DivBotoesEstoqueLayout.createSequentialGroup()
                 .addGap(0, 72, Short.MAX_VALUE)
-                .addGroup(DivBotoesFuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(DivBotoesEstoqueLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(BotaoGerenciarVenda, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(BotaoAddUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(BotaoAddEstoque, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -164,9 +164,9 @@ public class MenuAdm extends javax.swing.JFrame {
                     .addComponent(BotaoAddProduto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(0, 72, Short.MAX_VALUE))
         );
-        DivBotoesFuncionarioLayout.setVerticalGroup(
-            DivBotoesFuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, DivBotoesFuncionarioLayout.createSequentialGroup()
+        DivBotoesEstoqueLayout.setVerticalGroup(
+            DivBotoesEstoqueLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, DivBotoesEstoqueLayout.createSequentialGroup()
                 .addContainerGap(39, Short.MAX_VALUE)
                 .addComponent(BotaoAddUsuario)
                 .addGap(18, 18, 18)
@@ -180,24 +180,24 @@ public class MenuAdm extends javax.swing.JFrame {
                 .addGap(0, 39, Short.MAX_VALUE))
         );
 
-        javax.swing.GroupLayout DivMenuAdmLayout = new javax.swing.GroupLayout(DivMenuAdm);
-        DivMenuAdm.setLayout(DivMenuAdmLayout);
-        DivMenuAdmLayout.setHorizontalGroup(
-            DivMenuAdmLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout DivMenuEstoqueLayout = new javax.swing.GroupLayout(DivMenuEstoque);
+        DivMenuEstoque.setLayout(DivMenuEstoqueLayout);
+        DivMenuEstoqueLayout.setHorizontalGroup(
+            DivMenuEstoqueLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(Foother, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(Header, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, DivMenuAdmLayout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, DivMenuEstoqueLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(DivBotoesFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(DivBotoesEstoque, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        DivMenuAdmLayout.setVerticalGroup(
-            DivMenuAdmLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, DivMenuAdmLayout.createSequentialGroup()
+        DivMenuEstoqueLayout.setVerticalGroup(
+            DivMenuEstoqueLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, DivMenuEstoqueLayout.createSequentialGroup()
                 .addComponent(Header, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 87, Short.MAX_VALUE)
-                .addComponent(DivBotoesFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 87, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(DivBotoesEstoque, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(Foother, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -205,11 +205,11 @@ public class MenuAdm extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(DivMenuAdm, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(DivMenuEstoque, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(DivMenuAdm, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(DivMenuEstoque, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -253,20 +253,20 @@ public class MenuAdm extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(MenuAdm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AddEstoque.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(MenuAdm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AddEstoque.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(MenuAdm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AddEstoque.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(MenuAdm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AddEstoque.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new MenuAdm().setVisible(true);
+                new AddEstoque().setVisible(true);
             }
         });
     }
@@ -277,8 +277,8 @@ public class MenuAdm extends javax.swing.JFrame {
     private javax.swing.JButton BotaoAddUsuario;
     private javax.swing.JButton BotaoGerarRelatorio;
     private javax.swing.JButton BotaoGerenciarVenda;
-    private javax.swing.JPanel DivBotoesFuncionario;
-    private javax.swing.JPanel DivMenuAdm;
+    private javax.swing.JPanel DivBotoesEstoque;
+    private javax.swing.JPanel DivMenuEstoque;
     private javax.swing.JPanel Foother;
     private javax.swing.JPanel Header;
     private javax.swing.JLabel MyStock;
