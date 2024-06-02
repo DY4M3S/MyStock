@@ -9,6 +9,11 @@ public class Administrador extends Usuario {
         this.id_adm = id_adm;
     }
 
+    public Administrador(boolean id_adm, int id, String email, String senha) {
+        super(id, email, senha);
+        this.id_adm = id_adm;
+    }
+    
     @Override
     public String toString() {
         return "Administrador{" + "id_adm=" + id_adm + '}';

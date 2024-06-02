@@ -1,36 +1,40 @@
 package ModeloClasse;
 
+import java.util.List;
+
 public class Venda {
     private int id;
-    private String nomeCliente;
+    private List<Cliente> cliente;
     private int numeroPedido;
+    private List<Produto> produto;
     private int quantidade;
     private float valorTotalDaVenda;
     private String enderecoDeEntrega;
 
-    public Venda(int id,String nomeCliente, int numeroPedido, int quantidade, float valorTotalDaVenda, String enderecoDeEntrega) {
+    public Venda(int id, List<Cliente> cliente, int numeroPedido, List<Produto> produto, int quantidade, float valorTotalDaVenda, String enderecoDeEntrega) {
         this.id = id;
-        this.nomeCliente = nomeCliente;
+        this.cliente = cliente;
         this.numeroPedido = numeroPedido;
+        this.produto = produto;
         this.quantidade = quantidade;
         this.valorTotalDaVenda = valorTotalDaVenda;
         this.enderecoDeEntrega = enderecoDeEntrega;
     }
 
-     public int getId() {
+    public int getId() {
         return id;
     }
 
     public void setId(int id) {
         this.id = id;
     }
-    
-    public String getNomeCliente() {
-        return nomeCliente;
+
+    public List<Cliente> getCliente() {
+        return cliente;
     }
 
-    public void setNomeCliente(String nomeCliente) {
-        this.nomeCliente = nomeCliente;
+    public void setCliente(List<Cliente> cliente) {
+        this.cliente = cliente;
     }
 
     public int getNumeroPedido() {
@@ -39,6 +43,14 @@ public class Venda {
 
     public void setNumeroPedido(int numeroPedido) {
         this.numeroPedido = numeroPedido;
+    }
+
+    public List<Produto> getProduto() {
+        return produto;
+    }
+
+    public void setProduto(List<Produto> produto) {
+        this.produto = produto;
     }
 
     public int getQuantidade() {
@@ -67,11 +79,9 @@ public class Venda {
 
     @Override
     public String toString() {
-        return "Venda{" + "id=" + id + ", nomeCliente=" + nomeCliente + ", numeroPedido=" + numeroPedido + ", quantidade=" + quantidade + ", valorTotalDaVenda=" + valorTotalDaVenda + ", enderecoDeEntrega=" + enderecoDeEntrega + '}';
+        return "Venda{" + "id=" + id + ", cliente=" + cliente + ", numeroPedido=" + numeroPedido + ", produto=" + produto + ", quantidade=" + quantidade + ", valorTotalDaVenda=" + valorTotalDaVenda + ", enderecoDeEntrega=" + enderecoDeEntrega + '}';
     }
 
    
-    
-    
-    
+
 }

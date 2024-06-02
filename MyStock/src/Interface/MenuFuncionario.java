@@ -35,13 +35,13 @@ public class MenuFuncionario extends javax.swing.JFrame {
         c = new javax.swing.JLabel();
         DivBotoesFuncionario = new javax.swing.JPanel();
         BotaoAddProduto = new javax.swing.JButton();
-        BotaoAddEstoque = new javax.swing.JButton();
         BotaoGerenciarVenda = new javax.swing.JButton();
+        BotaoAddEstoque = new javax.swing.JButton();
         BotaoGerarRelatorio = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Menu");
-        setMinimumSize(new java.awt.Dimension(700, 680));
+        setMinimumSize(new java.awt.Dimension(700, 700));
 
         DivMenuFuncionario.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -115,19 +115,19 @@ public class MenuFuncionario extends javax.swing.JFrame {
             }
         });
 
-        BotaoAddEstoque.setFont(new java.awt.Font("Consolas", 0, 14)); // NOI18N
-        BotaoAddEstoque.setText("Gerenciar vendas");
-        BotaoAddEstoque.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BotaoAddEstoqueActionPerformed(evt);
-            }
-        });
-
         BotaoGerenciarVenda.setFont(new java.awt.Font("Consolas", 0, 14)); // NOI18N
-        BotaoGerenciarVenda.setText("Adicionar um novo estoque");
+        BotaoGerenciarVenda.setText("Gerenciar vendas");
         BotaoGerenciarVenda.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BotaoGerenciarVendaActionPerformed(evt);
+            }
+        });
+
+        BotaoAddEstoque.setFont(new java.awt.Font("Consolas", 0, 14)); // NOI18N
+        BotaoAddEstoque.setText("Adicionar um novo estoque");
+        BotaoAddEstoque.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotaoAddEstoqueActionPerformed(evt);
             }
         });
 
@@ -144,26 +144,26 @@ public class MenuFuncionario extends javax.swing.JFrame {
         DivBotoesFuncionarioLayout.setHorizontalGroup(
             DivBotoesFuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, DivBotoesFuncionarioLayout.createSequentialGroup()
-                .addGap(0, 72, Short.MAX_VALUE)
+                .addGap(0, 120, Short.MAX_VALUE)
                 .addGroup(DivBotoesFuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(BotaoGerenciarVenda, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(BotaoAddProduto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(BotaoAddEstoque, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(BotaoAddProduto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(BotaoGerenciarVenda, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(BotaoGerarRelatorio, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 72, Short.MAX_VALUE))
+                .addGap(0, 120, Short.MAX_VALUE))
         );
         DivBotoesFuncionarioLayout.setVerticalGroup(
             DivBotoesFuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, DivBotoesFuncionarioLayout.createSequentialGroup()
-                .addGap(0, 51, Short.MAX_VALUE)
+                .addGap(0, 70, Short.MAX_VALUE)
                 .addComponent(BotaoAddProduto)
-                .addGap(18, 18, 18)
-                .addComponent(BotaoGerenciarVenda)
                 .addGap(18, 18, 18)
                 .addComponent(BotaoAddEstoque)
                 .addGap(18, 18, 18)
+                .addComponent(BotaoGerenciarVenda)
+                .addGap(18, 18, 18)
                 .addComponent(BotaoGerarRelatorio)
-                .addGap(0, 51, Short.MAX_VALUE))
+                .addGap(0, 70, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout DivMenuFuncionarioLayout = new javax.swing.GroupLayout(DivMenuFuncionario);
@@ -203,19 +203,19 @@ public class MenuFuncionario extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void BotaoAddProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoAddProdutoActionPerformed
-        // TODO add your handling code here:
+        new AddProduto().setVisible(true);
     }//GEN-LAST:event_BotaoAddProdutoActionPerformed
 
-    private void BotaoAddEstoqueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoAddEstoqueActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_BotaoAddEstoqueActionPerformed
-
     private void BotaoGerenciarVendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoGerenciarVendaActionPerformed
-        // TODO add your handling code here:
+        new GerenciarVendas().setVisible(true);
     }//GEN-LAST:event_BotaoGerenciarVendaActionPerformed
 
+    private void BotaoAddEstoqueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoAddEstoqueActionPerformed
+        new AddEstoque().setVisible(true);
+    }//GEN-LAST:event_BotaoAddEstoqueActionPerformed
+
     private void BotaoGerarRelatorioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoGerarRelatorioActionPerformed
-        // TODO add your handling code here:
+        new GerarRelatorio().setVisible(true);
     }//GEN-LAST:event_BotaoGerarRelatorioActionPerformed
 
     /**

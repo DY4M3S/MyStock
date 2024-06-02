@@ -1,11 +1,11 @@
 package ModeloClasse;
 
-public class Usuario {
+ abstract public class Usuario {
 
     private int id;
     private String nome;
     private String cpf;
-    private String email;
+    private String email; 
     private int telefone;
     private String senha;
     private String uf;
@@ -27,7 +27,25 @@ public class Usuario {
         this.numero = numero;
         this.bairro = bairro;
     }
+
+    public Usuario(int id, String nome, String cpf, String email, int telefone, String uf, String cidade, String endereco, int numero, String bairro) {
+        this.id = id;
+        this.nome = nome;
+        this.cpf = cpf;
+        this.email = email;
+        this.telefone = telefone;
+        this.uf = uf;
+        this.cidade = cidade;
+        this.endereco = endereco;
+        this.numero = numero;
+        this.bairro = bairro;
+    }
     
+    public Usuario(int id, String email,String senha){
+    this.id = id;
+    this.email = email;
+    this.senha = senha;
+    }
     
     public int getId() {
         return id;

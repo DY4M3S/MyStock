@@ -6,6 +6,10 @@ public class Funcionario extends Usuario {
         super(id, nome, cpf, email, telefone, senha, uf, cidade, endereco, numero, bairro);
     }
 
+    public Funcionario(int id, String email, String senha) {
+        super(id, email, senha);
+    }
+
     @Override
     public String toString() {
         return "Funcionario{" + '}';

@@ -34,16 +34,18 @@ public class AddEstoque extends javax.swing.JFrame {
         Todos = new javax.swing.JLabel();
         c = new javax.swing.JLabel();
         DivBotoesEstoque = new javax.swing.JPanel();
-        BotaoAddUsuario = new javax.swing.JButton();
-        BotaoAddEstoque = new javax.swing.JButton();
-        BotaoGerenciarVenda = new javax.swing.JButton();
-        BotaoGerarRelatorio = new javax.swing.JButton();
-        BotaoAddProduto = new javax.swing.JButton();
+        soutNomeEstoque = new javax.swing.JLabel();
+        soutEnderecoEstoque = new javax.swing.JLabel();
+        inputNomeEstoque = new javax.swing.JTextField();
+        inputEnderecoEstoque = new javax.swing.JTextField();
+        botaoVoltar = new javax.swing.JButton();
+        botaoExcluir = new javax.swing.JButton();
+        botaoSalvar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Estoque");
         setMaximumSize(new java.awt.Dimension(1012, 800));
-        setMinimumSize(new java.awt.Dimension(700, 680));
+        setMinimumSize(new java.awt.Dimension(700, 700));
         setPreferredSize(new java.awt.Dimension(800, 700));
 
         DivMenuEstoque.setBackground(new java.awt.Color(255, 255, 255));
@@ -110,43 +112,57 @@ public class AddEstoque extends javax.swing.JFrame {
         DivBotoesEstoque.setBackground(new java.awt.Color(255, 255, 255));
         DivBotoesEstoque.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
 
-        BotaoAddUsuario.setFont(new java.awt.Font("Consolas", 0, 14)); // NOI18N
-        BotaoAddUsuario.setText("Adicionar um novo usuário");
-        BotaoAddUsuario.addActionListener(new java.awt.event.ActionListener() {
+        soutNomeEstoque.setFont(new java.awt.Font("Consolas", 0, 14)); // NOI18N
+        soutNomeEstoque.setText("Nome do estoque:");
+
+        soutEnderecoEstoque.setFont(new java.awt.Font("Consolas", 0, 14)); // NOI18N
+        soutEnderecoEstoque.setText("Endereço do estoque:");
+
+        inputNomeEstoque.setFont(new java.awt.Font("Consolas", 0, 14)); // NOI18N
+        inputNomeEstoque.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BotaoAddUsuarioActionPerformed(evt);
+                inputNomeEstoqueActionPerformed(evt);
             }
         });
 
-        BotaoAddEstoque.setFont(new java.awt.Font("Consolas", 0, 14)); // NOI18N
-        BotaoAddEstoque.setText("Gerenciar vendas");
-        BotaoAddEstoque.addActionListener(new java.awt.event.ActionListener() {
+        inputEnderecoEstoque.setFont(new java.awt.Font("Consolas", 0, 14)); // NOI18N
+        inputEnderecoEstoque.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BotaoAddEstoqueActionPerformed(evt);
+                inputEnderecoEstoqueActionPerformed(evt);
             }
         });
 
-        BotaoGerenciarVenda.setFont(new java.awt.Font("Consolas", 0, 14)); // NOI18N
-        BotaoGerenciarVenda.setText("Adicionar um novo estoque");
-        BotaoGerenciarVenda.addActionListener(new java.awt.event.ActionListener() {
+        botaoVoltar.setFont(new java.awt.Font("Consolas", 0, 14)); // NOI18N
+        botaoVoltar.setText("Voltar");
+        botaoVoltar.setBorder(null);
+        botaoVoltar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        botaoVoltar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BotaoGerenciarVendaActionPerformed(evt);
+                botaoVoltarActionPerformed(evt);
             }
         });
 
-        BotaoGerarRelatorio.setFont(new java.awt.Font("Consolas", 0, 14)); // NOI18N
-        BotaoGerarRelatorio.setText("Gerar relatório ");
-        BotaoGerarRelatorio.addActionListener(new java.awt.event.ActionListener() {
+        botaoExcluir.setFont(new java.awt.Font("Consolas", 0, 14)); // NOI18N
+        botaoExcluir.setText("Listar");
+        botaoExcluir.setBorder(null);
+        botaoExcluir.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        botaoExcluir.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        botaoExcluir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BotaoGerarRelatorioActionPerformed(evt);
+                botaoExcluirActionPerformed(evt);
             }
         });
 
-        BotaoAddProduto.setFont(new java.awt.Font("Consolas", 0, 14)); // NOI18N
-        BotaoAddProduto.setText("Adicionar um novo produto");
-        BotaoAddProduto.addActionListener(new java.awt.event.ActionListener() {
+        botaoSalvar.setBackground(new java.awt.Color(40, 203, 58));
+        botaoSalvar.setFont(new java.awt.Font("Consolas", 0, 14)); // NOI18N
+        botaoSalvar.setText("Salvar");
+        botaoSalvar.setBorder(null);
+        botaoSalvar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        botaoSalvar.setMaximumSize(new java.awt.Dimension(60, 21));
+        botaoSalvar.setMinimumSize(new java.awt.Dimension(60, 21));
+        botaoSalvar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BotaoAddProdutoActionPerformed(evt);
+                botaoSalvarActionPerformed(evt);
             }
         });
 
@@ -154,30 +170,43 @@ public class AddEstoque extends javax.swing.JFrame {
         DivBotoesEstoque.setLayout(DivBotoesEstoqueLayout);
         DivBotoesEstoqueLayout.setHorizontalGroup(
             DivBotoesEstoqueLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, DivBotoesEstoqueLayout.createSequentialGroup()
-                .addGap(0, 72, Short.MAX_VALUE)
-                .addGroup(DivBotoesEstoqueLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(BotaoGerenciarVenda, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(BotaoAddUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(BotaoAddEstoque, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(BotaoGerarRelatorio, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(BotaoAddProduto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(0, 72, Short.MAX_VALUE))
+            .addGroup(DivBotoesEstoqueLayout.createSequentialGroup()
+                .addContainerGap(120, Short.MAX_VALUE)
+                .addGroup(DivBotoesEstoqueLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(DivBotoesEstoqueLayout.createSequentialGroup()
+                        .addGroup(DivBotoesEstoqueLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(soutNomeEstoque)
+                            .addComponent(soutEnderecoEstoque, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(24, 24, 24)
+                        .addGroup(DivBotoesEstoqueLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(inputNomeEstoque, javax.swing.GroupLayout.DEFAULT_SIZE, 210, Short.MAX_VALUE)
+                            .addComponent(inputEnderecoEstoque)))
+                    .addGroup(DivBotoesEstoqueLayout.createSequentialGroup()
+                        .addComponent(botaoVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(botaoExcluir, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(botaoSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(120, Short.MAX_VALUE))
         );
         DivBotoesEstoqueLayout.setVerticalGroup(
             DivBotoesEstoqueLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, DivBotoesEstoqueLayout.createSequentialGroup()
-                .addContainerGap(39, Short.MAX_VALUE)
-                .addComponent(BotaoAddUsuario)
-                .addGap(18, 18, 18)
-                .addComponent(BotaoAddProduto)
-                .addGap(18, 18, 18)
-                .addComponent(BotaoGerenciarVenda)
-                .addGap(18, 18, 18)
-                .addComponent(BotaoAddEstoque)
-                .addGap(18, 18, 18)
-                .addComponent(BotaoGerarRelatorio)
-                .addGap(0, 39, Short.MAX_VALUE))
+            .addGroup(DivBotoesEstoqueLayout.createSequentialGroup()
+                .addContainerGap(70, Short.MAX_VALUE)
+                .addGroup(DivBotoesEstoqueLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(soutNomeEstoque)
+                    .addComponent(inputNomeEstoque, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(39, 39, 39)
+                .addGroup(DivBotoesEstoqueLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(soutEnderecoEstoque)
+                    .addComponent(inputEnderecoEstoque, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 85, Short.MAX_VALUE)
+                .addGroup(DivBotoesEstoqueLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(botaoSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(DivBotoesEstoqueLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(botaoVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(botaoExcluir, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(70, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout DivMenuEstoqueLayout = new javax.swing.GroupLayout(DivMenuEstoque);
@@ -187,17 +216,17 @@ public class AddEstoque extends javax.swing.JFrame {
             .addComponent(Foother, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(Header, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, DivMenuEstoqueLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(137, Short.MAX_VALUE)
                 .addComponent(DivBotoesEstoque, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(137, Short.MAX_VALUE))
         );
         DivMenuEstoqueLayout.setVerticalGroup(
             DivMenuEstoqueLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, DivMenuEstoqueLayout.createSequentialGroup()
                 .addComponent(Header, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 134, Short.MAX_VALUE)
                 .addComponent(DivBotoesEstoque, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 134, Short.MAX_VALUE)
                 .addComponent(Foother, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -216,25 +245,25 @@ public class AddEstoque extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void BotaoAddUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoAddUsuarioActionPerformed
+    private void inputNomeEstoqueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputNomeEstoqueActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_BotaoAddUsuarioActionPerformed
+    }//GEN-LAST:event_inputNomeEstoqueActionPerformed
 
-    private void BotaoAddEstoqueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoAddEstoqueActionPerformed
+    private void inputEnderecoEstoqueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputEnderecoEstoqueActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_BotaoAddEstoqueActionPerformed
+    }//GEN-LAST:event_inputEnderecoEstoqueActionPerformed
 
-    private void BotaoGerenciarVendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoGerenciarVendaActionPerformed
+    private void botaoVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoVoltarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_BotaoGerenciarVendaActionPerformed
+    }//GEN-LAST:event_botaoVoltarActionPerformed
 
-    private void BotaoGerarRelatorioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoGerarRelatorioActionPerformed
+    private void botaoExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoExcluirActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_BotaoGerarRelatorioActionPerformed
+    }//GEN-LAST:event_botaoExcluirActionPerformed
 
-    private void BotaoAddProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoAddProdutoActionPerformed
+    private void botaoSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoSalvarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_BotaoAddProdutoActionPerformed
+    }//GEN-LAST:event_botaoSalvarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -272,18 +301,20 @@ public class AddEstoque extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton BotaoAddEstoque;
-    private javax.swing.JButton BotaoAddProduto;
-    private javax.swing.JButton BotaoAddUsuario;
-    private javax.swing.JButton BotaoGerarRelatorio;
-    private javax.swing.JButton BotaoGerenciarVenda;
     private javax.swing.JPanel DivBotoesEstoque;
     private javax.swing.JPanel DivMenuEstoque;
     private javax.swing.JPanel Foother;
     private javax.swing.JPanel Header;
     private javax.swing.JLabel MyStock;
     private javax.swing.JLabel Todos;
+    private javax.swing.JButton botaoExcluir;
+    private javax.swing.JButton botaoSalvar;
+    private javax.swing.JButton botaoVoltar;
     private javax.swing.JLabel c;
+    private javax.swing.JTextField inputEnderecoEstoque;
+    private javax.swing.JTextField inputNomeEstoque;
     private javax.swing.JLabel logo;
+    private javax.swing.JLabel soutEnderecoEstoque;
+    private javax.swing.JLabel soutNomeEstoque;
     // End of variables declaration//GEN-END:variables
 }
