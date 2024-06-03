@@ -38,6 +38,9 @@ public class MenuFuncionario extends javax.swing.JFrame {
         BotaoGerenciarVenda = new javax.swing.JButton();
         BotaoAddEstoque = new javax.swing.JButton();
         BotaoGerarRelatorio = new javax.swing.JButton();
+        BotaoMenu = new javax.swing.JMenuBar();
+        BotaoSistema = new javax.swing.JMenu();
+        BotaoSair = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Menu");
@@ -181,11 +184,25 @@ public class MenuFuncionario extends javax.swing.JFrame {
             DivMenuFuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, DivMenuFuncionarioLayout.createSequentialGroup()
                 .addComponent(Header, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 66, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 55, Short.MAX_VALUE)
                 .addComponent(DivBotoesFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 66, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 54, Short.MAX_VALUE)
                 .addComponent(Foother, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
+
+        BotaoSistema.setText("Sistema");
+
+        BotaoSair.setText("Sair");
+        BotaoSair.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotaoSairActionPerformed(evt);
+            }
+        });
+        BotaoSistema.add(BotaoSair);
+
+        BotaoMenu.add(BotaoSistema);
+
+        setJMenuBar(BotaoMenu);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -203,20 +220,25 @@ public class MenuFuncionario extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void BotaoAddProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoAddProdutoActionPerformed
-        new AddProduto().setVisible(true);
+        new AddProdutoAdm().setVisible(true);
     }//GEN-LAST:event_BotaoAddProdutoActionPerformed
 
     private void BotaoGerenciarVendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoGerenciarVendaActionPerformed
-        new GerenciarVendas().setVisible(true);
+        new GerenciarVendasAdm().setVisible(true);
     }//GEN-LAST:event_BotaoGerenciarVendaActionPerformed
 
     private void BotaoAddEstoqueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoAddEstoqueActionPerformed
-        new AddEstoque().setVisible(true);
+        new AddEstoqueAdm().setVisible(true);
     }//GEN-LAST:event_BotaoAddEstoqueActionPerformed
 
     private void BotaoGerarRelatorioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoGerarRelatorioActionPerformed
-        new GerarRelatorio().setVisible(true);
+        new GerarRelatorioAdm().setVisible(true);
     }//GEN-LAST:event_BotaoGerarRelatorioActionPerformed
+
+    private void BotaoSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoSairActionPerformed
+        new Login().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_BotaoSairActionPerformed
 
     /**
      * @param args the command line arguments
@@ -258,6 +280,9 @@ public class MenuFuncionario extends javax.swing.JFrame {
     private javax.swing.JButton BotaoAddProduto;
     private javax.swing.JButton BotaoGerarRelatorio;
     private javax.swing.JButton BotaoGerenciarVenda;
+    private javax.swing.JMenuBar BotaoMenu;
+    private javax.swing.JMenuItem BotaoSair;
+    private javax.swing.JMenu BotaoSistema;
     private javax.swing.JPanel DivBotoesFuncionario;
     private javax.swing.JPanel DivMenuFuncionario;
     private javax.swing.JPanel Foother;

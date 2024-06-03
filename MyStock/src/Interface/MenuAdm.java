@@ -4,6 +4,7 @@
  */
 package Interface;
 
+import Repositorio.Repositorio;
 /**
  *
  * @author Jason
@@ -39,12 +40,15 @@ public class MenuAdm extends javax.swing.JFrame {
         BotaoAddEstoque = new javax.swing.JButton();
         BotaoGerarRelatorio = new javax.swing.JButton();
         BotaoAddProduto = new javax.swing.JButton();
+        BotaoMenu = new javax.swing.JMenuBar();
+        BotaoSistema = new javax.swing.JMenu();
+        BotaoSair = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Menu");
         setMaximumSize(new java.awt.Dimension(1012, 800));
-        setMinimumSize(new java.awt.Dimension(700, 700));
-        setPreferredSize(new java.awt.Dimension(800, 700));
+        setMinimumSize(new java.awt.Dimension(700, 725));
+        setPreferredSize(new java.awt.Dimension(800, 725));
 
         DivMenuAdm.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -195,11 +199,25 @@ public class MenuAdm extends javax.swing.JFrame {
             DivMenuAdmLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, DivMenuAdmLayout.createSequentialGroup()
                 .addComponent(Header, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 119, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 108, Short.MAX_VALUE)
                 .addComponent(DivBotoesFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 119, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 107, Short.MAX_VALUE)
                 .addComponent(Foother, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
+
+        BotaoSistema.setText("Sistema");
+
+        BotaoSair.setText("Sair");
+        BotaoSair.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotaoSairActionPerformed(evt);
+            }
+        });
+        BotaoSistema.add(BotaoSair);
+
+        BotaoMenu.add(BotaoSistema);
+
+        setJMenuBar(BotaoMenu);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -217,24 +235,34 @@ public class MenuAdm extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void BotaoAddUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoAddUsuarioActionPerformed
-          new AddFuncionario().setVisible(true);
+        new AddFuncionarioAdm().setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_BotaoAddUsuarioActionPerformed
 
     private void BotaoGerenciarVendasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoGerenciarVendasActionPerformed
-        new GerenciarVendas().setVisible(true);
+        new GerenciarVendasAdm().setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_BotaoGerenciarVendasActionPerformed
 
     private void BotaoAddEstoqueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoAddEstoqueActionPerformed
-          new AddEstoque().setVisible(true);
+          new AddEstoqueAdm().setVisible(true);
+          this.dispose();
     }//GEN-LAST:event_BotaoAddEstoqueActionPerformed
 
     private void BotaoGerarRelatorioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoGerarRelatorioActionPerformed
-        new GerarRelatorio().setVisible(true);
+        new GerarRelatorioAdm().setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_BotaoGerarRelatorioActionPerformed
 
     private void BotaoAddProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoAddProdutoActionPerformed
-        new AddProduto().setVisible(true);
+        new AddProdutoAdm().setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_BotaoAddProdutoActionPerformed
+
+    private void BotaoSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoSairActionPerformed
+       new Login().setVisible(true);
+       this.dispose();
+    }//GEN-LAST:event_BotaoSairActionPerformed
 
     /**
      * @param args the command line arguments
@@ -277,6 +305,9 @@ public class MenuAdm extends javax.swing.JFrame {
     private javax.swing.JButton BotaoAddUsuario;
     private javax.swing.JButton BotaoGerarRelatorio;
     private javax.swing.JButton BotaoGerenciarVendas;
+    private javax.swing.JMenuBar BotaoMenu;
+    private javax.swing.JMenuItem BotaoSair;
+    private javax.swing.JMenu BotaoSistema;
     private javax.swing.JPanel DivBotoesFuncionario;
     private javax.swing.JPanel DivMenuAdm;
     private javax.swing.JPanel Foother;

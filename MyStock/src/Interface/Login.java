@@ -4,6 +4,7 @@
  */
 package Interface;
 
+import ModeloClasse.Administrador;
 import javax.swing.JOptionPane;
 
 /**
@@ -11,14 +12,21 @@ import javax.swing.JOptionPane;
  * @author Jason
  */
 public class Login extends javax.swing.JFrame {
-
+ 
     /**
      * Creates new form Login
      */
     public Login() {
         initComponents();
+     
     }
 
+    private void limpar() {
+        this.inputEmail.setText("");
+        this.inputSenha.setText("");
+        
+        this.inputEmail.requestFocus();
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -95,7 +103,7 @@ public class Login extends javax.swing.JFrame {
         divBotoesLayout.setHorizontalGroup(
             divBotoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(divBotoesLayout.createSequentialGroup()
-                .addGap(0, 120, Short.MAX_VALUE)
+                .addGap(0, 100, Short.MAX_VALUE)
                 .addGroup(divBotoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(soutEmail, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(soutSenha, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -103,7 +111,7 @@ public class Login extends javax.swing.JFrame {
                 .addGroup(divBotoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(inputEmail, javax.swing.GroupLayout.DEFAULT_SIZE, 204, Short.MAX_VALUE)
                     .addComponent(inputSenha))
-                .addGap(0, 120, Short.MAX_VALUE))
+                .addGap(0, 100, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, divBotoesLayout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(botaoLogin)
@@ -197,9 +205,9 @@ public class Login extends javax.swing.JFrame {
             .addComponent(header, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(foother, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, divLoginLayout.createSequentialGroup()
-                .addGap(0, 33, Short.MAX_VALUE)
+                .addGap(0, 53, Short.MAX_VALUE)
                 .addComponent(divBotoes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 33, Short.MAX_VALUE))
+                .addGap(0, 53, Short.MAX_VALUE))
         );
         divLoginLayout.setVerticalGroup(
             divLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -235,18 +243,11 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_inputSenhaActionPerformed
 
     private void botaoLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoLoginActionPerformed
-        
-        if(inputEmail.getText().equals("d")&& inputSenha.getText().equals("1")){
-            
-           JOptionPane.showMessageDialog(this, "Acesso concedido!");
-        } else {
-        
-            JOptionPane.showMessageDialog(this, "Usuário não cadastrado!");
-        } 
+       
     }//GEN-LAST:event_botaoLoginActionPerformed
 
     private void checkAdmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkAdmActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_checkAdmActionPerformed
 
     /**

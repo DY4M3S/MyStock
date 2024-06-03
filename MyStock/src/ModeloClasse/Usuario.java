@@ -14,8 +14,7 @@ package ModeloClasse;
     private int numero;
     private String bairro;
 
-    public Usuario(int id, String nome, String cpf, String email, int telefone, String senha, String uf, String cidade, String endereco, int numero, String bairro) {
-        this.id = id;
+    public Usuario(String nome, String cpf, String email, int telefone, String senha, String uf, String cidade, String endereco, int numero, String bairro) {
         this.nome = nome;
         this.cpf = cpf;
         this.email = email;
@@ -28,8 +27,7 @@ package ModeloClasse;
         this.bairro = bairro;
     }
 
-    public Usuario(int id, String nome, String cpf, String email, int telefone, String uf, String cidade, String endereco, int numero, String bairro) {
-        this.id = id;
+    public Usuario(String nome, String cpf, String email, int telefone, String uf, String cidade, String endereco, int numero, String bairro) {
         this.nome = nome;
         this.cpf = cpf;
         this.email = email;
@@ -40,11 +38,13 @@ package ModeloClasse;
         this.numero = numero;
         this.bairro = bairro;
     }
-    
-    public Usuario(int id, String email,String senha){
-    this.id = id;
-    this.email = email;
-    this.senha = senha;
+
+    public Usuario(String email, String senha) {
+        this.email = email;
+        this.senha = senha;
+    }
+
+    public Usuario() {
     }
     
     public int getId() {

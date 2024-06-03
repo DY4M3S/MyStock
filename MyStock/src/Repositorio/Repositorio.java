@@ -18,5 +18,5 @@ public class Repositorio {
     public static List<Produto> produto = new ArrayList<>();
     public static List<Estoque> estoque = new ArrayList<>();
 
-    
+   
 }
