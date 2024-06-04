@@ -65,7 +65,7 @@ public class AddFuncionarioAdm extends javax.swing.JFrame {
         inputNumero = new javax.swing.JTextField();
         botaoVoltar = new javax.swing.JButton();
         botaoListar = new javax.swing.JButton();
-        botaoSalvar = new javax.swing.JButton();
+        botaoCadastrar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Funcionário");
@@ -257,16 +257,16 @@ public class AddFuncionarioAdm extends javax.swing.JFrame {
             }
         });
 
-        botaoSalvar.setBackground(new java.awt.Color(40, 203, 58));
-        botaoSalvar.setFont(new java.awt.Font("Consolas", 0, 14)); // NOI18N
-        botaoSalvar.setText("Salvar");
-        botaoSalvar.setBorder(null);
-        botaoSalvar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        botaoSalvar.setMaximumSize(new java.awt.Dimension(60, 21));
-        botaoSalvar.setMinimumSize(new java.awt.Dimension(60, 21));
-        botaoSalvar.addActionListener(new java.awt.event.ActionListener() {
+        botaoCadastrar.setBackground(new java.awt.Color(40, 203, 58));
+        botaoCadastrar.setFont(new java.awt.Font("Consolas", 0, 14)); // NOI18N
+        botaoCadastrar.setText("Cadastrar");
+        botaoCadastrar.setBorder(null);
+        botaoCadastrar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        botaoCadastrar.setMaximumSize(new java.awt.Dimension(60, 21));
+        botaoCadastrar.setMinimumSize(new java.awt.Dimension(60, 21));
+        botaoCadastrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botaoSalvarActionPerformed(evt);
+                botaoCadastrarActionPerformed(evt);
             }
         });
 
@@ -283,45 +283,45 @@ public class AddFuncionarioAdm extends javax.swing.JFrame {
                         .addComponent(inputEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(DivBotoesAddUsuárioLayout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addGroup(DivBotoesAddUsuárioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(DivBotoesAddUsuárioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, DivBotoesAddUsuárioLayout.createSequentialGroup()
+                                .addComponent(soutCpf)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(inputCpf, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(DivBotoesAddUsuárioLayout.createSequentialGroup()
-                                .addComponent(botaoVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(soutNome)
                                 .addGap(18, 18, 18)
-                                .addComponent(botaoListar, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(inputNome, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, DivBotoesAddUsuárioLayout.createSequentialGroup()
+                                .addComponent(soutSenhaAcesso)
                                 .addGap(18, 18, 18)
-                                .addComponent(botaoSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(DivBotoesAddUsuárioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addGroup(DivBotoesAddUsuárioLayout.createSequentialGroup()
-                                    .addComponent(soutNumero)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(inputNumero, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, DivBotoesAddUsuárioLayout.createSequentialGroup()
-                                    .addComponent(soutCpf)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(inputCpf, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(DivBotoesAddUsuárioLayout.createSequentialGroup()
-                                    .addComponent(soutNome)
-                                    .addGap(18, 18, 18)
-                                    .addComponent(inputNome, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, DivBotoesAddUsuárioLayout.createSequentialGroup()
-                                    .addComponent(soutSenhaAcesso)
-                                    .addGap(18, 18, 18)
-                                    .addComponent(inputSenhaAcesso, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, DivBotoesAddUsuárioLayout.createSequentialGroup()
-                                    .addGroup(DivBotoesAddUsuárioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(soutSenhaAcesso1)
-                                        .addComponent(soutUf)
-                                        .addComponent(soutCidade)
-                                        .addComponent(soutEndereco)
-                                        .addComponent(soutBairro))
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addGroup(DivBotoesAddUsuárioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(inputBairro, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGroup(DivBotoesAddUsuárioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(inputTelefone, javax.swing.GroupLayout.DEFAULT_SIZE, 248, Short.MAX_VALUE)
-                                            .addComponent(inputUf)
-                                            .addComponent(inputCidade)
-                                            .addComponent(inputEndereco))))))))
+                                .addComponent(inputSenhaAcesso, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, DivBotoesAddUsuárioLayout.createSequentialGroup()
+                                .addGroup(DivBotoesAddUsuárioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(soutSenhaAcesso1)
+                                    .addComponent(soutUf)
+                                    .addComponent(soutCidade)
+                                    .addComponent(soutEndereco)
+                                    .addComponent(soutBairro))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(DivBotoesAddUsuárioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(inputBairro, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(DivBotoesAddUsuárioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(inputTelefone, javax.swing.GroupLayout.DEFAULT_SIZE, 248, Short.MAX_VALUE)
+                                        .addComponent(inputUf)
+                                        .addComponent(inputCidade)
+                                        .addComponent(inputEndereco))))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, DivBotoesAddUsuárioLayout.createSequentialGroup()
+                                .addComponent(soutNumero)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(DivBotoesAddUsuárioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(DivBotoesAddUsuárioLayout.createSequentialGroup()
+                                        .addComponent(botaoVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(botaoListar, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(botaoCadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(inputNumero, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE))))))
                 .addContainerGap(70, Short.MAX_VALUE))
         );
         DivBotoesAddUsuárioLayout.setVerticalGroup(
@@ -371,7 +371,7 @@ public class AddFuncionarioAdm extends javax.swing.JFrame {
                 .addGroup(DivBotoesAddUsuárioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(botaoVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(botaoListar, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(botaoSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(botaoCadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(25, Short.MAX_VALUE))
         );
 
@@ -461,21 +461,21 @@ public class AddFuncionarioAdm extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_botaoListarActionPerformed
 
-    private void botaoSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoSalvarActionPerformed
-        Funcionario funcionario = new Funcionario();
+    private void botaoCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoCadastrarActionPerformed
+//        Funcionario funcionario = new Funcionario();
+//        
+//        funcionario.setEmail(inputEmail.getText());
+//        funcionario.setSenha(inputSenhaAcesso.getText());
+//        
+//        Repositorio.funcionario.add(funcionario);
+//        
+//        for(int i = 0; i < Repositorio.funcionario.size(); i ++ ){
+//            System.out.println(Repositorio.funcionario.get(i));
+//        }
         
-        funcionario.setEmail(inputEmail.getText());
-        funcionario.setSenha(inputSenhaAcesso.getText());
-        
-        Repositorio.funcionario.add(funcionario);
-        
-        for(int i = 0; i < Repositorio.funcionario.size(); i ++ ){
-            System.out.println(Repositorio.funcionario.get(i));
-        }
         
         
-        //this.inputEmail.equals(inputEmail.getText());
-    }//GEN-LAST:event_botaoSalvarActionPerformed
+    }//GEN-LAST:event_botaoCadastrarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -526,8 +526,8 @@ public class AddFuncionarioAdm extends javax.swing.JFrame {
     private javax.swing.JPanel Header;
     private javax.swing.JLabel MyStock;
     private javax.swing.JLabel Todos;
+    private javax.swing.JButton botaoCadastrar;
     private javax.swing.JButton botaoListar;
-    private javax.swing.JButton botaoSalvar;
     private javax.swing.JButton botaoVoltar;
     private javax.swing.JLabel c;
     private javax.swing.JTextField inputBairro;

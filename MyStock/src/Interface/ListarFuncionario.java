@@ -33,7 +33,7 @@ public class ListarFuncionario extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        divEditar = new javax.swing.JPanel();
+        divListarFuncionario = new javax.swing.JPanel();
         header = new javax.swing.JPanel();
         logo = new javax.swing.JLabel();
         foother = new javax.swing.JPanel();
@@ -52,9 +52,9 @@ public class ListarFuncionario extends javax.swing.JFrame {
         setMinimumSize(new java.awt.Dimension(700, 680));
         setPreferredSize(new java.awt.Dimension(800, 700));
 
-        divEditar.setBackground(new java.awt.Color(255, 255, 255));
-        divEditar.setMaximumSize(new java.awt.Dimension(0, 0));
-        divEditar.setPreferredSize(new java.awt.Dimension(800, 700));
+        divListarFuncionario.setBackground(new java.awt.Color(255, 255, 255));
+        divListarFuncionario.setMaximumSize(new java.awt.Dimension(0, 0));
+        divListarFuncionario.setPreferredSize(new java.awt.Dimension(800, 700));
 
         header.setBackground(new java.awt.Color(40, 203, 58));
         header.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
@@ -154,16 +154,16 @@ public class ListarFuncionario extends javax.swing.JFrame {
             }
         });
 
-        javax.swing.GroupLayout divEditarLayout = new javax.swing.GroupLayout(divEditar);
-        divEditar.setLayout(divEditarLayout);
-        divEditarLayout.setHorizontalGroup(
-            divEditarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout divListarFuncionarioLayout = new javax.swing.GroupLayout(divListarFuncionario);
+        divListarFuncionario.setLayout(divListarFuncionarioLayout);
+        divListarFuncionarioLayout.setHorizontalGroup(
+            divListarFuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(header, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(foother, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(divEditarLayout.createSequentialGroup()
+            .addGroup(divListarFuncionarioLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(divEditarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(divEditarLayout.createSequentialGroup()
+                .addGroup(divListarFuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(divListarFuncionarioLayout.createSequentialGroup()
                         .addComponent(botaoVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(botaoExcluir, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -172,14 +172,14 @@ public class ListarFuncionario extends javax.swing.JFrame {
                     .addComponent(DivBotoes, javax.swing.GroupLayout.PREFERRED_SIZE, 450, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        divEditarLayout.setVerticalGroup(
-            divEditarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(divEditarLayout.createSequentialGroup()
+        divListarFuncionarioLayout.setVerticalGroup(
+            divListarFuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(divListarFuncionarioLayout.createSequentialGroup()
                 .addComponent(header, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(DivBotoes, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addGroup(divEditarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(divListarFuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(botaoVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(botaoExcluir, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(botaoEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -191,11 +191,11 @@ public class ListarFuncionario extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(divEditar, javax.swing.GroupLayout.DEFAULT_SIZE, 492, Short.MAX_VALUE)
+            .addComponent(divListarFuncionario, javax.swing.GroupLayout.DEFAULT_SIZE, 492, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(divEditar, javax.swing.GroupLayout.DEFAULT_SIZE, 580, Short.MAX_VALUE)
+            .addComponent(divListarFuncionario, javax.swing.GroupLayout.DEFAULT_SIZE, 580, Short.MAX_VALUE)
         );
 
         pack();
@@ -261,7 +261,7 @@ public class ListarFuncionario extends javax.swing.JFrame {
     private javax.swing.JButton botaoExcluir;
     private javax.swing.JButton botaoVoltar;
     private javax.swing.JLabel c;
-    private javax.swing.JPanel divEditar;
+    private javax.swing.JPanel divListarFuncionario;
     private javax.swing.JPanel foother;
     private javax.swing.JPanel header;
     private javax.swing.JLabel logo;

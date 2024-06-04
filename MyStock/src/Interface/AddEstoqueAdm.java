@@ -39,13 +39,12 @@ public class AddEstoqueAdm extends javax.swing.JFrame {
         inputNomeEstoque = new javax.swing.JTextField();
         inputEnderecoEstoque = new javax.swing.JTextField();
         botaoVoltar = new javax.swing.JButton();
-        botaoExcluir = new javax.swing.JButton();
-        botaoSalvar = new javax.swing.JButton();
+        botaoListar = new javax.swing.JButton();
+        botaoCadastrar3 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Estoque");
         setMinimumSize(new java.awt.Dimension(700, 700));
-        setPreferredSize(new java.awt.Dimension(700, 700));
 
         DivMenuEstoque.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -141,27 +140,27 @@ public class AddEstoqueAdm extends javax.swing.JFrame {
             }
         });
 
-        botaoExcluir.setFont(new java.awt.Font("Consolas", 0, 14)); // NOI18N
-        botaoExcluir.setText("Listar");
-        botaoExcluir.setBorder(null);
-        botaoExcluir.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        botaoExcluir.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        botaoExcluir.addActionListener(new java.awt.event.ActionListener() {
+        botaoListar.setFont(new java.awt.Font("Consolas", 0, 14)); // NOI18N
+        botaoListar.setText("Listar");
+        botaoListar.setBorder(null);
+        botaoListar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        botaoListar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        botaoListar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botaoExcluirActionPerformed(evt);
+                botaoListarActionPerformed(evt);
             }
         });
 
-        botaoSalvar.setBackground(new java.awt.Color(40, 203, 58));
-        botaoSalvar.setFont(new java.awt.Font("Consolas", 0, 14)); // NOI18N
-        botaoSalvar.setText("Salvar");
-        botaoSalvar.setBorder(null);
-        botaoSalvar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        botaoSalvar.setMaximumSize(new java.awt.Dimension(60, 21));
-        botaoSalvar.setMinimumSize(new java.awt.Dimension(60, 21));
-        botaoSalvar.addActionListener(new java.awt.event.ActionListener() {
+        botaoCadastrar3.setBackground(new java.awt.Color(40, 203, 58));
+        botaoCadastrar3.setFont(new java.awt.Font("Consolas", 0, 14)); // NOI18N
+        botaoCadastrar3.setText("Cadastrar");
+        botaoCadastrar3.setBorder(null);
+        botaoCadastrar3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        botaoCadastrar3.setMaximumSize(new java.awt.Dimension(60, 21));
+        botaoCadastrar3.setMinimumSize(new java.awt.Dimension(60, 21));
+        botaoCadastrar3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botaoSalvarActionPerformed(evt);
+                botaoCadastrar3ActionPerformed(evt);
             }
         });
 
@@ -183,9 +182,9 @@ public class AddEstoqueAdm extends javax.swing.JFrame {
                     .addGroup(DivBotoesEstoqueLayout.createSequentialGroup()
                         .addComponent(botaoVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(botaoExcluir, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(botaoListar, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(botaoSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(botaoCadastrar3, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(120, Short.MAX_VALUE))
         );
         DivBotoesEstoqueLayout.setVerticalGroup(
@@ -200,12 +199,11 @@ public class AddEstoqueAdm extends javax.swing.JFrame {
                     .addComponent(soutEnderecoEstoque)
                     .addComponent(inputEnderecoEstoque, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 85, Short.MAX_VALUE)
-                .addGroup(DivBotoesEstoqueLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(botaoSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(DivBotoesEstoqueLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(botaoVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(botaoExcluir, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(70, Short.MAX_VALUE))
+                .addGroup(DivBotoesEstoqueLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(botaoVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(botaoListar, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(botaoCadastrar3, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(71, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout DivMenuEstoqueLayout = new javax.swing.GroupLayout(DivMenuEstoque);
@@ -257,13 +255,14 @@ public class AddEstoqueAdm extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_botaoVoltarActionPerformed
 
-    private void botaoExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoExcluirActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botaoExcluirActionPerformed
+    private void botaoListarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoListarActionPerformed
+        new ListarEstoque().setVisible(true);
+        this.dispose();        // TODO add your handling code here:
+    }//GEN-LAST:event_botaoListarActionPerformed
 
-    private void botaoSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoSalvarActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botaoSalvarActionPerformed
+    private void botaoCadastrar3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoCadastrar3ActionPerformed
+        
+    }//GEN-LAST:event_botaoCadastrar3ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -308,8 +307,10 @@ public class AddEstoqueAdm extends javax.swing.JFrame {
     private javax.swing.JPanel Header;
     private javax.swing.JLabel MyStock;
     private javax.swing.JLabel Todos;
-    private javax.swing.JButton botaoExcluir;
-    private javax.swing.JButton botaoSalvar;
+    private javax.swing.JButton botaoCadastrar;
+    private javax.swing.JButton botaoCadastrar1;
+    private javax.swing.JButton botaoCadastrar3;
+    private javax.swing.JButton botaoListar;
     private javax.swing.JButton botaoVoltar;
     private javax.swing.JLabel c;
     private javax.swing.JTextField inputEnderecoEstoque;

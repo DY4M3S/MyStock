@@ -46,15 +46,15 @@ public class GerenciarVendasAdm extends javax.swing.JFrame {
         inputEnderecoEntrega = new javax.swing.JTextField();
         botaoVoltar = new javax.swing.JButton();
         botaoExcluir = new javax.swing.JButton();
-        botaoSalvar = new javax.swing.JButton();
         soutNomeProduto = new javax.swing.JLabel();
         inputNomeProduto = new javax.swing.JTextField();
+        botaoCadastrar4 = new javax.swing.JButton();
         MenuCadastrar = new javax.swing.JMenuBar();
         CadastrarCliente = new javax.swing.JMenu();
         botaoCadastrarCliente = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Vendas");
+        setTitle("Gerenciar vendas");
         setMaximumSize(new java.awt.Dimension(1012, 800));
         setMinimumSize(new java.awt.Dimension(700, 825));
         setPreferredSize(new java.awt.Dimension(700, 825));
@@ -194,19 +194,6 @@ public class GerenciarVendasAdm extends javax.swing.JFrame {
             }
         });
 
-        botaoSalvar.setBackground(new java.awt.Color(40, 203, 58));
-        botaoSalvar.setFont(new java.awt.Font("Consolas", 0, 14)); // NOI18N
-        botaoSalvar.setText("Salvar");
-        botaoSalvar.setBorder(null);
-        botaoSalvar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        botaoSalvar.setMaximumSize(new java.awt.Dimension(60, 21));
-        botaoSalvar.setMinimumSize(new java.awt.Dimension(60, 21));
-        botaoSalvar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botaoSalvarActionPerformed(evt);
-            }
-        });
-
         soutNomeProduto.setFont(new java.awt.Font("Consolas", 0, 14)); // NOI18N
         soutNomeProduto.setText("Nome do produto:");
 
@@ -214,6 +201,19 @@ public class GerenciarVendasAdm extends javax.swing.JFrame {
         inputNomeProduto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 inputNomeProdutoActionPerformed(evt);
+            }
+        });
+
+        botaoCadastrar4.setBackground(new java.awt.Color(40, 203, 58));
+        botaoCadastrar4.setFont(new java.awt.Font("Consolas", 0, 14)); // NOI18N
+        botaoCadastrar4.setText("Cadastrar");
+        botaoCadastrar4.setBorder(null);
+        botaoCadastrar4.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        botaoCadastrar4.setMaximumSize(new java.awt.Dimension(60, 21));
+        botaoCadastrar4.setMinimumSize(new java.awt.Dimension(60, 21));
+        botaoCadastrar4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoCadastrar4ActionPerformed(evt);
             }
         });
 
@@ -229,7 +229,7 @@ public class GerenciarVendasAdm extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(botaoExcluir, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(botaoSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(botaoCadastrar4, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(DivBotoesEstoqueLayout.createSequentialGroup()
                         .addGroup(DivBotoesEstoqueLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(soutValorTotalPedido1)
@@ -276,12 +276,11 @@ public class GerenciarVendasAdm extends javax.swing.JFrame {
                     .addComponent(soutValorTotalPedido)
                     .addComponent(inputEnderecoEntrega, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(DivBotoesEstoqueLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(botaoSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(DivBotoesEstoqueLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(botaoVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(botaoExcluir, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(70, 70, 70))
+                .addGroup(DivBotoesEstoqueLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(botaoVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(botaoExcluir, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(botaoCadastrar4, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(71, 71, 71))
         );
 
         javax.swing.GroupLayout DivGerenciarVendasLayout = new javax.swing.GroupLayout(DivGerenciarVendas);
@@ -344,12 +343,9 @@ public class GerenciarVendasAdm extends javax.swing.JFrame {
     }//GEN-LAST:event_botaoVoltarActionPerformed
 
     private void botaoExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoExcluirActionPerformed
-        // TODO add your handling code here:
+        new ListarGerenciarVendas().setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_botaoExcluirActionPerformed
-
-    private void botaoSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoSalvarActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botaoSalvarActionPerformed
 
     private void inputNumPedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputNumPedidoActionPerformed
         // TODO add your handling code here:
@@ -375,6 +371,10 @@ public class GerenciarVendasAdm extends javax.swing.JFrame {
         new AddClienteAdm().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_botaoCadastrarClienteActionPerformed
+
+    private void botaoCadastrar4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoCadastrar4ActionPerformed
+
+    }//GEN-LAST:event_botaoCadastrar4ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -421,9 +421,9 @@ public class GerenciarVendasAdm extends javax.swing.JFrame {
     private javax.swing.JMenuBar MenuCadastrar;
     private javax.swing.JLabel MyStock;
     private javax.swing.JLabel Todos;
+    private javax.swing.JButton botaoCadastrar4;
     private javax.swing.JMenuItem botaoCadastrarCliente;
     private javax.swing.JButton botaoExcluir;
-    private javax.swing.JButton botaoSalvar;
     private javax.swing.JButton botaoVoltar;
     private javax.swing.JLabel c;
     private javax.swing.JTextField inputEnderecoEntrega;
