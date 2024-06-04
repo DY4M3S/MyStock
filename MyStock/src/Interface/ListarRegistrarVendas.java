@@ -8,12 +8,12 @@ package Interface;
  *
  * @author Laboratorio
  */
-public class ListarGerenciarVendas extends javax.swing.JFrame {
+public class ListarRegistrarVendas extends javax.swing.JFrame {
 
     /**
      * Creates new form ListarGerenciarVendas
      */
-    public ListarGerenciarVendas() {
+    public ListarRegistrarVendas() {
         initComponents();
     }
 
@@ -41,9 +41,7 @@ public class ListarGerenciarVendas extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Listar vendas");
-        setMaximumSize(new java.awt.Dimension(1012, 800));
         setMinimumSize(new java.awt.Dimension(700, 680));
-        setPreferredSize(new java.awt.Dimension(800, 700));
 
         divListarGerenciarFuncionario.setBackground(new java.awt.Color(255, 255, 255));
         divListarGerenciarFuncionario.setMaximumSize(new java.awt.Dimension(0, 0));
@@ -196,7 +194,7 @@ public class ListarGerenciarVendas extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void botaoVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoVoltarActionPerformed
-        new GerenciarVendasAdm().setVisible(true);
+        new RegistrarVendasAdm().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_botaoVoltarActionPerformed
 
@@ -205,7 +203,7 @@ public class ListarGerenciarVendas extends javax.swing.JFrame {
     }//GEN-LAST:event_botaoExcluirActionPerformed
 
     private void botaoEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoEditarActionPerformed
-        new EditarGerenciarVendas().setVisible(true);
+        new EditarRegistrarVendas().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_botaoEditarActionPerformed
 
@@ -226,20 +224,21 @@ public class ListarGerenciarVendas extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ListarGerenciarVendas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ListarRegistrarVendas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ListarGerenciarVendas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ListarRegistrarVendas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ListarGerenciarVendas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ListarRegistrarVendas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ListarGerenciarVendas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ListarRegistrarVendas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new ListarGerenciarVendas().setVisible(true);
+                new ListarRegistrarVendas().setVisible(true);
             }
         });
     }

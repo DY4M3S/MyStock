@@ -418,7 +418,7 @@ public class AddClienteAdm extends javax.swing.JFrame {
     }//GEN-LAST:event_inputNumeroActionPerformed
 
     private void botaoVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoVoltarActionPerformed
-        new GerenciarVendasAdm().setVisible(true);
+        new RegistrarVendasAdm().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_botaoVoltarActionPerformed
 

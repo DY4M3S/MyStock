@@ -8,12 +8,12 @@ package Interface;
  *
  * @author Jason
  */
-public class GerenciarVendasAdm extends javax.swing.JFrame {
+public class RegistrarVendasAdm extends javax.swing.JFrame {
 
     /**
      * Creates new form GerenciarVendas
      */
-    public GerenciarVendasAdm() {
+    public RegistrarVendasAdm() {
         initComponents();
     }
 
@@ -26,14 +26,14 @@ public class GerenciarVendasAdm extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        DivGerenciarVendas = new javax.swing.JPanel();
+        DivRegistrarVendas = new javax.swing.JPanel();
         Header = new javax.swing.JPanel();
         logo = new javax.swing.JLabel();
         Foother = new javax.swing.JPanel();
         MyStock = new javax.swing.JLabel();
         Todos = new javax.swing.JLabel();
         c = new javax.swing.JLabel();
-        DivBotoesEstoque = new javax.swing.JPanel();
+        DivBotoesRegistrarVendas = new javax.swing.JPanel();
         soutNúmeroPedido = new javax.swing.JLabel();
         soutNomeCliente = new javax.swing.JLabel();
         soutQuantidade = new javax.swing.JLabel();
@@ -48,18 +48,16 @@ public class GerenciarVendasAdm extends javax.swing.JFrame {
         botaoExcluir = new javax.swing.JButton();
         soutNomeProduto = new javax.swing.JLabel();
         inputNomeProduto = new javax.swing.JTextField();
-        botaoCadastrar4 = new javax.swing.JButton();
+        botaoCadastrar = new javax.swing.JButton();
         MenuCadastrar = new javax.swing.JMenuBar();
         CadastrarCliente = new javax.swing.JMenu();
         botaoCadastrarCliente = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Gerenciar vendas");
-        setMaximumSize(new java.awt.Dimension(1012, 800));
+        setTitle("Registrar vendas");
         setMinimumSize(new java.awt.Dimension(700, 825));
-        setPreferredSize(new java.awt.Dimension(700, 825));
 
-        DivGerenciarVendas.setBackground(new java.awt.Color(255, 255, 255));
+        DivRegistrarVendas.setBackground(new java.awt.Color(255, 255, 255));
 
         Header.setBackground(new java.awt.Color(40, 203, 58));
         Header.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
@@ -120,8 +118,8 @@ public class GerenciarVendasAdm extends javax.swing.JFrame {
                 .addContainerGap(47, Short.MAX_VALUE))
         );
 
-        DivBotoesEstoque.setBackground(new java.awt.Color(255, 255, 255));
-        DivBotoesEstoque.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        DivBotoesRegistrarVendas.setBackground(new java.awt.Color(255, 255, 255));
+        DivBotoesRegistrarVendas.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
 
         soutNúmeroPedido.setFont(new java.awt.Font("Consolas", 0, 14)); // NOI18N
         soutNúmeroPedido.setText("Número do pedido:");
@@ -204,34 +202,34 @@ public class GerenciarVendasAdm extends javax.swing.JFrame {
             }
         });
 
-        botaoCadastrar4.setBackground(new java.awt.Color(40, 203, 58));
-        botaoCadastrar4.setFont(new java.awt.Font("Consolas", 0, 14)); // NOI18N
-        botaoCadastrar4.setText("Cadastrar");
-        botaoCadastrar4.setBorder(null);
-        botaoCadastrar4.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        botaoCadastrar4.setMaximumSize(new java.awt.Dimension(60, 21));
-        botaoCadastrar4.setMinimumSize(new java.awt.Dimension(60, 21));
-        botaoCadastrar4.addActionListener(new java.awt.event.ActionListener() {
+        botaoCadastrar.setBackground(new java.awt.Color(40, 203, 58));
+        botaoCadastrar.setFont(new java.awt.Font("Consolas", 0, 14)); // NOI18N
+        botaoCadastrar.setText("Cadastrar");
+        botaoCadastrar.setBorder(null);
+        botaoCadastrar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        botaoCadastrar.setMaximumSize(new java.awt.Dimension(60, 21));
+        botaoCadastrar.setMinimumSize(new java.awt.Dimension(60, 21));
+        botaoCadastrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botaoCadastrar4ActionPerformed(evt);
+                botaoCadastrarActionPerformed(evt);
             }
         });
 
-        javax.swing.GroupLayout DivBotoesEstoqueLayout = new javax.swing.GroupLayout(DivBotoesEstoque);
-        DivBotoesEstoque.setLayout(DivBotoesEstoqueLayout);
-        DivBotoesEstoqueLayout.setHorizontalGroup(
-            DivBotoesEstoqueLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(DivBotoesEstoqueLayout.createSequentialGroup()
+        javax.swing.GroupLayout DivBotoesRegistrarVendasLayout = new javax.swing.GroupLayout(DivBotoesRegistrarVendas);
+        DivBotoesRegistrarVendas.setLayout(DivBotoesRegistrarVendasLayout);
+        DivBotoesRegistrarVendasLayout.setHorizontalGroup(
+            DivBotoesRegistrarVendasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(DivBotoesRegistrarVendasLayout.createSequentialGroup()
                 .addContainerGap(120, Short.MAX_VALUE)
-                .addGroup(DivBotoesEstoqueLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(DivBotoesEstoqueLayout.createSequentialGroup()
+                .addGroup(DivBotoesRegistrarVendasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(DivBotoesRegistrarVendasLayout.createSequentialGroup()
                         .addComponent(botaoVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(botaoExcluir, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(botaoCadastrar4, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(DivBotoesEstoqueLayout.createSequentialGroup()
-                        .addGroup(DivBotoesEstoqueLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(botaoCadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(DivBotoesRegistrarVendasLayout.createSequentialGroup()
+                        .addGroup(DivBotoesRegistrarVendasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(soutValorTotalPedido1)
                             .addComponent(soutQuantidade)
                             .addComponent(soutValorTotalPedido)
@@ -239,7 +237,7 @@ public class GerenciarVendasAdm extends javax.swing.JFrame {
                             .addComponent(soutNomeProduto)
                             .addComponent(soutNomeCliente))
                         .addGap(18, 18, 18)
-                        .addGroup(DivBotoesEstoqueLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(DivBotoesRegistrarVendasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(inputNumPedido, javax.swing.GroupLayout.DEFAULT_SIZE, 232, Short.MAX_VALUE)
                             .addComponent(inputNomeCliente)
                             .addComponent(inputQuantidade)
@@ -248,58 +246,58 @@ public class GerenciarVendasAdm extends javax.swing.JFrame {
                             .addComponent(inputNomeProduto, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(120, Short.MAX_VALUE))
         );
-        DivBotoesEstoqueLayout.setVerticalGroup(
-            DivBotoesEstoqueLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(DivBotoesEstoqueLayout.createSequentialGroup()
+        DivBotoesRegistrarVendasLayout.setVerticalGroup(
+            DivBotoesRegistrarVendasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(DivBotoesRegistrarVendasLayout.createSequentialGroup()
                 .addContainerGap(70, Short.MAX_VALUE)
-                .addGroup(DivBotoesEstoqueLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(DivBotoesRegistrarVendasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(soutNúmeroPedido)
                     .addComponent(inputNumPedido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(DivBotoesEstoqueLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(DivBotoesRegistrarVendasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(soutNomeCliente)
                     .addComponent(inputNomeCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(DivBotoesEstoqueLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(DivBotoesRegistrarVendasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(soutNomeProduto)
                     .addComponent(inputNomeProduto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
-                .addGroup(DivBotoesEstoqueLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(DivBotoesRegistrarVendasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(inputQuantidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(soutQuantidade))
                 .addGap(18, 18, 18)
-                .addGroup(DivBotoesEstoqueLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(DivBotoesRegistrarVendasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(soutValorTotalPedido1)
                     .addComponent(inputValorTotalPedido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(DivBotoesEstoqueLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(DivBotoesRegistrarVendasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(soutValorTotalPedido)
                     .addComponent(inputEnderecoEntrega, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(DivBotoesEstoqueLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(DivBotoesRegistrarVendasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(botaoVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(botaoExcluir, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(botaoCadastrar4, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(botaoCadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(71, 71, 71))
         );
 
-        javax.swing.GroupLayout DivGerenciarVendasLayout = new javax.swing.GroupLayout(DivGerenciarVendas);
-        DivGerenciarVendas.setLayout(DivGerenciarVendasLayout);
-        DivGerenciarVendasLayout.setHorizontalGroup(
-            DivGerenciarVendasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout DivRegistrarVendasLayout = new javax.swing.GroupLayout(DivRegistrarVendas);
+        DivRegistrarVendas.setLayout(DivRegistrarVendasLayout);
+        DivRegistrarVendasLayout.setHorizontalGroup(
+            DivRegistrarVendasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(Foother, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(Header, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, DivGerenciarVendasLayout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, DivRegistrarVendasLayout.createSequentialGroup()
                 .addContainerGap(65, Short.MAX_VALUE)
-                .addComponent(DivBotoesEstoque, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(DivBotoesRegistrarVendas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(65, Short.MAX_VALUE))
         );
-        DivGerenciarVendasLayout.setVerticalGroup(
-            DivGerenciarVendasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, DivGerenciarVendasLayout.createSequentialGroup()
+        DivRegistrarVendasLayout.setVerticalGroup(
+            DivRegistrarVendasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, DivRegistrarVendasLayout.createSequentialGroup()
                 .addComponent(Header, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
-                .addComponent(DivBotoesEstoque, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(DivBotoesRegistrarVendas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
                 .addComponent(Foother, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
@@ -322,11 +320,11 @@ public class GerenciarVendasAdm extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(DivGerenciarVendas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(DivRegistrarVendas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(DivGerenciarVendas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(DivRegistrarVendas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -343,7 +341,7 @@ public class GerenciarVendasAdm extends javax.swing.JFrame {
     }//GEN-LAST:event_botaoVoltarActionPerformed
 
     private void botaoExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoExcluirActionPerformed
-        new ListarGerenciarVendas().setVisible(true);
+        new ListarRegistrarVendas().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_botaoExcluirActionPerformed
 
@@ -372,9 +370,9 @@ public class GerenciarVendasAdm extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_botaoCadastrarClienteActionPerformed
 
-    private void botaoCadastrar4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoCadastrar4ActionPerformed
+    private void botaoCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoCadastrarActionPerformed
 
-    }//GEN-LAST:event_botaoCadastrar4ActionPerformed
+    }//GEN-LAST:event_botaoCadastrarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -393,35 +391,37 @@ public class GerenciarVendasAdm extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(GerenciarVendasAdm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RegistrarVendasAdm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(GerenciarVendasAdm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RegistrarVendasAdm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(GerenciarVendasAdm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RegistrarVendasAdm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(GerenciarVendasAdm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RegistrarVendasAdm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new GerenciarVendasAdm().setVisible(true);
+                new RegistrarVendasAdm().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenu CadastrarCliente;
-    private javax.swing.JPanel DivBotoesEstoque;
-    private javax.swing.JPanel DivGerenciarVendas;
+    private javax.swing.JPanel DivBotoesRegistrarVendas;
+    private javax.swing.JPanel DivRegistrarVendas;
     private javax.swing.JPanel Foother;
     private javax.swing.JPanel Header;
     private javax.swing.JMenuBar MenuCadastrar;
     private javax.swing.JLabel MyStock;
     private javax.swing.JLabel Todos;
-    private javax.swing.JButton botaoCadastrar4;
+    private javax.swing.JButton botaoCadastrar;
     private javax.swing.JMenuItem botaoCadastrarCliente;
     private javax.swing.JButton botaoExcluir;
     private javax.swing.JButton botaoVoltar;

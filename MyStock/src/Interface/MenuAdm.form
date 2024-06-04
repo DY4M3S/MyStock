@@ -79,7 +79,7 @@
               <Component id="Header" alignment="0" max="32767" attributes="0"/>
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace pref="160" max="32767" attributes="0"/>
-                  <Component id="DivBotoesFuncionario" min="-2" max="-2" attributes="0"/>
+                  <Component id="DivBotoes" min="-2" max="-2" attributes="0"/>
                   <EmptySpace pref="160" max="32767" attributes="0"/>
               </Group>
           </Group>
@@ -89,7 +89,7 @@
               <Group type="102" alignment="1" attributes="0">
                   <Component id="Header" min="-2" max="-2" attributes="0"/>
                   <EmptySpace pref="108" max="32767" attributes="0"/>
-                  <Component id="DivBotoesFuncionario" min="-2" max="-2" attributes="0"/>
+                  <Component id="DivBotoes" min="-2" max="-2" attributes="0"/>
                   <EmptySpace pref="107" max="32767" attributes="0"/>
                   <Component id="Foother" min="-2" max="-2" attributes="0"/>
               </Group>
@@ -209,7 +209,7 @@
             </Component>
           </SubComponents>
         </Container>
-        <Container class="javax.swing.JPanel" name="DivBotoesFuncionario">
+        <Container class="javax.swing.JPanel" name="DivBotoes">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -229,9 +229,9 @@
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Component id="BotaoAddEstoque" alignment="0" max="32767" attributes="0"/>
                           <Component id="BotaoAddUsuario" alignment="0" max="32767" attributes="0"/>
-                          <Component id="BotaoGerenciarVendas" alignment="0" max="32767" attributes="0"/>
-                          <Component id="BotaoGerarRelatorio" alignment="0" min="-2" pref="230" max="-2" attributes="0"/>
+                          <Component id="BotaoGerarRelatorio" alignment="0" max="32767" attributes="0"/>
                           <Component id="BotaoAddProduto" alignment="0" max="32767" attributes="0"/>
+                          <Component id="BotaoRegistrarVendas" alignment="0" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace min="0" pref="120" max="32767" attributes="0"/>
                   </Group>
@@ -247,7 +247,7 @@
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="BotaoAddEstoque" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="BotaoGerenciarVendas" min="-2" max="-2" attributes="0"/>
+                      <Component id="BotaoRegistrarVendas" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="BotaoGerarRelatorio" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="0" pref="70" max="32767" attributes="0"/>
@@ -267,15 +267,15 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotaoAddUsuarioActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="BotaoGerenciarVendas">
+            <Component class="javax.swing.JButton" name="BotaoRegistrarVendas">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Consolas" size="14" style="0"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Gerenciar vendas"/>
+                <Property name="text" type="java.lang.String" value="Registrar vendas"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotaoGerenciarVendasActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotaoRegistrarVendasActionPerformed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JButton" name="BotaoAddEstoque">

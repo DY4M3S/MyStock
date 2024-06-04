@@ -8,12 +8,12 @@ package Interface;
  *
  * @author Laboratorio
  */
-public class EditarGerenciarVendas extends javax.swing.JFrame {
+public class EditarRegistrarVendas extends javax.swing.JFrame {
 
     /**
      * Creates new form EditarGerenciarVendas
      */
-    public EditarGerenciarVendas() {
+    public EditarRegistrarVendas() {
         initComponents();
     }
 
@@ -51,9 +51,7 @@ public class EditarGerenciarVendas extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Editar vendas");
-        setMaximumSize(new java.awt.Dimension(1012, 800));
         setMinimumSize(new java.awt.Dimension(700, 825));
-        setPreferredSize(new java.awt.Dimension(700, 825));
 
         DivGerenciarVendas.setBackground(new java.awt.Color(255, 255, 255));
         DivGerenciarVendas.setPreferredSize(new java.awt.Dimension(800, 777));
@@ -323,7 +321,7 @@ public class EditarGerenciarVendas extends javax.swing.JFrame {
     }//GEN-LAST:event_inputEnderecoEntregaActionPerformed
 
     private void botaoVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoVoltarActionPerformed
-        new ListarGerenciarVendas().setVisible(true);
+        new ListarRegistrarVendas().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_botaoVoltarActionPerformed
 
@@ -353,20 +351,21 @@ public class EditarGerenciarVendas extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(EditarGerenciarVendas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(EditarRegistrarVendas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(EditarGerenciarVendas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(EditarRegistrarVendas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(EditarGerenciarVendas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(EditarRegistrarVendas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(EditarGerenciarVendas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(EditarRegistrarVendas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new EditarGerenciarVendas().setVisible(true);
+                new EditarRegistrarVendas().setVisible(true);
             }
         });
     }
