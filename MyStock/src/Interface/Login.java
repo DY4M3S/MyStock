@@ -5,6 +5,7 @@
 package Interface;
 
 import ModeloClasse.Administrador;
+import javax.swing.JCheckBox;
 import javax.swing.JOptionPane;
 
 /**
@@ -18,7 +19,14 @@ public class Login extends javax.swing.JFrame {
      */
     public Login() {
         initComponents();
+        validarAdm();
+        
+    }
+    
+    public void validarAdm(){
      
+    
+        
     }
 
     private void limpar() {
@@ -243,7 +251,19 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_inputSenhaActionPerformed
 
     private void botaoLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoLoginActionPerformed
-       
+            String email = inputEmail.getText();
+            String senha = new String(inputSenha.getPassword());
+            
+            Administrador adm = new Administrador(true,"adm@MyStock.com","adm123");
+            
+        if (adm != null && adm.getEmail().equals(email) && checkAdm.isSelected() && adm.getSenha().equals(senha)) {
+            JOptionPane.showMessageDialog(this, "Login bem-sucedido!");
+            MenuAdm menuAdm = new MenuAdm();
+            menuAdm.setVisible(true);
+            this.dispose();
+        } else {
+            JOptionPane.showMessageDialog(this, "Email ou senha incorretos.");
+        }
     }//GEN-LAST:event_botaoLoginActionPerformed
 
     private void checkAdmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkAdmActionPerformed

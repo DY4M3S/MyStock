@@ -42,7 +42,7 @@ public class MenuAdm extends javax.swing.JFrame {
         BotaoAddProduto = new javax.swing.JButton();
         BotaoMenu = new javax.swing.JMenuBar();
         BotaoSistema = new javax.swing.JMenu();
-        BotaoSair = new javax.swing.JMenuItem();
+        BotaoLogin = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Menu");
@@ -115,7 +115,7 @@ public class MenuAdm extends javax.swing.JFrame {
         DivBotoes.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
 
         BotaoAddUsuario.setFont(new java.awt.Font("Consolas", 0, 14)); // NOI18N
-        BotaoAddUsuario.setText("Adicionar um novo usuário");
+        BotaoAddUsuario.setText("Adicionar um novo funcionário");
         BotaoAddUsuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BotaoAddUsuarioActionPerformed(evt);
@@ -162,10 +162,10 @@ public class MenuAdm extends javax.swing.JFrame {
                 .addGap(0, 120, Short.MAX_VALUE)
                 .addGroup(DivBotoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(BotaoAddEstoque, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(BotaoAddUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(BotaoGerarRelatorio, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(BotaoAddProduto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(BotaoRegistrarVendas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(BotaoRegistrarVendas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(BotaoAddUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(BotaoAddProduto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(0, 120, Short.MAX_VALUE))
         );
         DivBotoesLayout.setVerticalGroup(
@@ -191,9 +191,9 @@ public class MenuAdm extends javax.swing.JFrame {
             .addComponent(Foother, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(Header, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(DivMenuAdmLayout.createSequentialGroup()
-                .addContainerGap(160, Short.MAX_VALUE)
+                .addContainerGap(144, Short.MAX_VALUE)
                 .addComponent(DivBotoes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(160, Short.MAX_VALUE))
+                .addContainerGap(144, Short.MAX_VALUE))
         );
         DivMenuAdmLayout.setVerticalGroup(
             DivMenuAdmLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -207,13 +207,13 @@ public class MenuAdm extends javax.swing.JFrame {
 
         BotaoSistema.setText("Sistema");
 
-        BotaoSair.setText("Sair");
-        BotaoSair.addActionListener(new java.awt.event.ActionListener() {
+        BotaoLogin.setText("Login");
+        BotaoLogin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BotaoSairActionPerformed(evt);
+                BotaoLoginActionPerformed(evt);
             }
         });
-        BotaoSistema.add(BotaoSair);
+        BotaoSistema.add(BotaoLogin);
 
         BotaoMenu.add(BotaoSistema);
 
@@ -259,10 +259,10 @@ public class MenuAdm extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_BotaoAddProdutoActionPerformed
 
-    private void BotaoSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoSairActionPerformed
+    private void BotaoLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoLoginActionPerformed
        new Login().setVisible(true);
        this.dispose();
-    }//GEN-LAST:event_BotaoSairActionPerformed
+    }//GEN-LAST:event_BotaoLoginActionPerformed
 
     /**
      * @param args the command line arguments
@@ -304,9 +304,9 @@ public class MenuAdm extends javax.swing.JFrame {
     private javax.swing.JButton BotaoAddProduto;
     private javax.swing.JButton BotaoAddUsuario;
     private javax.swing.JButton BotaoGerarRelatorio;
+    private javax.swing.JMenuItem BotaoLogin;
     private javax.swing.JMenuBar BotaoMenu;
     private javax.swing.JButton BotaoRegistrarVendas;
-    private javax.swing.JMenuItem BotaoSair;
     private javax.swing.JMenu BotaoSistema;
     private javax.swing.JPanel DivBotoes;
     private javax.swing.JPanel DivMenuAdm;

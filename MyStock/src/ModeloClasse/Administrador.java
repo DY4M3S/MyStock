@@ -1,24 +1,40 @@
 package ModeloClasse;
 
-public class Administrador extends Usuario {
+public class Administrador {
     
-    private boolean idAdm;
+    private boolean Adm;
+    private String email;
+    private String senha;
 
-    public Administrador(String nome, String cpf, String email, int telefone, String senha, String uf, String cidade, String endereco, int numero, String bairro) {
-        super(nome, cpf, email, telefone, senha, uf, cidade, endereco, numero, bairro);
+    public Administrador(boolean isAdm, String email, String senha) {
+        this.Adm = isAdm;
+        this.email = email;
+        this.senha = senha;
     }
 
-    public Administrador(String email, String senha) {
-        super(email, senha);
+    public boolean IsAdm() {
+        return Adm;
     }
-    
-    public boolean isId_adm() {
-        return idAdm;
-    } 
-    
+
+    public String getEmail() {
+        return email;
+    }
+
+    public String getSenha() {
+        return senha;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public void setSenha(String senha) {
+        this.senha = senha;
+    }
+
     @Override
     public String toString() {
-        return "Administrador{" + "id_adm=" + idAdm + '}';
+        return "Administrador{" + "isAdm=" + Adm + ", email=" + email + ", senha=" + senha + '}';
     }
 
 }

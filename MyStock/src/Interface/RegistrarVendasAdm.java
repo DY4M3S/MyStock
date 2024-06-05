@@ -304,7 +304,7 @@ public class RegistrarVendasAdm extends javax.swing.JFrame {
 
         CadastrarCliente.setText("Cadastrar cliente");
 
-        botaoCadastrarCliente.setText("Cadastrar");
+        botaoCadastrarCliente.setText("Cadastrar novo cliente");
         botaoCadastrarCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botaoCadastrarClienteActionPerformed(evt);

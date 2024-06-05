@@ -9,12 +9,12 @@
             <Property name="text" type="java.lang.String" value="Sistema"/>
           </Properties>
           <SubComponents>
-            <MenuItem class="javax.swing.JMenuItem" name="BotaoSair">
+            <MenuItem class="javax.swing.JMenuItem" name="BotaoLogin">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Sair"/>
+                <Property name="text" type="java.lang.String" value="Login"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotaoSairActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotaoLoginActionPerformed"/>
               </Events>
             </MenuItem>
           </SubComponents>
@@ -78,9 +78,9 @@
               <Component id="Foother" alignment="0" max="32767" attributes="0"/>
               <Component id="Header" alignment="0" max="32767" attributes="0"/>
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace pref="160" max="32767" attributes="0"/>
+                  <EmptySpace pref="144" max="32767" attributes="0"/>
                   <Component id="DivBotoes" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="160" max="32767" attributes="0"/>
+                  <EmptySpace pref="144" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -228,10 +228,10 @@
                       <EmptySpace min="0" pref="120" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Component id="BotaoAddEstoque" alignment="0" max="32767" attributes="0"/>
-                          <Component id="BotaoAddUsuario" alignment="0" max="32767" attributes="0"/>
                           <Component id="BotaoGerarRelatorio" alignment="0" max="32767" attributes="0"/>
-                          <Component id="BotaoAddProduto" alignment="0" max="32767" attributes="0"/>
                           <Component id="BotaoRegistrarVendas" alignment="0" max="32767" attributes="0"/>
+                          <Component id="BotaoAddUsuario" alignment="0" max="32767" attributes="0"/>
+                          <Component id="BotaoAddProduto" alignment="0" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace min="0" pref="120" max="32767" attributes="0"/>
                   </Group>
@@ -261,7 +261,7 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Consolas" size="14" style="0"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Adicionar um novo usu&#xe1;rio"/>
+                <Property name="text" type="java.lang.String" value="Adicionar um novo funcion&#xe1;rio"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotaoAddUsuarioActionPerformed"/>

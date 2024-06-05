@@ -47,7 +47,7 @@ public class ListarFuncionario extends javax.swing.JFrame {
         botaoEditar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Gerenciar funcionários");
+        setTitle("Gerenciar funcionário");
         setMaximumSize(new java.awt.Dimension(1012, 800));
         setMinimumSize(new java.awt.Dimension(700, 680));
         setPreferredSize(new java.awt.Dimension(800, 700));

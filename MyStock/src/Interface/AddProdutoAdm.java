@@ -46,8 +46,8 @@ public class AddProdutoAdm extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
         botaoVoltar = new javax.swing.JButton();
-        botaoExcluir = new javax.swing.JButton();
-        botaoSalvar = new javax.swing.JButton();
+        botaoListar = new javax.swing.JButton();
+        botaoCadastrar1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Produto");
@@ -178,27 +178,27 @@ public class AddProdutoAdm extends javax.swing.JFrame {
             }
         });
 
-        botaoExcluir.setFont(new java.awt.Font("Consolas", 0, 14)); // NOI18N
-        botaoExcluir.setText("Listar");
-        botaoExcluir.setBorder(null);
-        botaoExcluir.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        botaoExcluir.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        botaoExcluir.addActionListener(new java.awt.event.ActionListener() {
+        botaoListar.setFont(new java.awt.Font("Consolas", 0, 14)); // NOI18N
+        botaoListar.setText("Listar");
+        botaoListar.setBorder(null);
+        botaoListar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        botaoListar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        botaoListar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botaoExcluirActionPerformed(evt);
+                botaoListarActionPerformed(evt);
             }
         });
 
-        botaoSalvar.setBackground(new java.awt.Color(40, 203, 58));
-        botaoSalvar.setFont(new java.awt.Font("Consolas", 0, 14)); // NOI18N
-        botaoSalvar.setText("Salvar");
-        botaoSalvar.setBorder(null);
-        botaoSalvar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        botaoSalvar.setMaximumSize(new java.awt.Dimension(60, 21));
-        botaoSalvar.setMinimumSize(new java.awt.Dimension(60, 21));
-        botaoSalvar.addActionListener(new java.awt.event.ActionListener() {
+        botaoCadastrar1.setBackground(new java.awt.Color(40, 203, 58));
+        botaoCadastrar1.setFont(new java.awt.Font("Consolas", 0, 14)); // NOI18N
+        botaoCadastrar1.setText("Cadastrar");
+        botaoCadastrar1.setBorder(null);
+        botaoCadastrar1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        botaoCadastrar1.setMaximumSize(new java.awt.Dimension(60, 21));
+        botaoCadastrar1.setMinimumSize(new java.awt.Dimension(60, 21));
+        botaoCadastrar1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botaoSalvarActionPerformed(evt);
+                botaoCadastrar1ActionPerformed(evt);
             }
         });
 
@@ -212,9 +212,9 @@ public class AddProdutoAdm extends javax.swing.JFrame {
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(botaoVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(botaoExcluir, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(botaoListar, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(botaoSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(botaoCadastrar1, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(DivBotoesProdutoLayout.createSequentialGroup()
                         .addContainerGap(100, Short.MAX_VALUE)
                         .addGroup(DivBotoesProdutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -259,12 +259,11 @@ public class AddProdutoAdm extends javax.swing.JFrame {
                     .addGroup(DivBotoesProdutoLayout.createSequentialGroup()
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE)
-                        .addGroup(DivBotoesProdutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(botaoSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(DivBotoesProdutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(botaoVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(botaoExcluir, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addContainerGap(50, Short.MAX_VALUE))))
+                        .addGroup(DivBotoesProdutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(botaoVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(botaoListar, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(botaoCadastrar1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap(51, Short.MAX_VALUE))))
         );
 
         javax.swing.GroupLayout DivMenuProdutoLayout = new javax.swing.GroupLayout(DivMenuProduto);
@@ -324,13 +323,24 @@ public class AddProdutoAdm extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_botaoVoltarActionPerformed
 
-    private void botaoExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoExcluirActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botaoExcluirActionPerformed
+    private void botaoListarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoListarActionPerformed
+        new ListarProduto().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_botaoListarActionPerformed
 
-    private void botaoSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoSalvarActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botaoSalvarActionPerformed
+    private void botaoCadastrar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoCadastrar1ActionPerformed
+        //        Funcionario funcionario = new Funcionario();
+        //
+        //        funcionario.setEmail(inputEmail.getText());
+        //        funcionario.setSenha(inputSenhaAcesso.getText());
+        //
+        //        Repositorio.funcionario.add(funcionario);
+        //
+        //        for(int i = 0; i < Repositorio.funcionario.size(); i ++ ){
+            //            System.out.println(Repositorio.funcionario.get(i));
+            //        }
+
+    }//GEN-LAST:event_botaoCadastrar1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -377,8 +387,8 @@ public class AddProdutoAdm extends javax.swing.JFrame {
     private javax.swing.JPanel Header;
     private javax.swing.JLabel MyStock;
     private javax.swing.JLabel Todos;
-    private javax.swing.JButton botaoExcluir;
-    private javax.swing.JButton botaoSalvar;
+    private javax.swing.JButton botaoCadastrar1;
+    private javax.swing.JButton botaoListar;
     private javax.swing.JButton botaoVoltar;
     private javax.swing.JLabel c;
     private javax.swing.JTextField inputEstoque;

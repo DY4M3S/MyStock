@@ -53,11 +53,11 @@ public class AddClienteAdm extends javax.swing.JFrame {
         inputEndereco = new javax.swing.JTextField();
         inputNumero = new javax.swing.JTextField();
         botaoVoltar = new javax.swing.JButton();
-        botaoExcluir = new javax.swing.JButton();
-        botaoSalvar = new javax.swing.JButton();
+        botaoListar = new javax.swing.JButton();
+        botaoCadastrar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Cadastro do cliente");
+        setTitle("Cadastrar  cliente");
         setMinimumSize(new java.awt.Dimension(700, 875));
 
         DivAddCliente.setBackground(new java.awt.Color(255, 255, 255));
@@ -224,27 +224,27 @@ public class AddClienteAdm extends javax.swing.JFrame {
             }
         });
 
-        botaoExcluir.setFont(new java.awt.Font("Consolas", 0, 14)); // NOI18N
-        botaoExcluir.setText("Listar");
-        botaoExcluir.setBorder(null);
-        botaoExcluir.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        botaoExcluir.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        botaoExcluir.addActionListener(new java.awt.event.ActionListener() {
+        botaoListar.setFont(new java.awt.Font("Consolas", 0, 14)); // NOI18N
+        botaoListar.setText("Listar");
+        botaoListar.setBorder(null);
+        botaoListar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        botaoListar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        botaoListar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botaoExcluirActionPerformed(evt);
+                botaoListarActionPerformed(evt);
             }
         });
 
-        botaoSalvar.setBackground(new java.awt.Color(40, 203, 58));
-        botaoSalvar.setFont(new java.awt.Font("Consolas", 0, 14)); // NOI18N
-        botaoSalvar.setText("Salvar");
-        botaoSalvar.setBorder(null);
-        botaoSalvar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        botaoSalvar.setMaximumSize(new java.awt.Dimension(60, 21));
-        botaoSalvar.setMinimumSize(new java.awt.Dimension(60, 21));
-        botaoSalvar.addActionListener(new java.awt.event.ActionListener() {
+        botaoCadastrar.setBackground(new java.awt.Color(40, 203, 58));
+        botaoCadastrar.setFont(new java.awt.Font("Consolas", 0, 14)); // NOI18N
+        botaoCadastrar.setText("Cadastrar");
+        botaoCadastrar.setBorder(null);
+        botaoCadastrar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        botaoCadastrar.setMaximumSize(new java.awt.Dimension(60, 21));
+        botaoCadastrar.setMinimumSize(new java.awt.Dimension(60, 21));
+        botaoCadastrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botaoSalvarActionPerformed(evt);
+                botaoCadastrarActionPerformed(evt);
             }
         });
 
@@ -265,9 +265,9 @@ public class AddClienteAdm extends javax.swing.JFrame {
                             .addGroup(DivBotoesAddClienteLayout.createSequentialGroup()
                                 .addComponent(botaoVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(botaoExcluir, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(botaoListar, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(botaoSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(botaoCadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(DivBotoesAddClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addGroup(DivBotoesAddClienteLayout.createSequentialGroup()
                                     .addComponent(soutNumero)
@@ -340,8 +340,8 @@ public class AddClienteAdm extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(DivBotoesAddClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(botaoVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(botaoExcluir, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(botaoSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(botaoListar, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(botaoCadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(25, Short.MAX_VALUE))
         );
 
@@ -422,13 +422,24 @@ public class AddClienteAdm extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_botaoVoltarActionPerformed
 
-    private void botaoExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoExcluirActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botaoExcluirActionPerformed
+    private void botaoListarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoListarActionPerformed
+        new ListarCliente().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_botaoListarActionPerformed
 
-    private void botaoSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoSalvarActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botaoSalvarActionPerformed
+    private void botaoCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoCadastrarActionPerformed
+        //        Funcionario funcionario = new Funcionario();
+        //
+        //        funcionario.setEmail(inputEmail.getText());
+        //        funcionario.setSenha(inputSenhaAcesso.getText());
+        //
+        //        Repositorio.funcionario.add(funcionario);
+        //
+        //        for(int i = 0; i < Repositorio.funcionario.size(); i ++ ){
+            //            System.out.println(Repositorio.funcionario.get(i));
+            //        }
+
+    }//GEN-LAST:event_botaoCadastrarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -475,8 +486,8 @@ public class AddClienteAdm extends javax.swing.JFrame {
     private javax.swing.JPanel Header;
     private javax.swing.JLabel MyStock;
     private javax.swing.JLabel Todos;
-    private javax.swing.JButton botaoExcluir;
-    private javax.swing.JButton botaoSalvar;
+    private javax.swing.JButton botaoCadastrar;
+    private javax.swing.JButton botaoListar;
     private javax.swing.JButton botaoVoltar;
     private javax.swing.JLabel c;
     private javax.swing.JTextField inputBairro;

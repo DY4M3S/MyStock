@@ -33,7 +33,7 @@ public class EditarRegistrarVendas extends javax.swing.JFrame {
         MyStock = new javax.swing.JLabel();
         Todos = new javax.swing.JLabel();
         c = new javax.swing.JLabel();
-        DivBotoesEstoque = new javax.swing.JPanel();
+        DivBotoesRegistrarVendas = new javax.swing.JPanel();
         soutNúmeroPedido = new javax.swing.JLabel();
         soutNomeCliente = new javax.swing.JLabel();
         soutQuantidade = new javax.swing.JLabel();
@@ -115,8 +115,8 @@ public class EditarRegistrarVendas extends javax.swing.JFrame {
                 .addContainerGap(47, Short.MAX_VALUE))
         );
 
-        DivBotoesEstoque.setBackground(new java.awt.Color(255, 255, 255));
-        DivBotoesEstoque.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        DivBotoesRegistrarVendas.setBackground(new java.awt.Color(255, 255, 255));
+        DivBotoesRegistrarVendas.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
 
         soutNúmeroPedido.setFont(new java.awt.Font("Consolas", 0, 14)); // NOI18N
         soutNúmeroPedido.setText("Número do pedido:");
@@ -201,19 +201,19 @@ public class EditarRegistrarVendas extends javax.swing.JFrame {
             }
         });
 
-        javax.swing.GroupLayout DivBotoesEstoqueLayout = new javax.swing.GroupLayout(DivBotoesEstoque);
-        DivBotoesEstoque.setLayout(DivBotoesEstoqueLayout);
-        DivBotoesEstoqueLayout.setHorizontalGroup(
-            DivBotoesEstoqueLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(DivBotoesEstoqueLayout.createSequentialGroup()
+        javax.swing.GroupLayout DivBotoesRegistrarVendasLayout = new javax.swing.GroupLayout(DivBotoesRegistrarVendas);
+        DivBotoesRegistrarVendas.setLayout(DivBotoesRegistrarVendasLayout);
+        DivBotoesRegistrarVendasLayout.setHorizontalGroup(
+            DivBotoesRegistrarVendasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(DivBotoesRegistrarVendasLayout.createSequentialGroup()
                 .addContainerGap(120, Short.MAX_VALUE)
-                .addGroup(DivBotoesEstoqueLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(DivBotoesEstoqueLayout.createSequentialGroup()
+                .addGroup(DivBotoesRegistrarVendasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(DivBotoesRegistrarVendasLayout.createSequentialGroup()
                         .addComponent(botaoVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(botaoSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(DivBotoesEstoqueLayout.createSequentialGroup()
-                        .addGroup(DivBotoesEstoqueLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(DivBotoesRegistrarVendasLayout.createSequentialGroup()
+                        .addGroup(DivBotoesRegistrarVendasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(soutValorTotalPedido1)
                             .addComponent(soutQuantidade)
                             .addComponent(soutValorTotalPedido)
@@ -221,7 +221,7 @@ public class EditarRegistrarVendas extends javax.swing.JFrame {
                             .addComponent(soutNomeProduto)
                             .addComponent(soutNomeCliente))
                         .addGap(18, 18, 18)
-                        .addGroup(DivBotoesEstoqueLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(DivBotoesRegistrarVendasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(inputNumPedido, javax.swing.GroupLayout.DEFAULT_SIZE, 232, Short.MAX_VALUE)
                             .addComponent(inputNomeCliente)
                             .addComponent(inputQuantidade)
@@ -230,35 +230,35 @@ public class EditarRegistrarVendas extends javax.swing.JFrame {
                             .addComponent(inputNomeProduto, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(120, Short.MAX_VALUE))
         );
-        DivBotoesEstoqueLayout.setVerticalGroup(
-            DivBotoesEstoqueLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(DivBotoesEstoqueLayout.createSequentialGroup()
+        DivBotoesRegistrarVendasLayout.setVerticalGroup(
+            DivBotoesRegistrarVendasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(DivBotoesRegistrarVendasLayout.createSequentialGroup()
                 .addContainerGap(70, Short.MAX_VALUE)
-                .addGroup(DivBotoesEstoqueLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(DivBotoesRegistrarVendasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(soutNúmeroPedido)
                     .addComponent(inputNumPedido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(DivBotoesEstoqueLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(DivBotoesRegistrarVendasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(soutNomeCliente)
                     .addComponent(inputNomeCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(DivBotoesEstoqueLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(DivBotoesRegistrarVendasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(soutNomeProduto)
                     .addComponent(inputNomeProduto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
-                .addGroup(DivBotoesEstoqueLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(DivBotoesRegistrarVendasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(inputQuantidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(soutQuantidade))
                 .addGap(18, 18, 18)
-                .addGroup(DivBotoesEstoqueLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(DivBotoesRegistrarVendasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(soutValorTotalPedido1)
                     .addComponent(inputValorTotalPedido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(DivBotoesEstoqueLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(DivBotoesRegistrarVendasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(soutValorTotalPedido)
                     .addComponent(inputEnderecoEntrega, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(DivBotoesEstoqueLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(DivBotoesRegistrarVendasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(botaoVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(botaoSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(71, 71, 71))
@@ -272,7 +272,7 @@ public class EditarRegistrarVendas extends javax.swing.JFrame {
             .addComponent(Header, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, DivGerenciarVendasLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(DivBotoesEstoque, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(DivBotoesRegistrarVendas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         DivGerenciarVendasLayout.setVerticalGroup(
@@ -280,7 +280,7 @@ public class EditarRegistrarVendas extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, DivGerenciarVendasLayout.createSequentialGroup()
                 .addComponent(Header, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(DivBotoesEstoque, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(DivBotoesRegistrarVendas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(Foother, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
@@ -371,7 +371,7 @@ public class EditarRegistrarVendas extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel DivBotoesEstoque;
+    private javax.swing.JPanel DivBotoesRegistrarVendas;
     private javax.swing.JPanel DivGerenciarVendas;
     private javax.swing.JPanel Foother;
     private javax.swing.JPanel Header;
