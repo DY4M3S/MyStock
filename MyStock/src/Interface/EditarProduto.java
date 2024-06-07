@@ -6,7 +6,7 @@ package Interface;
 
 /**
  *
- * @author Jason
+ * @author Laboratorio
  */
 public class EditarProduto extends javax.swing.JFrame {
 
@@ -26,14 +26,14 @@ public class EditarProduto extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        DivMenuEditarProduto = new javax.swing.JPanel();
+        DivMenuProduto = new javax.swing.JPanel();
         Header = new javax.swing.JPanel();
         logo = new javax.swing.JLabel();
         Foother = new javax.swing.JPanel();
         MyStock = new javax.swing.JLabel();
         Todos = new javax.swing.JLabel();
         c = new javax.swing.JLabel();
-        DivBotoesEditarProduto = new javax.swing.JPanel();
+        DivBotoesProduto = new javax.swing.JPanel();
         soutNomeProduto = new javax.swing.JLabel();
         soutQuantidade = new javax.swing.JLabel();
         inputNomeProduto = new javax.swing.JTextField();
@@ -46,13 +46,14 @@ public class EditarProduto extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
         botaoVoltar = new javax.swing.JButton();
-        botaoSalvar = new javax.swing.JButton();
+        botaoSalvar1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Editar produto");
-        setMinimumSize(new java.awt.Dimension(855, 638));
+        setMinimumSize(new java.awt.Dimension(875, 850));
+        setPreferredSize(new java.awt.Dimension(875, 850));
 
-        DivMenuEditarProduto.setBackground(new java.awt.Color(255, 255, 255));
+        DivMenuProduto.setBackground(new java.awt.Color(255, 255, 255));
 
         Header.setBackground(new java.awt.Color(40, 203, 58));
         Header.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
@@ -113,9 +114,9 @@ public class EditarProduto extends javax.swing.JFrame {
                 .addContainerGap(47, Short.MAX_VALUE))
         );
 
-        DivBotoesEditarProduto.setBackground(new java.awt.Color(255, 255, 255));
-        DivBotoesEditarProduto.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
-        DivBotoesEditarProduto.setFont(new java.awt.Font("Consolas", 0, 14)); // NOI18N
+        DivBotoesProduto.setBackground(new java.awt.Color(255, 255, 255));
+        DivBotoesProduto.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        DivBotoesProduto.setFont(new java.awt.Font("Consolas", 0, 14)); // NOI18N
 
         soutNomeProduto.setFont(new java.awt.Font("Consolas", 0, 14)); // NOI18N
         soutNomeProduto.setText("Nome do produto:");
@@ -176,40 +177,40 @@ public class EditarProduto extends javax.swing.JFrame {
             }
         });
 
-        botaoSalvar.setBackground(new java.awt.Color(40, 203, 58));
-        botaoSalvar.setFont(new java.awt.Font("Consolas", 0, 14)); // NOI18N
-        botaoSalvar.setText("Salvar");
-        botaoSalvar.setBorder(null);
-        botaoSalvar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        botaoSalvar.setMaximumSize(new java.awt.Dimension(60, 21));
-        botaoSalvar.setMinimumSize(new java.awt.Dimension(60, 21));
-        botaoSalvar.addActionListener(new java.awt.event.ActionListener() {
+        botaoSalvar1.setBackground(new java.awt.Color(40, 203, 58));
+        botaoSalvar1.setFont(new java.awt.Font("Consolas", 0, 14)); // NOI18N
+        botaoSalvar1.setText("Salvar");
+        botaoSalvar1.setBorder(null);
+        botaoSalvar1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        botaoSalvar1.setMaximumSize(new java.awt.Dimension(60, 21));
+        botaoSalvar1.setMinimumSize(new java.awt.Dimension(60, 21));
+        botaoSalvar1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botaoSalvarActionPerformed(evt);
+                botaoSalvar1ActionPerformed(evt);
             }
         });
 
-        javax.swing.GroupLayout DivBotoesEditarProdutoLayout = new javax.swing.GroupLayout(DivBotoesEditarProduto);
-        DivBotoesEditarProduto.setLayout(DivBotoesEditarProdutoLayout);
-        DivBotoesEditarProdutoLayout.setHorizontalGroup(
-            DivBotoesEditarProdutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(DivBotoesEditarProdutoLayout.createSequentialGroup()
-                .addGroup(DivBotoesEditarProdutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(DivBotoesEditarProdutoLayout.createSequentialGroup()
+        javax.swing.GroupLayout DivBotoesProdutoLayout = new javax.swing.GroupLayout(DivBotoesProduto);
+        DivBotoesProduto.setLayout(DivBotoesProdutoLayout);
+        DivBotoesProdutoLayout.setHorizontalGroup(
+            DivBotoesProdutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(DivBotoesProdutoLayout.createSequentialGroup()
+                .addGroup(DivBotoesProdutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(DivBotoesProdutoLayout.createSequentialGroup()
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(botaoVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(botaoSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(DivBotoesEditarProdutoLayout.createSequentialGroup()
+                        .addComponent(botaoSalvar1, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(DivBotoesProdutoLayout.createSequentialGroup()
                         .addContainerGap(100, Short.MAX_VALUE)
-                        .addGroup(DivBotoesEditarProdutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(DivBotoesProdutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(soutEspecificacaoTecnica)
                             .addComponent(soutEstoque)
                             .addComponent(soutValorUnitario)
                             .addComponent(soutQuantidade)
                             .addComponent(soutNomeProduto))
                         .addGap(18, 18, 18)
-                        .addGroup(DivBotoesEditarProdutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(DivBotoesProdutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(inputNomeProduto)
                             .addComponent(inputQuantidade)
                             .addComponent(inputValorUnitario)
@@ -217,56 +218,56 @@ public class EditarProduto extends javax.swing.JFrame {
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 445, Short.MAX_VALUE))))
                 .addContainerGap(100, Short.MAX_VALUE))
         );
-        DivBotoesEditarProdutoLayout.setVerticalGroup(
-            DivBotoesEditarProdutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(DivBotoesEditarProdutoLayout.createSequentialGroup()
-                .addContainerGap(50, Short.MAX_VALUE)
-                .addGroup(DivBotoesEditarProdutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+        DivBotoesProdutoLayout.setVerticalGroup(
+            DivBotoesProdutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(DivBotoesProdutoLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(DivBotoesProdutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(soutNomeProduto)
                     .addComponent(inputNomeProduto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(DivBotoesEditarProdutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(DivBotoesProdutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(soutQuantidade)
                     .addComponent(inputQuantidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(DivBotoesEditarProdutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(DivBotoesProdutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(soutValorUnitario)
                     .addComponent(inputValorUnitario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(DivBotoesEditarProdutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(DivBotoesProdutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(soutEstoque)
                     .addComponent(inputEstoque, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(DivBotoesEditarProdutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(DivBotoesEditarProdutoLayout.createSequentialGroup()
+                .addGroup(DivBotoesProdutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(DivBotoesProdutoLayout.createSequentialGroup()
                         .addComponent(soutEspecificacaoTecnica)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(DivBotoesEditarProdutoLayout.createSequentialGroup()
+                    .addGroup(DivBotoesProdutoLayout.createSequentialGroup()
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(DivBotoesEditarProdutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addGroup(DivBotoesProdutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(botaoVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(botaoSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(50, Short.MAX_VALUE))))
+                            .addComponent(botaoSalvar1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap(12, Short.MAX_VALUE))))
         );
 
-        javax.swing.GroupLayout DivMenuEditarProdutoLayout = new javax.swing.GroupLayout(DivMenuEditarProduto);
-        DivMenuEditarProduto.setLayout(DivMenuEditarProdutoLayout);
-        DivMenuEditarProdutoLayout.setHorizontalGroup(
-            DivMenuEditarProdutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout DivMenuProdutoLayout = new javax.swing.GroupLayout(DivMenuProduto);
+        DivMenuProduto.setLayout(DivMenuProdutoLayout);
+        DivMenuProdutoLayout.setHorizontalGroup(
+            DivMenuProdutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(Header, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(Foother, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(DivMenuEditarProdutoLayout.createSequentialGroup()
+            .addGroup(DivMenuProdutoLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(DivBotoesEditarProduto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(DivBotoesProduto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        DivMenuEditarProdutoLayout.setVerticalGroup(
-            DivMenuEditarProdutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(DivMenuEditarProdutoLayout.createSequentialGroup()
+        DivMenuProdutoLayout.setVerticalGroup(
+            DivMenuProdutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(DivMenuProdutoLayout.createSequentialGroup()
                 .addComponent(Header, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(DivBotoesEditarProduto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(DivBotoesProduto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(Foother, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
@@ -275,15 +276,14 @@ public class EditarProduto extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(DivMenuEditarProduto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(DivMenuProduto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(DivMenuEditarProduto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(DivMenuProduto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
-        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void inputNomeProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputNomeProdutoActionPerformed
@@ -307,10 +307,18 @@ public class EditarProduto extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_botaoVoltarActionPerformed
 
-    private void botaoSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoSalvarActionPerformed
-
-        //this.inputEmail.equals(inputEmail.getText());
-    }//GEN-LAST:event_botaoSalvarActionPerformed
+    private void botaoSalvar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoSalvar1ActionPerformed
+        //        Funcionario funcionario = new Funcionario();
+        //
+        //        funcionario.setEmail(inputEmail.getText());
+        //        funcionario.setSenha(inputSenhaAcesso.getText());
+        //
+        //        Repositorio.funcionario.add(funcionario);
+        //
+        //        for(int i = 0; i < Repositorio.funcionario.size(); i ++ ){
+            //            System.out.println(Repositorio.funcionario.get(i));
+            //        }
+    }//GEN-LAST:event_botaoSalvar1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -348,13 +356,13 @@ public class EditarProduto extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel DivBotoesEditarProduto;
-    private javax.swing.JPanel DivMenuEditarProduto;
+    private javax.swing.JPanel DivBotoesProduto;
+    private javax.swing.JPanel DivMenuProduto;
     private javax.swing.JPanel Foother;
     private javax.swing.JPanel Header;
     private javax.swing.JLabel MyStock;
     private javax.swing.JLabel Todos;
-    private javax.swing.JButton botaoSalvar;
+    private javax.swing.JButton botaoSalvar1;
     private javax.swing.JButton botaoVoltar;
     private javax.swing.JLabel c;
     private javax.swing.JTextField inputEstoque;

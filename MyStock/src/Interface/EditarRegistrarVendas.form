@@ -32,7 +32,7 @@
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="DivGerenciarVendas" alignment="0" pref="703" max="32767" attributes="0"/>
+          <Component id="DivGerenciarVendas" alignment="0" pref="709" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
   </Layout>
@@ -207,7 +207,7 @@
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Component id="botaoSalvar" min="-2" pref="65" max="-2" attributes="0"/>
                           </Group>
-                          <Group type="102" attributes="0">
+                          <Group type="102" alignment="1" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="soutValorTotalPedido1" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Component id="soutQuantidade" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -215,15 +215,19 @@
                                   <Component id="soutNúmeroPedido" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Component id="soutNomeProduto" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Component id="soutNomeCliente" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="soutDataVenda" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="inputNumPedido" alignment="0" pref="232" max="32767" attributes="0"/>
-                                  <Component id="inputNomeCliente" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="inputQuantidade" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="inputValorTotalPedido" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="inputEnderecoEntrega" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="inputNomeProduto" alignment="0" min="-2" pref="231" max="-2" attributes="0"/>
+                                  <Component id="inputDataVenda" pref="232" max="32767" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                      <Component id="inputNumPedido" alignment="0" pref="232" max="32767" attributes="0"/>
+                                      <Component id="inputNomeCliente" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="inputQuantidade" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="inputValorTotalPedido" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="inputEnderecoEntrega" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="inputNomeProduto" alignment="0" min="-2" pref="231" max="-2" attributes="0"/>
+                                  </Group>
                               </Group>
                           </Group>
                       </Group>
@@ -254,22 +258,27 @@
                           <Component id="inputQuantidade" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="soutQuantidade" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="soutValorTotalPedido1" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="inputValorTotalPedido" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <EmptySpace pref="18" max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="soutDataVenda" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="inputDataVenda" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace pref="18" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="soutValorTotalPedido" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="inputEnderecoEntrega" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="botaoVoltar" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
                           <Component id="botaoSalvar" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="71" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -420,6 +429,24 @@
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botaoSalvarActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JLabel" name="soutDataVenda">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Consolas" size="14" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Data da venda:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="inputDataVenda">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Consolas" size="14" style="0"/>
+                </Property>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="inputDataVendaActionPerformed"/>
               </Events>
             </Component>
           </SubComponents>

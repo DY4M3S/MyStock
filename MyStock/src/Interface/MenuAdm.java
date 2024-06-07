@@ -37,7 +37,6 @@ public class MenuAdm extends javax.swing.JFrame {
         DivBotoes = new javax.swing.JPanel();
         BotaoAddFuncionario = new javax.swing.JButton();
         BotaoRegistrarVendas = new javax.swing.JButton();
-        BotaoAddEstoque = new javax.swing.JButton();
         BotaoGerarRelatorio = new javax.swing.JButton();
         BotaoAddProduto = new javax.swing.JButton();
         BotaoMenu = new javax.swing.JMenuBar();
@@ -130,14 +129,6 @@ public class MenuAdm extends javax.swing.JFrame {
             }
         });
 
-        BotaoAddEstoque.setFont(new java.awt.Font("Consolas", 0, 14)); // NOI18N
-        BotaoAddEstoque.setText("Adicionar um novo estoque");
-        BotaoAddEstoque.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BotaoAddEstoqueActionPerformed(evt);
-            }
-        });
-
         BotaoGerarRelatorio.setFont(new java.awt.Font("Consolas", 0, 14)); // NOI18N
         BotaoGerarRelatorio.setText("Gerar relatório ");
         BotaoGerarRelatorio.addActionListener(new java.awt.event.ActionListener() {
@@ -161,7 +152,6 @@ public class MenuAdm extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, DivBotoesLayout.createSequentialGroup()
                 .addGap(0, 120, Short.MAX_VALUE)
                 .addGroup(DivBotoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(BotaoAddEstoque, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(BotaoGerarRelatorio, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(BotaoRegistrarVendas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(BotaoAddFuncionario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -175,9 +165,7 @@ public class MenuAdm extends javax.swing.JFrame {
                 .addComponent(BotaoAddFuncionario)
                 .addGap(18, 18, 18)
                 .addComponent(BotaoAddProduto)
-                .addGap(18, 18, 18)
-                .addComponent(BotaoAddEstoque)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
                 .addComponent(BotaoRegistrarVendas)
                 .addGap(18, 18, 18)
                 .addComponent(BotaoGerarRelatorio)
@@ -244,10 +232,6 @@ public class MenuAdm extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_BotaoRegistrarVendasActionPerformed
 
-    private void BotaoAddEstoqueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoAddEstoqueActionPerformed
-          
-    }//GEN-LAST:event_BotaoAddEstoqueActionPerformed
-
     private void BotaoGerarRelatorioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoGerarRelatorioActionPerformed
         new GerarRelatorioAdm().setVisible(true);
         this.dispose();
@@ -299,7 +283,6 @@ public class MenuAdm extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton BotaoAddEstoque;
     private javax.swing.JButton BotaoAddFuncionario;
     private javax.swing.JButton BotaoAddProduto;
     private javax.swing.JButton BotaoGerarRelatorio;

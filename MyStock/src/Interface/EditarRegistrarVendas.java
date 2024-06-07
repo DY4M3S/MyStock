@@ -48,6 +48,8 @@ public class EditarRegistrarVendas extends javax.swing.JFrame {
         soutNomeProduto = new javax.swing.JLabel();
         inputNomeProduto = new javax.swing.JTextField();
         botaoSalvar = new javax.swing.JButton();
+        soutDataVenda = new javax.swing.JLabel();
+        inputDataVenda = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Editar vendas");
@@ -201,6 +203,16 @@ public class EditarRegistrarVendas extends javax.swing.JFrame {
             }
         });
 
+        soutDataVenda.setFont(new java.awt.Font("Consolas", 0, 14)); // NOI18N
+        soutDataVenda.setText("Data da venda:");
+
+        inputDataVenda.setFont(new java.awt.Font("Consolas", 0, 14)); // NOI18N
+        inputDataVenda.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                inputDataVendaActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout DivBotoesRegistrarVendasLayout = new javax.swing.GroupLayout(DivBotoesRegistrarVendas);
         DivBotoesRegistrarVendas.setLayout(DivBotoesRegistrarVendasLayout);
         DivBotoesRegistrarVendasLayout.setHorizontalGroup(
@@ -219,15 +231,18 @@ public class EditarRegistrarVendas extends javax.swing.JFrame {
                             .addComponent(soutValorTotalPedido)
                             .addComponent(soutNúmeroPedido)
                             .addComponent(soutNomeProduto)
-                            .addComponent(soutNomeCliente))
+                            .addComponent(soutNomeCliente)
+                            .addComponent(soutDataVenda))
                         .addGap(18, 18, 18)
                         .addGroup(DivBotoesRegistrarVendasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(inputNumPedido, javax.swing.GroupLayout.DEFAULT_SIZE, 232, Short.MAX_VALUE)
-                            .addComponent(inputNomeCliente)
-                            .addComponent(inputQuantidade)
-                            .addComponent(inputValorTotalPedido)
-                            .addComponent(inputEnderecoEntrega)
-                            .addComponent(inputNomeProduto, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(inputDataVenda, javax.swing.GroupLayout.DEFAULT_SIZE, 232, Short.MAX_VALUE)
+                            .addGroup(DivBotoesRegistrarVendasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(inputNumPedido, javax.swing.GroupLayout.DEFAULT_SIZE, 232, Short.MAX_VALUE)
+                                .addComponent(inputNomeCliente)
+                                .addComponent(inputQuantidade)
+                                .addComponent(inputValorTotalPedido)
+                                .addComponent(inputEnderecoEntrega)
+                                .addComponent(inputNomeProduto, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addContainerGap(120, Short.MAX_VALUE))
         );
         DivBotoesRegistrarVendasLayout.setVerticalGroup(
@@ -249,19 +264,23 @@ public class EditarRegistrarVendas extends javax.swing.JFrame {
                 .addGroup(DivBotoesRegistrarVendasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(inputQuantidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(soutQuantidade))
-                .addGap(18, 18, 18)
+                .addGap(18, 18, Short.MAX_VALUE)
                 .addGroup(DivBotoesRegistrarVendasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(soutValorTotalPedido1)
                     .addComponent(inputValorTotalPedido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
+                .addGroup(DivBotoesRegistrarVendasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(soutDataVenda)
+                    .addComponent(inputDataVenda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
                 .addGroup(DivBotoesRegistrarVendasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(soutValorTotalPedido)
                     .addComponent(inputEnderecoEntrega, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addGap(18, 18, Short.MAX_VALUE)
                 .addGroup(DivBotoesRegistrarVendasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(botaoVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(botaoSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(71, 71, 71))
+                .addGap(36, 36, 36))
         );
 
         javax.swing.GroupLayout DivGerenciarVendasLayout = new javax.swing.GroupLayout(DivGerenciarVendas);
@@ -293,7 +312,7 @@ public class EditarRegistrarVendas extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(DivGerenciarVendas, javax.swing.GroupLayout.DEFAULT_SIZE, 703, Short.MAX_VALUE)
+            .addComponent(DivGerenciarVendas, javax.swing.GroupLayout.DEFAULT_SIZE, 709, Short.MAX_VALUE)
         );
 
         pack();
@@ -333,6 +352,10 @@ public class EditarRegistrarVendas extends javax.swing.JFrame {
 
         //this.inputEmail.equals(inputEmail.getText());
     }//GEN-LAST:event_botaoSalvarActionPerformed
+
+    private void inputDataVendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputDataVendaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_inputDataVendaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -380,6 +403,7 @@ public class EditarRegistrarVendas extends javax.swing.JFrame {
     private javax.swing.JButton botaoSalvar;
     private javax.swing.JButton botaoVoltar;
     private javax.swing.JLabel c;
+    private javax.swing.JTextField inputDataVenda;
     private javax.swing.JTextField inputEnderecoEntrega;
     private javax.swing.JTextField inputNomeCliente;
     private javax.swing.JTextField inputNomeProduto;
@@ -387,6 +411,7 @@ public class EditarRegistrarVendas extends javax.swing.JFrame {
     private javax.swing.JTextField inputQuantidade;
     private javax.swing.JTextField inputValorTotalPedido;
     private javax.swing.JLabel logo;
+    private javax.swing.JLabel soutDataVenda;
     private javax.swing.JLabel soutNomeCliente;
     private javax.swing.JLabel soutNomeProduto;
     private javax.swing.JLabel soutNúmeroPedido;

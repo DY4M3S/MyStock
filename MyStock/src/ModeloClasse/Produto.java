@@ -1,14 +1,16 @@
 package ModeloClasse;
 
+import java.util.List;
+
 public class Produto {
     private int id;
     private String nome;
     private int quantidade;
     private float valorUnitario;
-    private String estoque;
+    private List<Estoque> estoque;
     private String especificacaoTecnica;
 
-    public Produto(int id, String nome, int quantidade, float valorUnitario, String estoque, String especificacaoTecnica) {
+    public Produto(int id, String nome, int quantidade, float valorUnitario, List<Estoque> estoque, String especificacaoTecnica) {
         this.id = id;
         this.nome = nome;
         this.quantidade = quantidade;
@@ -49,11 +51,11 @@ public class Produto {
         this.valorUnitario = valorUnitario;
     }
 
-    public String getEstoque() {
+    public List<Estoque> getEstoque() {
         return estoque;
     }
 
-    public void setEstoque(String estoque) {
+    public void setEstoque(List<Estoque> estoque) {
         this.estoque = estoque;
     }
 
@@ -70,6 +72,4 @@ public class Produto {
         return "Produto{" + "id=" + id + ", nome=" + nome + ", quantidade=" + quantidade + ", valorUnitario=" + valorUnitario + ", estoque=" + estoque + ", especificacaoTecnica=" + especificacaoTecnica + '}';
     }
 
-    
-   
 }
