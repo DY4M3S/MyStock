@@ -230,7 +230,7 @@
                           <Component id="BotaoAddEstoque" alignment="0" max="32767" attributes="0"/>
                           <Component id="BotaoGerarRelatorio" alignment="0" max="32767" attributes="0"/>
                           <Component id="BotaoRegistrarVendas" alignment="0" max="32767" attributes="0"/>
-                          <Component id="BotaoAddUsuario" alignment="0" max="32767" attributes="0"/>
+                          <Component id="BotaoAddFuncionario" alignment="0" max="32767" attributes="0"/>
                           <Component id="BotaoAddProduto" alignment="0" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace min="0" pref="120" max="32767" attributes="0"/>
@@ -241,7 +241,7 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace pref="70" max="32767" attributes="0"/>
-                      <Component id="BotaoAddUsuario" min="-2" max="-2" attributes="0"/>
+                      <Component id="BotaoAddFuncionario" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="BotaoAddProduto" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -256,7 +256,7 @@
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Component class="javax.swing.JButton" name="BotaoAddUsuario">
+            <Component class="javax.swing.JButton" name="BotaoAddFuncionario">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Consolas" size="14" style="0"/>
@@ -264,7 +264,7 @@
                 <Property name="text" type="java.lang.String" value="Adicionar um novo funcion&#xe1;rio"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotaoAddUsuarioActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotaoAddFuncionarioActionPerformed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JButton" name="BotaoRegistrarVendas">

@@ -5,6 +5,7 @@
 package Interface;
 
 import ModeloClasse.Administrador;
+import ModeloClasse.Funcionario;
 import javax.swing.JCheckBox;
 import javax.swing.JOptionPane;
 
@@ -256,11 +257,17 @@ public class Login extends javax.swing.JFrame {
             
             Administrador adm = new Administrador(true,"adm@MyStock.com","adm123");
             
+            Funcionario fun = new Funcionario("a","a");
+            
         if (adm != null && adm.getEmail().equals(email) && checkAdm.isSelected() && adm.getSenha().equals(senha)) {
             JOptionPane.showMessageDialog(this, "Login bem-sucedido!");
             MenuAdm menuAdm = new MenuAdm();
             menuAdm.setVisible(true);
             this.dispose();
+        }else if (fun != null && fun.getEmail().equals(email) && fun.getSenha().equals(senha)) {
+            JOptionPane.showMessageDialog(this, "Login de funcionário bem-sucedido!");
+             MenuAdm menuAdm = new MenuAdm();
+             menuAdm.setVisible(true);
         } else {
             JOptionPane.showMessageDialog(this, "Email ou senha incorretos.");
         }

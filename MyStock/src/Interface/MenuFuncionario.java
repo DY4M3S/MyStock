@@ -228,7 +228,7 @@ public class MenuFuncionario extends javax.swing.JFrame {
     }//GEN-LAST:event_BotaoGerenciarVendaActionPerformed
 
     private void BotaoAddEstoqueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoAddEstoqueActionPerformed
-        new AddEstoqueAdm().setVisible(true);
+        
     }//GEN-LAST:event_BotaoAddEstoqueActionPerformed
 
     private void BotaoGerarRelatorioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoGerarRelatorioActionPerformed
