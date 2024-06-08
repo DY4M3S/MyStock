@@ -203,7 +203,7 @@ public class ListarFuncionario extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void botaoVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoVoltarActionPerformed
-        new AddFuncionarioAdm().setVisible(true);
+        new AddFuncionario().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_botaoVoltarActionPerformed
 

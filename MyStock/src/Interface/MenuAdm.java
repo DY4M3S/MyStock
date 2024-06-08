@@ -223,22 +223,22 @@ public class MenuAdm extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void BotaoAddFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoAddFuncionarioActionPerformed
-        new AddFuncionarioAdm().setVisible(true);
+        new AddFuncionario().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_BotaoAddFuncionarioActionPerformed
 
     private void BotaoRegistrarVendasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoRegistrarVendasActionPerformed
-        new RegistrarVendasAdm().setVisible(true);
+        new RegistrarVendas().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_BotaoRegistrarVendasActionPerformed
 
     private void BotaoGerarRelatorioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoGerarRelatorioActionPerformed
-        new GerarRelatorioAdm().setVisible(true);
+        new GerarRelatorio().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_BotaoGerarRelatorioActionPerformed
 
     private void BotaoAddProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoAddProdutoActionPerformed
-        new AddProdutoAdm().setVisible(true);
+        new AddProduto().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_BotaoAddProdutoActionPerformed
 

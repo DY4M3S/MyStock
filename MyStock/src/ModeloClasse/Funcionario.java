@@ -2,7 +2,7 @@ package ModeloClasse;
 
 public class Funcionario extends Usuario {
 
-    public Funcionario(String nome, String cpf, String email, int telefone, String senha, String uf, String cidade, String endereco, int numero, String bairro) {
+    public Funcionario(String nome, String cpf, String email, Long telefone, String senha, String uf, String cidade, String endereco, Long numero, String bairro) {
         super(nome, cpf, email, telefone, senha, uf, cidade, endereco, numero, bairro);
     }
 

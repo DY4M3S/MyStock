@@ -20,22 +20,10 @@ public class Login extends javax.swing.JFrame {
      */
     public Login() {
         initComponents();
-        validarAdm();
         
     }
     
-    public void validarAdm(){
-     
     
-        
-    }
-
-    private void limpar() {
-        this.inputEmail.setText("");
-        this.inputSenha.setText("");
-        
-        this.inputEmail.requestFocus();
-    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -261,13 +249,12 @@ public class Login extends javax.swing.JFrame {
             
         if (adm != null && adm.getEmail().equals(email) && checkAdm.isSelected() && adm.getSenha().equals(senha)) {
             JOptionPane.showMessageDialog(this, "Login bem-sucedido!");
-            MenuAdm menuAdm = new MenuAdm();
-            menuAdm.setVisible(true);
+            new MenuAdm().setVisible(true);
             this.dispose();
         }else if (fun != null && fun.getEmail().equals(email) && fun.getSenha().equals(senha)) {
             JOptionPane.showMessageDialog(this, "Login de funcionário bem-sucedido!");
-             MenuAdm menuAdm = new MenuAdm();
-             menuAdm.setVisible(true);
+            new MenuAdm().setVisible(true);
+            this.dispose();
         } else {
             JOptionPane.showMessageDialog(this, "Email ou senha incorretos.");
         }

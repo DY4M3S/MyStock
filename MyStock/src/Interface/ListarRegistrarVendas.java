@@ -194,7 +194,7 @@ public class ListarRegistrarVendas extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void botaoVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoVoltarActionPerformed
-        new RegistrarVendasAdm().setVisible(true);
+        new RegistrarVendas().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_botaoVoltarActionPerformed
 

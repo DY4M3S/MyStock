@@ -220,11 +220,11 @@ public class MenuFuncionario extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void BotaoAddProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoAddProdutoActionPerformed
-        new AddProdutoAdm().setVisible(true);
+        new AddProduto().setVisible(true);
     }//GEN-LAST:event_BotaoAddProdutoActionPerformed
 
     private void BotaoGerenciarVendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoGerenciarVendaActionPerformed
-        new RegistrarVendasAdm().setVisible(true);
+        new RegistrarVendas().setVisible(true);
     }//GEN-LAST:event_BotaoGerenciarVendaActionPerformed
 
     private void BotaoAddEstoqueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoAddEstoqueActionPerformed
@@ -232,7 +232,7 @@ public class MenuFuncionario extends javax.swing.JFrame {
     }//GEN-LAST:event_BotaoAddEstoqueActionPerformed
 
     private void BotaoGerarRelatorioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoGerarRelatorioActionPerformed
-        new GerarRelatorioAdm().setVisible(true);
+        new GerarRelatorio().setVisible(true);
     }//GEN-LAST:event_BotaoGerarRelatorioActionPerformed
 
     private void BotaoSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoSairActionPerformed

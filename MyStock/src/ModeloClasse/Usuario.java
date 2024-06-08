@@ -6,15 +6,15 @@ package ModeloClasse;
     private String nome;
     private String cpf;
     private String email; 
-    private int telefone;
+    private Long telefone;
     private String senha;
     private String uf;
     private String cidade;
     private String endereco;
-    private int numero;
+    private Long numero;
     private String bairro;
 
-    public Usuario(String nome, String cpf, String email, int telefone, String senha, String uf, String cidade, String endereco, int numero, String bairro) {
+    public Usuario(String nome, String cpf, String email, Long telefone, String senha, String uf, String cidade, String endereco, Long numero, String bairro) {
         this.nome = nome;
         this.cpf = cpf;
         this.email = email;
@@ -27,7 +27,7 @@ package ModeloClasse;
         this.bairro = bairro;
     }
 
-    public Usuario(String nome, String cpf, String email, int telefone, String uf, String cidade, String endereco, int numero, String bairro) {
+    public Usuario(String nome, String cpf, String email, Long telefone, String uf, String cidade, String endereco, Long numero, String bairro) {
         this.nome = nome;
         this.cpf = cpf;
         this.email = email;
@@ -79,11 +79,11 @@ package ModeloClasse;
         this.email = email;
     }
 
-    public int getTelefone() {
+    public Long getTelefone() {
         return telefone;
     }
 
-    public void setTelefone(int telefone) {
+    public void setTelefone(Long telefone) {
         this.telefone = telefone;
     }
 
@@ -119,11 +119,11 @@ package ModeloClasse;
         this.endereco = endereco;
     }
 
-    public int getNumero() {
+    public Long getNumero() {
         return numero;
     }
 
-    public void setNumero(int numero) {
+    public void setNumero(Long numero) {
         this.numero = numero;
     }
 

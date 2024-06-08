@@ -8,12 +8,12 @@ package Interface;
  *
  * @author Jason
  */
-public class RegistrarVendasAdm extends javax.swing.JFrame {
+public class RegistrarVendas extends javax.swing.JFrame {
 
     /**
      * Creates new form GerenciarVendas
      */
-    public RegistrarVendasAdm() {
+    public RegistrarVendas() {
         initComponents();
     }
 
@@ -385,7 +385,7 @@ public class RegistrarVendasAdm extends javax.swing.JFrame {
     }//GEN-LAST:event_inputNomeProdutoActionPerformed
 
     private void botaoCadastrarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoCadastrarClienteActionPerformed
-        new AddClienteAdm().setVisible(true);
+        new AddCliente().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_botaoCadastrarClienteActionPerformed
 
@@ -414,14 +414,18 @@ public class RegistrarVendasAdm extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(RegistrarVendasAdm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RegistrarVendas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(RegistrarVendasAdm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RegistrarVendas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(RegistrarVendasAdm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RegistrarVendas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(RegistrarVendasAdm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RegistrarVendas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -430,7 +434,7 @@ public class RegistrarVendasAdm extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new RegistrarVendasAdm().setVisible(true);
+                new RegistrarVendas().setVisible(true);
             }
         });
     }

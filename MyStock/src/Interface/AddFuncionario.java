@@ -12,7 +12,7 @@ import javax.swing.JOptionPane;
  *
  * @author Laboratorio
  */
-public class AddFuncionarioAdm extends javax.swing.JFrame {
+public class AddFuncionario extends javax.swing.JFrame {
   
     Funcionario funcionario = new Funcionario();
     
@@ -21,17 +21,52 @@ public class AddFuncionarioAdm extends javax.swing.JFrame {
      * Creates new form AddFuncionario
      */
     
-    public AddFuncionarioAdm() {
+    public AddFuncionario() {
         initComponents();
+        limpar();
     }
-
-    private void limpar() {
-        this.inputEmail.setText("");
-        this.inputSenhaAcesso.setText("");
+    
+    private Long converterParaNumero(String numeroString){
         
-        //this.textFieldLogin.requestFocus();
+        try {
+            Long numeroLong = Long.parseLong(numeroString);
+            
+            return numeroLong;
+        } catch (Exception ex) {
+            
+             JOptionPane.showMessageDialog(this,"Por favor, insira somente números sem espaços, letras e caracteres especiais para os campos telefone e número de endereço.");
+            
+            return 0L;
+        }
     }
-    @SuppressWarnings("unchecked")
+    
+    private void limpar() {
+       
+        this.inputNome.setText("");
+        this.inputCpf.setText("");
+        this.inputEmail.setText("");
+        this.inputTelefone.setText("");
+        this.inputSenhaAcesso.setText("");
+        this.inputUf.setText("");
+        this.inputCidade.setText("");
+        this.inputEndereco.setText("");
+        this.inputNumero.setText("");
+        this.inputBairro.setText("");
+        
+        this.inputNome.requestFocus();
+    }
+    
+    
+    private boolean naoSalvaVazio(Funcionario f){
+        if (f.getNumero() != 0 && f.getTelefone() != 0 && !f.getNome().isEmpty()
+                && !f.getCpf().isEmpty() && !f.getEmail().isEmpty() && !f.getSenha().isEmpty()
+                && !f.getUf().isEmpty() && !f.getCidade().isEmpty() && !f.getEndereco().isEmpty()
+                && !f.getBairro().isEmpty()) {
+            return true;
+        } else {
+            return false;
+        }
+    }
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
@@ -70,7 +105,6 @@ public class AddFuncionarioAdm extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Funcionário");
         setMinimumSize(new java.awt.Dimension(700, 875));
-        setPreferredSize(new java.awt.Dimension(700, 875));
 
         DivAddUsuário.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -462,19 +496,29 @@ public class AddFuncionarioAdm extends javax.swing.JFrame {
     }//GEN-LAST:event_botaoListarActionPerformed
 
     private void botaoCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoCadastrarActionPerformed
-//        Funcionario funcionario = new Funcionario();
-//        
-//        funcionario.setEmail(inputEmail.getText());
-//        funcionario.setSenha(inputSenhaAcesso.getText());
-//        
-//        Repositorio.funcionario.add(funcionario);
-//        
-//        for(int i = 0; i < Repositorio.funcionario.size(); i ++ ){
-//            System.out.println(Repositorio.funcionario.get(i));
-//        }
+        String nome = this.inputNome.getText();
+        String cpf = this.inputCpf.getText();
+        String email = this.inputEmail.getText();
+        Long telefone = converterParaNumero(this.inputTelefone.getText());
+        String senha = this.inputSenhaAcesso.getText();
+        String UF = this.inputUf.getText();
+        String cidade = this.inputCidade.getText();
+        String endereco = this.inputEndereco.getText();
+        Long numero = converterParaNumero(this.inputNumero.getText());
+        String bairro = this.inputBairro.getText();
         
+      
+        Funcionario f = new Funcionario(nome, cpf, email, telefone, senha, UF, cidade, endereco, numero, bairro);
         
+        if(naoSalvaVazio(f)){
+            Repositorio.funcionario.add(f);
         
+            JOptionPane.showMessageDialog(this, "Funcionário cadastrado com sucesso!");
+            System.out.println(Repositorio.funcionario);
+            limpar();
+        } else {
+            JOptionPane.showMessageDialog(this, "Funcionário tem que apresentar todos campos preenchidos!");
+        }
     }//GEN-LAST:event_botaoCadastrarActionPerformed
 
     /**
@@ -494,14 +538,22 @@ public class AddFuncionarioAdm extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(AddFuncionarioAdm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AddFuncionario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(AddFuncionarioAdm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AddFuncionario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(AddFuncionarioAdm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AddFuncionario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(AddFuncionarioAdm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AddFuncionario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -514,7 +566,7 @@ public class AddFuncionarioAdm extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new AddFuncionarioAdm().setVisible(true);
+                new AddFuncionario().setVisible(true);
             }
         });
     }

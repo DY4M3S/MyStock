@@ -8,12 +8,12 @@ package Interface;
  *
  * @author Jason
  */
-public class AddProdutoAdm extends javax.swing.JFrame {
+public class AddProduto extends javax.swing.JFrame {
 
     /**
      * Creates new form Produto
      */
-    public AddProdutoAdm() {
+    public AddProduto() {
         initComponents();
     }
 
@@ -52,7 +52,6 @@ public class AddProdutoAdm extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Produto");
         setMinimumSize(new java.awt.Dimension(875, 850));
-        setPreferredSize(new java.awt.Dimension(875, 850));
 
         DivMenuProduto.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -359,14 +358,18 @@ public class AddProdutoAdm extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(AddProdutoAdm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AddProduto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(AddProdutoAdm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AddProduto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(AddProdutoAdm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AddProduto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(AddProdutoAdm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AddProduto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -375,7 +378,7 @@ public class AddProdutoAdm extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new AddProdutoAdm().setVisible(true);
+                new AddProduto().setVisible(true);
             }
         });
     }
