@@ -7,15 +7,14 @@ public class Produto {
     private String nome;
     private int quantidade;
     private float valorUnitario;
-    private List<Estoque> estoque;
+    private String nomeEstoque;
     private String especificacaoTecnica;
 
-    public Produto(int id, String nome, int quantidade, float valorUnitario, List<Estoque> estoque, String especificacaoTecnica) {
-        this.id = id;
+    public Produto(String nome, int quantidade, float valorUnitario, String nomeEstoque, String especificacaoTecnica) {
         this.nome = nome;
         this.quantidade = quantidade;
         this.valorUnitario = valorUnitario;
-        this.estoque = estoque;
+        this.nomeEstoque = nomeEstoque;
         this.especificacaoTecnica = especificacaoTecnica;
     }
 
@@ -51,12 +50,12 @@ public class Produto {
         this.valorUnitario = valorUnitario;
     }
 
-    public List<Estoque> getEstoque() {
-        return estoque;
+    public String getNomeEstoque() {
+        return nomeEstoque;
     }
 
-    public void setEstoque(List<Estoque> estoque) {
-        this.estoque = estoque;
+    public void setNomeEstoque(String nomeEstoque) {
+        this.nomeEstoque = nomeEstoque;
     }
 
     public String getEspecificacaoTecnica() {
@@ -69,7 +68,8 @@ public class Produto {
 
     @Override
     public String toString() {
-        return "Produto{" + "id=" + id + ", nome=" + nome + ", quantidade=" + quantidade + ", valorUnitario=" + valorUnitario + ", estoque=" + estoque + ", especificacaoTecnica=" + especificacaoTecnica + '}';
+        return "Produto{" + "nome=" + nome + ", quantidade=" + quantidade + ", valorUnitario=" + valorUnitario + ", nomeEstoque=" + nomeEstoque + ", especificacaoTecnica=" + especificacaoTecnica + '}';
     }
 
+    
 }

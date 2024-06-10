@@ -6,6 +6,10 @@ public class Estoque {
     private int id;
     private String nome;
 
+    public Estoque(String nome) {
+        this.nome = nome;
+    }
+    
     public Estoque(int id, String nome) {
         this.id = id;
         this.nome = nome;

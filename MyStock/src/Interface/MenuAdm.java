@@ -4,6 +4,9 @@
  */
 package Interface;
 
+import Interface.vendas.RegistrarVendas;
+import Interface.produto.AddProduto;
+import Interface.funcionario.AddFuncionario;
 import Repositorio.Repositorio;
 /**
  *
