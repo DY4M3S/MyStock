@@ -14,7 +14,7 @@ public class Repositorio {
     public static List<Administrador> administrador = new ArrayList<>();
     public static List<Funcionario> funcionario = new ArrayList<>();
     public static List<Cliente> cliente = new ArrayList<>();
-    public static List<Vendas> venda = new ArrayList<>();
+    public static List<Vendas> vendas = new ArrayList<>();
     public static List<Produto> produto = new ArrayList<>();
     public static List<Estoque> estoque = new ArrayList<>();
 

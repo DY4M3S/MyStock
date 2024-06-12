@@ -4,11 +4,12 @@
  */
 package Interface.produto;
 
+import ModeloClasse.Estoque;
 import ModeloClasse.Produto;
 import Repositorio.Repositorio;
+import java.util.HashSet;
 import javax.swing.DefaultListModel;
 import javax.swing.JOptionPane;
-
 
 /**
  *
@@ -27,43 +28,87 @@ public class EditarProduto extends javax.swing.JFrame {
         initComponents();
         carregarProdutos();
         trazerDadosProduto();
+        //inputEstoque.setVisible(false);
+        //soutEstoque.setVisible(false);
     }
-    
-    public void carregarProdutos() {     
-        for (Produto p : Repositorio.produto) {
-            this.soutEstoqueDisponivelSelecao.addItem(p.getNome());
-        }
-    }
-    
-    private int converterParaInteiro(String numeroString) {
-        try {
-            int numeroInteiro = Integer.parseInt(numeroString);
-            return numeroInteiro;
-        } catch (NumberFormatException ex) {
-            JOptionPane.showMessageDialog(this, "Por favor, no campo Quantidade"
-                    + "\n\nInsira somente números inteiros sem espaços. Letras e caracteres especiais não podem ser inseridos.");
-            return 0;
-        }
-    }
-    
-    private float converterParaNumero(String numeroString) {
-        try {
-            float numeroFloat = Float.parseFloat(numeroString);
-            return numeroFloat;
-        } catch (NumberFormatException ex) {
-            JOptionPane.showMessageDialog(this, "Por favor, no campo Valor unitário"
-                    + "\n\nInsira somente números decimais( exemplo: 1 ou 1.50) sem espaços. Letras e caracteres especiais não podem ser inseridos.");
-            return 0.0f;
-        }
-    }
-    
-    private void trazerDadosProduto() {
-        this.inputNomeProduto.setText(p.getNome());
-        this.inputQuantidade.setText(String.valueOf(p.getQuantidade()));
-        this.inputValorUnitario.setText(String.valueOf(p.getValorUnitario()));
-        this.inputEstoque.setText(p.getNomeEstoque());
-        this.inputEspecificacaoTecnica.setText(p.getEspecificacaoTecnica());
 
+        private Estoque buscarEstoquePorNome(String nomeEstoque) {
+            for (Estoque e : Repositorio.estoque) {
+                if (e.getNome().equals(nomeEstoque)) {
+                    return e;
+                }
+            }
+            return null;
+        }
+
+        private boolean existeEstoque(String nomeEstoque) {
+            for (Estoque e : Repositorio.estoque) {
+                if (e.getNome().equals(nomeEstoque)) {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        public void carregarProdutos() {
+            HashSet<String> nomesEstoque = new HashSet<>();
+            for (Produto p : Repositorio.produto) {
+                String nomeEstoque = p.getNomeEstoque();
+                if (!nomesEstoque.contains(nomeEstoque)) {
+                    this.soutEstoqueDisponivelSelecao.addItem(nomeEstoque);
+                    nomesEstoque.add(nomeEstoque);
+                }
+            }
+        }
+
+        private int converterParaInteiro(String numeroString) {
+            try {
+                int numeroInteiro = Integer.parseInt(numeroString);
+                return numeroInteiro;
+            } catch (NumberFormatException ex) {
+                JOptionPane.showMessageDialog(this, "Por favor, no campo Quantidade"
+                        + "\n\nInsira somente números inteiros sem espaços. Letras e caracteres especiais não podem ser inseridos.");
+                return 0;
+            }
+        }
+
+        private float converterParaNumero(String numeroString) {
+            try {
+                float numeroFloat = Float.parseFloat(numeroString);
+                return numeroFloat;
+            } catch (NumberFormatException ex) {
+                JOptionPane.showMessageDialog(this, "Por favor, no campo Valor unitário"
+                        + "\n\nInsira somente números decimais (exemplo: 1 ou 1.50) sem espaços. Letras e caracteres especiais não podem ser inseridos.");
+                return 0.0f;
+            }
+        }
+
+        private void trazerDadosProduto() {
+            this.inputNomeProduto.setText(p.getNome());
+            this.inputQuantidade.setText(String.valueOf(p.getQuantidade()));
+            this.inputValorUnitario.setText(String.valueOf(p.getValorUnitario()));
+            this.inputEstoque.setText(p.getNomeEstoque());
+            this.inputEspecificacaoTecnica.setText(p.getEspecificacaoTecnica());
+            this.soutEstoqueDisponivelSelecao.setSelectedItem(p.getNomeEstoque());
+        }
+    
+    private boolean naoSalvaVazio(Produto p){
+        if (p.getQuantidade() != 0 && p.getValorUnitario() != 0.0f
+                && !p.getNome().isEmpty() && !p.getNomeEstoque().isEmpty()
+                && !p.getEspecificacaoTecnica().isEmpty()) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    private void limpar() {
+        this.inputNomeProduto.setText("");
+        this.inputQuantidade.setText("");
+        this.inputValorUnitario.setText("");
+        this.inputEstoque.setText("");
+        this.inputEspecificacaoTecnica.setText("");
+        this.soutEstoqueDisponivelSelecao.setSelectedItem("");
         this.inputNomeProduto.requestFocus();
     }
     
@@ -264,6 +309,11 @@ public class EditarProduto extends javax.swing.JFrame {
 
         soutEstoqueDisponivelSelecao.setFont(new java.awt.Font("Consolas", 0, 14)); // NOI18N
         soutEstoqueDisponivelSelecao.setToolTipText("");
+        soutEstoqueDisponivelSelecao.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                soutEstoqueDisponivelSelecaoActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout DivBotoesProdutoLayout = new javax.swing.GroupLayout(DivBotoesProduto);
         DivBotoesProduto.setLayout(DivBotoesProdutoLayout);
@@ -381,7 +431,8 @@ public class EditarProduto extends javax.swing.JFrame {
     }//GEN-LAST:event_inputValorUnitarioActionPerformed
 
     private void inputEstoqueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputEstoqueActionPerformed
-        // TODO add your handling code here:
+        inputEstoque.setVisible(false);
+        soutEstoque.setVisible(false);
     }//GEN-LAST:event_inputEstoqueActionPerformed
 
     private void botaoVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoVoltarActionPerformed
@@ -393,36 +444,46 @@ public class EditarProduto extends javax.swing.JFrame {
         String nomeProduto = this.inputNomeProduto.getText();
         int quantidade = converterParaInteiro(this.inputQuantidade.getText());
         float valorUnitario = converterParaNumero(this.inputValorUnitario.getText());
-        String especificacaoTecnica = this.inputEspecificacaoTecnica.getText();
         String nomeEstoque = this.inputEstoque.getText();
+        String especificacaoTecnica = this.inputEspecificacaoTecnica.getText();
 
-        if (isFieldEmpty(nomeProduto) || quantidade == 0 || valorUnitario == 0.0f
-                || isFieldEmpty(especificacaoTecnica) || isFieldEmpty(nomeEstoque)) {
-            JOptionPane.showMessageDialog(this, "Produto tem que apresentar todos campos preenchidos!");
-            trazerDadosProduto();
-        } else {
-            int confirmar = JOptionPane.showConfirmDialog(this, "Você realmente deseja alterar os dados deste produto?",
-                    "Confirmar alteração",
-                    JOptionPane.YES_NO_OPTION);
+        Produto produtoEditado = new Produto(nomeProduto, quantidade, valorUnitario, nomeEstoque, especificacaoTecnica);
+        Estoque estoqueExistente = buscarEstoquePorNome(nomeEstoque);
+        String estoqueSelecionado = (String) soutEstoqueDisponivelSelecao.getSelectedItem();
 
-            if (confirmar == JOptionPane.YES_OPTION) {
-                p.setNome(nomeProduto);
-                p.setQuantidade(quantidade);
-                p.setValorUnitario(valorUnitario);
-                p.setEspecificacaoTecnica(especificacaoTecnica);
-                p.setNomeEstoque(nomeEstoque);
-
-                int index = soutEstoqueDisponivelSelecao.getSelectedIndex();
-                soutEstoqueDisponivelSelecao.removeItemAt(index);
-                soutEstoqueDisponivelSelecao.insertItemAt(nomeEstoque, index);
-                soutEstoqueDisponivelSelecao.setSelectedItem(nomeEstoque);
-
-                this.tela.atualizar();
+        if (!nomeEstoque.isEmpty() && !estoqueSelecionado.equals(nomeEstoque)) {
+            Estoque estoqueExistenteDoProdutoEditado = buscarEstoquePorNome(estoqueSelecionado);
+            if (estoqueExistenteDoProdutoEditado == null) {
+                JOptionPane.showMessageDialog(this, "O estoque selecionado não existe!");
+                return;
             } else {
-                trazerDadosProduto();
+                produtoEditado.setNomeEstoque(estoqueSelecionado);
             }
         }
+
+        int confirmar = JOptionPane.showConfirmDialog(this, "Você realmente deseja alterar os dados deste produto?",
+                "Confirmar alteração",
+                JOptionPane.YES_NO_OPTION);
+
+        if (confirmar == JOptionPane.YES_OPTION) {
+            if (naoSalvaVazio(produtoEditado)) {
+                Repositorio.produto.remove(p);
+                Repositorio.produto.add(produtoEditado);
+                JOptionPane.showMessageDialog(this, "Produto editado com sucesso!");
+                carregarProdutos();
+                new ListarProduto().setVisible(true);
+                this.dispose();
+            } else {
+                JOptionPane.showMessageDialog(this, "O produto deve apresentar todos os campos preenchidos corretamente!");
+            }
+        } else {
+            trazerDadosProduto();
+        }
     }//GEN-LAST:event_botaoSalvar1ActionPerformed
+
+    private void soutEstoqueDisponivelSelecaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_soutEstoqueDisponivelSelecaoActionPerformed
+        
+    }//GEN-LAST:event_soutEstoqueDisponivelSelecaoActionPerformed
 
     /**
      * @param args the command line arguments

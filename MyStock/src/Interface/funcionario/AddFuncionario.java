@@ -37,6 +37,25 @@ public class AddFuncionario extends javax.swing.JFrame {
         }
     }
     
+    private boolean verificarFuncionarioDuplicado(Funcionario novoFuncionario) {
+    for (Funcionario funcionario : Repositorio.funcionario) {
+        if (funcionario.getCpf().equals(novoFuncionario.getCpf())
+                && funcionario.getEmail().equals(novoFuncionario.getEmail())
+                && funcionario.getNome().equals(novoFuncionario.getNome())
+                && funcionario.getTelefone().equals(novoFuncionario.getTelefone())
+                && funcionario.getUf().equals(novoFuncionario.getUf())
+                && funcionario.getCidade().equals(novoFuncionario.getCidade())
+                && funcionario.getEndereco().equals(novoFuncionario.getEndereco())
+                && funcionario.getNumero().equals(novoFuncionario.getNumero())
+                && funcionario.getBairro().equals(novoFuncionario.getBairro())) {
+
+            return true;
+        }
+    }
+
+    return false;
+}
+    
     private void limpar() {
        
         this.inputNome.setText("");
@@ -508,13 +527,14 @@ public class AddFuncionario extends javax.swing.JFrame {
       
         Funcionario f = new Funcionario(nome, cpf, email, telefone, senha, UF, cidade, endereco, numero, bairro);
         
-        if(naoSalvaVazio(f)){
+        if (verificarFuncionarioDuplicado(f)) {
+            JOptionPane.showMessageDialog(this, "Funcionário com os mesmos dados já existe!");
+        } else if (naoSalvaVazio(f)) {
             Repositorio.funcionario.add(f);
-        
             JOptionPane.showMessageDialog(this, "Funcionário cadastrado com sucesso!");
             limpar();
         } else {
-            JOptionPane.showMessageDialog(this, "Funcionário tem que apresentar todos campos preenchidos corretamente!");
+            JOptionPane.showMessageDialog(this, "Funcionário tem que apresentar todos os campos preenchidos corretamente!");
         }
     }//GEN-LAST:event_botaoCadastrarActionPerformed
 

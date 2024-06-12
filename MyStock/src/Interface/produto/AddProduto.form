@@ -50,9 +50,9 @@
               <Component id="Header" max="32767" attributes="0"/>
               <Component id="Foother" max="32767" attributes="0"/>
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace pref="75" max="32767" attributes="0"/>
+                  <EmptySpace pref="60" max="32767" attributes="0"/>
                   <Component id="DivBotoesProduto" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="75" max="32767" attributes="0"/>
+                  <EmptySpace pref="60" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -60,7 +60,7 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <Component id="Header" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="55" max="32767" attributes="0"/>
+                  <EmptySpace pref="54" max="32767" attributes="0"/>
                   <Component id="DivBotoesProduto" max="32767" attributes="0"/>
                   <EmptySpace pref="55" max="32767" attributes="0"/>
                   <Component id="Foother" min="-2" max="-2" attributes="0"/>
@@ -199,8 +199,12 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
+                  <Group type="102" alignment="1" attributes="0">
                       <Group type="103" groupAlignment="1" attributes="0">
+                          <Group type="102" attributes="0">
+                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                              <Component id="checkBoxCriarEstoque" min="-2" max="-2" attributes="0"/>
+                          </Group>
                           <Group type="102" attributes="0">
                               <EmptySpace max="32767" attributes="0"/>
                               <Component id="botaoVoltar" min="-2" pref="65" max="-2" attributes="0"/>
@@ -230,14 +234,14 @@
                               </Group>
                           </Group>
                       </Group>
-                      <EmptySpace min="-2" pref="100" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="130" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace pref="44" max="32767" attributes="0"/>
+                      <EmptySpace pref="41" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="soutNomeProduto" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="inputNomeProduto" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -257,7 +261,9 @@
                           <Component id="soutEstoque" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="inputEstoque" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="40" max="32767" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Component id="checkBoxCriarEstoque" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="soutEstoqueDiponivel" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="soutEstoqueDisponivelSelecao" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -470,6 +476,14 @@
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
               </AuxValues>
+            </Component>
+            <Component class="javax.swing.JCheckBox" name="checkBoxCriarEstoque">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Criar estoque"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="checkBoxCriarEstoqueActionPerformed"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>

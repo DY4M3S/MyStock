@@ -6,6 +6,17 @@ package Interface.vendas;
 
 import Interface.MenuAdm;
 import Interface.cliente.AddCliente;
+import Repositorio.Repositorio;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.HashSet;
+import javax.swing.JOptionPane;
+import ModeloClasse.Produto;
+import ModeloClasse.Cliente;
+import ModeloClasse.Vendas;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 /**
  *
@@ -18,8 +29,94 @@ public class RegistrarVendas extends javax.swing.JFrame {
      */
     public RegistrarVendas() {
         initComponents();
+        carregarProdutos();
+        carregarClientes();
     }
 
+    private int converterParaInteiro(String numeroString) {
+        try {
+            int numeroInteiro = Integer.parseInt(numeroString);
+            return numeroInteiro;
+        } catch (NumberFormatException ex) {
+            JOptionPane.showMessageDialog(this, "Por favor, no campo Quantidade"
+                    + "\n\nInsira somente números inteiros sem espaços. Letras e caracteres especiais não podem ser inseridos.");
+            return 0;
+        }
+    }
+
+    private int converterNumPedido(String numPedidoString) {
+        try {
+            int numPedidoInteiro = Integer.parseInt(numPedidoString);
+            return numPedidoInteiro;
+        } catch (NumberFormatException ex) {
+            JOptionPane.showMessageDialog(this, "Por favor, insira somente números inteiros no campo Número do Pedido."
+                    + "\n\nLetras, caracteres especiais e espaços não são permitidos.");
+            return 0;
+        }
+    }
+
+    private float converterParaNumero(String numeroString) {
+        try {
+            float numeroFloat = Float.parseFloat(numeroString);
+            return numeroFloat;
+        } catch (NumberFormatException ex) {
+            JOptionPane.showMessageDialog(this, "Por favor, no campo Valor unitário"
+                    + "\n\nInsira somente números decimais( exemplo: 1 ou 1.50) sem espaços. Letras e caracteres especiais não podem ser inseridos.");
+            return 0.0f;
+        }
+    }
+
+    private Date converterParaData(String dataString) {
+        try {
+            SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+            Date data = formato.parse(dataString);
+            return data;
+        } catch (ParseException ex) {
+            JOptionPane.showMessageDialog(this, "Por favor, insira a data e hora no formato dd/MM/yyyy HH:mm:ss.");
+            return null;
+        }
+    }
+    
+    private void limpar() {
+        this.inputDataVenda.setText("");
+        this.inputEnderecoEntrega.setText("");
+        this.inputNumPedido.setText("");
+        this.inputQuantidade.setText("");
+        this.inputValorTotalPedido.setText("");
+        this.soutClienteDisponivelSelecao.setSelectedItem("");
+        this.soutProdutoDisponivelSelecao.setSelectedItem("");
+
+        this.inputNumPedido.requestFocus();
+    }
+
+    private boolean naoSalvaVazio(Vendas v) {
+        String dataVenda = inputDataVenda.getText();
+        String enderecoEntrega = inputEnderecoEntrega.getText();
+        String numPedido = inputNumPedido.getText();
+        String quantidade = inputQuantidade.getText();
+        String valorTotal = inputValorTotalPedido.getText();
+        String vendaSelecionada = (String) soutClienteDisponivelSelecao.getSelectedItem();
+        String produtoSelecionado = (String) soutProdutoDisponivelSelecao.getSelectedItem();
+
+        if (dataVenda.isEmpty() || enderecoEntrega.isEmpty() || numPedido.isEmpty() || quantidade.isEmpty() || valorTotal.isEmpty() || vendaSelecionada == null || vendaSelecionada.isEmpty() || produtoSelecionado == null || produtoSelecionado.isEmpty()) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+    public void carregarClientes() {
+        for (Cliente cliente : Repositorio.cliente) {
+            soutClienteDisponivelSelecao.addItem(cliente.getNome());
+        }
+    }
+
+    public void carregarProdutos() {
+        for (Produto produto : Repositorio.produto) {
+            soutProdutoDisponivelSelecao.addItem(produto.getNome());
+        }
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -44,16 +141,16 @@ public class RegistrarVendas extends javax.swing.JFrame {
         soutValorTotalPedido1 = new javax.swing.JLabel();
         inputNumPedido = new javax.swing.JTextField();
         inputValorTotalPedido = new javax.swing.JTextField();
-        inputNomeCliente = new javax.swing.JTextField();
         inputQuantidade = new javax.swing.JTextField();
         inputEnderecoEntrega = new javax.swing.JTextField();
         botaoVoltar = new javax.swing.JButton();
         botaoExcluir = new javax.swing.JButton();
         soutNomeProduto = new javax.swing.JLabel();
-        inputNomeProduto = new javax.swing.JTextField();
         botaoCadastrar = new javax.swing.JButton();
         soutDataVenda = new javax.swing.JLabel();
         inputDataVenda = new javax.swing.JTextField();
+        soutClienteDisponivelSelecao = new javax.swing.JComboBox<>();
+        soutProdutoDisponivelSelecao = new javax.swing.JComboBox<>();
         MenuCadastrar = new javax.swing.JMenuBar();
         CadastrarCliente = new javax.swing.JMenu();
         botaoCadastrarCliente = new javax.swing.JMenuItem();
@@ -155,13 +252,6 @@ public class RegistrarVendas extends javax.swing.JFrame {
             }
         });
 
-        inputNomeCliente.setFont(new java.awt.Font("Consolas", 0, 14)); // NOI18N
-        inputNomeCliente.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                inputNomeClienteActionPerformed(evt);
-            }
-        });
-
         inputQuantidade.setFont(new java.awt.Font("Consolas", 0, 14)); // NOI18N
         inputQuantidade.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -200,13 +290,6 @@ public class RegistrarVendas extends javax.swing.JFrame {
         soutNomeProduto.setFont(new java.awt.Font("Consolas", 0, 14)); // NOI18N
         soutNomeProduto.setText("Nome do produto:");
 
-        inputNomeProduto.setFont(new java.awt.Font("Consolas", 0, 14)); // NOI18N
-        inputNomeProduto.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                inputNomeProdutoActionPerformed(evt);
-            }
-        });
-
         botaoCadastrar.setBackground(new java.awt.Color(40, 203, 58));
         botaoCadastrar.setFont(new java.awt.Font("Consolas", 0, 14)); // NOI18N
         botaoCadastrar.setText("Cadastrar");
@@ -229,6 +312,15 @@ public class RegistrarVendas extends javax.swing.JFrame {
                 inputDataVendaActionPerformed(evt);
             }
         });
+
+        soutClienteDisponivelSelecao.setFont(new java.awt.Font("Consolas", 0, 14)); // NOI18N
+        soutClienteDisponivelSelecao.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                soutClienteDisponivelSelecaoActionPerformed(evt);
+            }
+        });
+
+        soutProdutoDisponivelSelecao.setFont(new java.awt.Font("Consolas", 0, 14)); // NOI18N
 
         javax.swing.GroupLayout DivBotoesRegistrarVendasLayout = new javax.swing.GroupLayout(DivBotoesRegistrarVendas);
         DivBotoesRegistrarVendas.setLayout(DivBotoesRegistrarVendasLayout);
@@ -255,13 +347,13 @@ public class RegistrarVendas extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addGroup(DivBotoesRegistrarVendasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(inputDataVenda, javax.swing.GroupLayout.DEFAULT_SIZE, 232, Short.MAX_VALUE)
-                            .addGroup(DivBotoesRegistrarVendasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(inputNumPedido, javax.swing.GroupLayout.DEFAULT_SIZE, 232, Short.MAX_VALUE)
-                                .addComponent(inputNomeCliente)
-                                .addComponent(inputQuantidade)
-                                .addComponent(inputValorTotalPedido)
-                                .addComponent(inputEnderecoEntrega)
-                                .addComponent(inputNomeProduto, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                            .addComponent(inputNumPedido, javax.swing.GroupLayout.DEFAULT_SIZE, 232, Short.MAX_VALUE)
+                            .addComponent(inputQuantidade)
+                            .addComponent(inputValorTotalPedido)
+                            .addComponent(inputEnderecoEntrega)
+                            .addGroup(DivBotoesRegistrarVendasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(soutProdutoDisponivelSelecao, javax.swing.GroupLayout.Alignment.LEADING, 0, 231, Short.MAX_VALUE)
+                                .addComponent(soutClienteDisponivelSelecao, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
                 .addContainerGap(120, Short.MAX_VALUE))
         );
         DivBotoesRegistrarVendasLayout.setVerticalGroup(
@@ -271,19 +363,19 @@ public class RegistrarVendas extends javax.swing.JFrame {
                 .addGroup(DivBotoesRegistrarVendasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(soutNúmeroPedido)
                     .addComponent(inputNumPedido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
                 .addGroup(DivBotoesRegistrarVendasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(soutNomeCliente)
-                    .addComponent(inputNomeCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                    .addComponent(soutClienteDisponivelSelecao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
                 .addGroup(DivBotoesRegistrarVendasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(soutNomeProduto)
-                    .addComponent(inputNomeProduto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(soutProdutoDisponivelSelecao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
                 .addGroup(DivBotoesRegistrarVendasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(inputQuantidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(soutQuantidade))
-                .addGap(18, 18, 18)
+                .addGap(18, 18, Short.MAX_VALUE)
                 .addGroup(DivBotoesRegistrarVendasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(soutValorTotalPedido1)
                     .addComponent(inputValorTotalPedido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -318,9 +410,9 @@ public class RegistrarVendas extends javax.swing.JFrame {
             DivRegistrarVendasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, DivRegistrarVendasLayout.createSequentialGroup()
                 .addComponent(Header, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
                 .addComponent(DivBotoesRegistrarVendas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
                 .addComponent(Foother, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -371,10 +463,6 @@ public class RegistrarVendas extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_inputNumPedidoActionPerformed
 
-    private void inputNomeClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputNomeClienteActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_inputNomeClienteActionPerformed
-
     private void inputQuantidadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputQuantidadeActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_inputQuantidadeActionPerformed
@@ -383,22 +471,42 @@ public class RegistrarVendas extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_inputEnderecoEntregaActionPerformed
 
-    private void inputNomeProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputNomeProdutoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_inputNomeProdutoActionPerformed
-
     private void botaoCadastrarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoCadastrarClienteActionPerformed
         new AddCliente().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_botaoCadastrarClienteActionPerformed
 
     private void botaoCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoCadastrarActionPerformed
-
+        Date dataVenda = converterParaData(inputDataVenda.getText());
+        String enderecoEntrega = inputEnderecoEntrega.getText();
+        int numeroPedido = converterNumPedido(inputNumPedido.getText());
+        int quantidade = converterParaInteiro(inputQuantidade.getText());
+        float valorTotal = converterParaNumero(inputValorTotalPedido.getText());
+        String cliente = soutClienteDisponivelSelecao.getName();
+        String produto = soutProdutoDisponivelSelecao.getName();
+        
+        Vendas v = new Vendas(cliente,numeroPedido,produto,dataVenda,quantidade,valorTotal,enderecoEntrega);
+        
+        if(naoSalvaVazio(v)){
+            Repositorio.vendas.add(v);
+            JOptionPane.showMessageDialog(this, "Pedido cadastrado com sucesso!");
+            limpar();
+            carregarProdutos();
+            carregarClientes();
+            new RegistrarVendas().setVisible(true);
+            this.dispose();
+        } else {
+            JOptionPane.showMessageDialog(this, "O pedido deve apresentar todos os campos preenchidos corretamente!");
+        }
     }//GEN-LAST:event_botaoCadastrarActionPerformed
 
     private void inputDataVendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputDataVendaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_inputDataVendaActionPerformed
+
+    private void soutClienteDisponivelSelecaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_soutClienteDisponivelSelecaoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_soutClienteDisponivelSelecaoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -458,16 +566,16 @@ public class RegistrarVendas extends javax.swing.JFrame {
     private javax.swing.JLabel c;
     private javax.swing.JTextField inputDataVenda;
     private javax.swing.JTextField inputEnderecoEntrega;
-    private javax.swing.JTextField inputNomeCliente;
-    private javax.swing.JTextField inputNomeProduto;
     private javax.swing.JTextField inputNumPedido;
     private javax.swing.JTextField inputQuantidade;
     private javax.swing.JTextField inputValorTotalPedido;
     private javax.swing.JLabel logo;
+    private javax.swing.JComboBox<String> soutClienteDisponivelSelecao;
     private javax.swing.JLabel soutDataVenda;
     private javax.swing.JLabel soutNomeCliente;
     private javax.swing.JLabel soutNomeProduto;
     private javax.swing.JLabel soutNúmeroPedido;
+    private javax.swing.JComboBox<String> soutProdutoDisponivelSelecao;
     private javax.swing.JLabel soutQuantidade;
     private javax.swing.JLabel soutValorTotalPedido;
     private javax.swing.JLabel soutValorTotalPedido1;

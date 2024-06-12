@@ -6,7 +6,7 @@ package Interface;
 
 import ModeloClasse.Administrador;
 import ModeloClasse.Funcionario;
-import javax.swing.JCheckBox;
+import Repositorio.Repositorio;
 import javax.swing.JOptionPane;
 
 /**
@@ -242,12 +242,12 @@ public class Login extends javax.swing.JFrame {
     private void botaoLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoLoginActionPerformed
             String email = inputEmail.getText();
             String senha = new String(inputSenha.getPassword());
-            
-            Administrador adm = new Administrador(true,"adm@MyStock.com","adm123");
-            
+           
             Funcionario fun = new Funcionario("a","a");
             
-        if (adm != null && adm.getEmail().equals(email) && checkAdm.isSelected() && adm.getSenha().equals(senha)) {
+        if (Repositorio.administrador.get(0) != null && 
+                Repositorio.administrador.get(0).getEmail().equals(email) &&
+                checkAdm.isSelected() && Repositorio.administrador.get(0).getSenha().equals(senha)) {
             JOptionPane.showMessageDialog(this, "Login bem-sucedido!");
             new MenuAdm().setVisible(true);
             this.dispose();

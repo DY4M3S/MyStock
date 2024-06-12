@@ -5,6 +5,7 @@ import java.util.List;
 public class Estoque {
     private int id;
     private String nome;
+    private List<Produto> produtos;
 
     public Estoque(String nome) {
         this.nome = nome;
@@ -30,7 +31,7 @@ public class Estoque {
     public void setNome(String nome) {
         this.nome = nome;
     }
-
+    
     @Override
     public String toString() {
         return "Estoque{" + "id=" + id + ", nome=" + nome + '}';

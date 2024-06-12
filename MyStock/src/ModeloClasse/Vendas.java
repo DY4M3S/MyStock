@@ -1,18 +1,26 @@
 package ModeloClasse;
 
-import java.time.*;
 import java.util.Date;
-import java.util.List;
 
 public class Vendas {
     private int id;
-    private List<Cliente> cliente;
+    private String cliente;
     private int numeroPedido;
-    private List<Produto> produto;
+    private String produto;
     private Date data;
     private int quantidade;
     private float valorTotalDaVenda;
     private String enderecoDeEntrega;
+
+    public Vendas(String cliente, int numeroPedido, String produto, Date data, int quantidade, float valorTotalDaVenda, String enderecoDeEntrega) {
+        this.cliente = cliente;
+        this.numeroPedido = numeroPedido;
+        this.produto = produto;
+        this.data = data;
+        this.quantidade = quantidade;
+        this.valorTotalDaVenda = valorTotalDaVenda;
+        this.enderecoDeEntrega = enderecoDeEntrega;
+    }
 
     public int getId() {
         return id;
@@ -22,11 +30,11 @@ public class Vendas {
         this.id = id;
     }
 
-    public List<Cliente> getCliente() {
+    public String getCliente() {
         return cliente;
     }
 
-    public void setCliente(List<Cliente> cliente) {
+    public void setCliente(String cliente) {
         this.cliente = cliente;
     }
 
@@ -38,11 +46,11 @@ public class Vendas {
         this.numeroPedido = numeroPedido;
     }
 
-    public List<Produto> getProduto() {
+    public String getProduto() {
         return produto;
     }
 
-    public void setProduto(List<Produto> produto) {
+    public void setProduto(String produto) {
         this.produto = produto;
     }
 
@@ -80,7 +88,6 @@ public class Vendas {
 
     @Override
     public String toString() {
-        return "Vendas{" + "id=" + id + ", cliente=" + cliente + ", numeroPedido=" + numeroPedido + ", produto=" + produto + ", data=" + data + ", quantidade=" + quantidade + ", valorTotalDaVenda=" + valorTotalDaVenda + ", enderecoDeEntrega=" + enderecoDeEntrega + '}';
+        return "Vendas{" + "cliente=" + cliente + ", numeroPedido=" + numeroPedido + ", produto=" + produto + ", data=" + data + ", quantidade=" + quantidade + ", valorTotalDaVenda=" + valorTotalDaVenda + ", enderecoDeEntrega=" + enderecoDeEntrega + '}';
     }
-    
 }

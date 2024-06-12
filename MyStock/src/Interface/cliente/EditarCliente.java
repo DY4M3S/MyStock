@@ -14,9 +14,10 @@ import javax.swing.JOptionPane;
  * @author Jason
  */
 public class EditarCliente extends javax.swing.JFrame {
+
     private ListarCliente tela;
     private Cliente cl;
-    
+
     /**
      * Creates new form EditarCliente
      */
@@ -26,21 +27,18 @@ public class EditarCliente extends javax.swing.JFrame {
         initComponents();
         trazerDadosCliente();
     }
-    
-     private Long converterParaNumero(String numeroString){
-        
+
+    private Long converterParaNumero(String numeroString) {
         try {
             Long numeroLong = Long.parseLong(numeroString);
-            
             return numeroLong;
-        } catch (NumberFormatException  ex) {
-            
+        } catch (NumberFormatException ex) {
             JOptionPane.showMessageDialog(this, "Por favor, nos campos Telefone e Número"
                     + "\n\nInsira somente números sem espaços. Letras e caracteres especiais não podem ser inseridos.");
             return 0L;
         }
     }
-     
+
     private void trazerDadosCliente() {
         this.inputNome.setText(cl.getNome());
         this.inputCpf.setText(cl.getCpf());
@@ -54,16 +52,31 @@ public class EditarCliente extends javax.swing.JFrame {
 
         this.inputNome.requestFocus();
     }
+
+    private boolean verificarClienteDuplicado(Cliente clienteEditado) {
+        for (Cliente cliente : Repositorio.cliente) {
+            if (cliente != cl
+                    && cliente.getNome().equals(clienteEditado.getNome())
+                    && cliente.getCpf().equals(clienteEditado.getCpf())
+                    && cliente.getEmail().equals(clienteEditado.getEmail())
+                    && cliente.getTelefone().equals(clienteEditado.getTelefone())
+                    && cliente.getUf().equals(clienteEditado.getUf())
+                    && cliente.getCidade().equals(clienteEditado.getCidade())
+                    && cliente.getEndereco().equals(clienteEditado.getEndereco())
+                    && cliente.getNumero().equals(clienteEditado.getNumero())
+                    && cliente.getBairro().equals(clienteEditado.getBairro())) {
+                return true;
+            }
+        }
+        return false;
+    }
     
     private static boolean isFieldEmpty(String field) {
         return field == null || field.trim().isEmpty();
     }
-    
+
     private static boolean isFieldEmpty(Long field) {
-        if(field == 0 || field == null){
-             return true;
-        }
-        return false;
+        return field == 0 || field == null;
     }
 
     /**
@@ -468,29 +481,36 @@ public class EditarCliente extends javax.swing.JFrame {
         String uf = this.inputUf.getText();
         
         if (isFieldEmpty(nome) || isFieldEmpty(cpf) || isFieldEmpty(email) || telefone == 0L ||
-        isFieldEmpty(endereco) || numero == 0L || isFieldEmpty(bairro) || isFieldEmpty(cidade) ||
-        isFieldEmpty(uf)){
+            isFieldEmpty(endereco) || numero == 0L || isFieldEmpty(bairro) || isFieldEmpty(cidade) ||
+            isFieldEmpty(uf)) {
             JOptionPane.showMessageDialog(this, "Cliente tem que apresentar todos campos preenchidos!");
             trazerDadosCliente();
         } else {
-        int confirmar = JOptionPane.showConfirmDialog(this, "Você realmente deseja alterar os dados deste cliente?",
-                "Confirmar alteração",
-                JOptionPane.YES_NO_OPTION);    
-            
-            if (confirmar == JOptionPane.YES_OPTION) {
-                cl.setNome(this.inputNome.getText());
-                cl.setCpf(this.inputCpf.getText());
-                cl.setEmail(this.inputEmail.getText());
-                cl.setTelefone(telefone);
-                cl.setEndereco(this.inputEndereco.getText());
-                cl.setNumero(numero);
-                cl.setBairro(this.inputBairro.getText());
-                cl.setCidade(this.inputCidade.getText());
-                cl.setUf(this.inputUf.getText());
+            Cliente clienteEditado = new Cliente(nome, cpf, email, telefone, uf, cidade, endereco, numero, bairro);
 
-                this.tela.atualizar();
-            } else {
+            if (verificarClienteDuplicado(clienteEditado)) {
+                JOptionPane.showMessageDialog(this, "Cliente com os mesmos dados já existe!");
                 trazerDadosCliente();
+            } else {
+                int confirmar = JOptionPane.showConfirmDialog(this, "Você realmente deseja alterar os dados deste cliente?",
+                        "Confirmar alteração",
+                        JOptionPane.YES_NO_OPTION);
+                
+                if (confirmar == JOptionPane.YES_OPTION) {
+                    cl.setNome(nome);
+                    cl.setCpf(cpf);
+                    cl.setEmail(email);
+                    cl.setTelefone(telefone);
+                    cl.setEndereco(endereco);
+                    cl.setNumero(numero);
+                    cl.setBairro(bairro);
+                    cl.setCidade(cidade);
+                    cl.setUf(uf);
+
+                    this.tela.atualizar();
+                } else {
+                    trazerDadosCliente();
+                }
             }
         }
     }//GEN-LAST:event_botaoSalvarActionPerformed

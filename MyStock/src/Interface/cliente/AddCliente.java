@@ -64,6 +64,23 @@ public class AddCliente extends javax.swing.JFrame {
             return false;
         }
 }
+    
+    private boolean verificarClienteDuplicado(Cliente novoCliente) {
+        for (Cliente cliente : Repositorio.cliente) {
+            if (cliente.getNome().equals(novoCliente.getNome())
+                    && cliente.getCpf().equals(novoCliente.getCpf())
+                    && cliente.getEmail().equals(novoCliente.getEmail())
+                    && cliente.getTelefone().equals(novoCliente.getTelefone())
+                    && cliente.getUf().equals(novoCliente.getUf())
+                    && cliente.getCidade().equals(novoCliente.getCidade())
+                    && cliente.getEndereco().equals(novoCliente.getEndereco())
+                    && cliente.getNumero().equals(novoCliente.getNumero())
+                    && cliente.getBairro().equals(novoCliente.getBairro())) {
+                return true;
+            }
+        }
+        return false;
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -487,11 +504,14 @@ public class AddCliente extends javax.swing.JFrame {
         
         Cliente c = new Cliente(nome, cpf, email, telefone, UF, cidade, endereco, numero, bairro);
         
-         if(naoSalvaVazio(c)){
-            Repositorio.cliente.add(c);
-        
-            JOptionPane.showMessageDialog(this, "Cliente cadastrado com sucesso!");
-            limpar();
+         if (naoSalvaVazio(c)) {
+            if (verificarClienteDuplicado(c)) {
+                JOptionPane.showMessageDialog(this, "Cliente com os mesmos dados já existe!");
+            } else {
+                Repositorio.cliente.add(c);
+                JOptionPane.showMessageDialog(this, "Cliente cadastrado com sucesso!");
+                limpar();
+            }
         } else {
             JOptionPane.showMessageDialog(this, "Cliente tem que apresentar todos campos preenchidos corretamente!");
         }

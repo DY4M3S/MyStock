@@ -7,10 +7,10 @@ package Interface.produto;
 import Interface.MenuAdm;
 import ModeloClasse.Estoque;
 import ModeloClasse.Produto;
-import ModeloClasse.Vendas;
 import Repositorio.Repositorio;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.HashSet;
-import java.util.List;
 import javax.swing.JOptionPane;
 
 /**
@@ -27,36 +27,38 @@ public class AddProduto extends javax.swing.JFrame {
         carregarProdutos();
         limpar();
     }
-    
+
     private Estoque buscarEstoquePorNome(String nomeEstoque) {
-    for (Estoque e : Repositorio.estoque) {
-        if (e.getNome().equals(nomeEstoque)) {
-            return e;
+        for (Estoque e : Repositorio.estoque) {
+            if (e.getNome().equals(nomeEstoque)) {
+                return e;
+            }
         }
+        return null;
     }
-    return null;
-}
-     private boolean existeEsoque(String nomeEstoque) {
-    for (Estoque e : Repositorio.estoque) {
-        if (e.getNome().equals(nomeEstoque)) {
-            return true;
+
+    private boolean existeEsoque(String nomeEstoque) {
+        for (Estoque e : Repositorio.estoque) {
+            if (e.getNome().equals(nomeEstoque)) {
+                return true;
+            }
         }
+        return false;
     }
-    return false;
-}
-    
+
     public void carregarProdutos() {
-        HashSet<String> nomesEstoque = new HashSet<>(); 
+        HashSet<String> nomesEstoque = new HashSet<>();
 
         for (Produto p : Repositorio.produto) {
             String nomeEstoque = p.getNomeEstoque();
-           
+
             if (!nomesEstoque.contains(nomeEstoque)) {
                 this.soutEstoqueDisponivelSelecao.addItem(nomeEstoque);
                 nomesEstoque.add(nomeEstoque);
             }
         }
     }
+
     private int converterParaInteiro(String numeroString) {
         try {
             int numeroInteiro = Integer.parseInt(numeroString);
@@ -67,7 +69,7 @@ public class AddProduto extends javax.swing.JFrame {
             return 0;
         }
     }
-    
+
     private float converterParaNumero(String numeroString) {
         try {
             float numeroFloat = Float.parseFloat(numeroString);
@@ -77,8 +79,8 @@ public class AddProduto extends javax.swing.JFrame {
                     + "\n\nInsira somente números decimais( exemplo: 1 ou 1.50) sem espaços. Letras e caracteres especiais não podem ser inseridos.");
             return 0.0f;
         }
-}
-    
+    }
+
     private void limpar() {
         this.inputNomeProduto.setText("");
         this.inputQuantidade.setText("");
@@ -86,12 +88,11 @@ public class AddProduto extends javax.swing.JFrame {
         this.inputEstoque.setText("");
         this.inputEspecificacaoTecnica.setText("");
         this.soutEstoqueDisponivelSelecao.setSelectedItem("");
-        
+
         this.inputNomeProduto.requestFocus();
     }
-        
-     private boolean naoSalvaVazio(Produto p){
-         System.out.println(p);
+
+    private boolean naoSalvaVazio(Produto p) {
         if (p.getQuantidade() != 0 && p.getValorUnitario() != 0.0f
                 && !p.getNome().isEmpty() && !p.getNomeEstoque().isEmpty()
                 && !p.getEspecificacaoTecnica().isEmpty()) {
@@ -99,9 +100,9 @@ public class AddProduto extends javax.swing.JFrame {
         } else {
             return false;
         }
-        
+
     }
-    
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -135,6 +136,7 @@ public class AddProduto extends javax.swing.JFrame {
         botaoCadastrar1 = new javax.swing.JButton();
         soutEstoqueDiponivel = new javax.swing.JLabel();
         soutEstoqueDisponivelSelecao = new javax.swing.JComboBox<>();
+        checkBoxCriarEstoque = new javax.swing.JCheckBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Produto");
@@ -299,12 +301,22 @@ public class AddProduto extends javax.swing.JFrame {
             }
         });
 
+        checkBoxCriarEstoque.setText("Criar estoque");
+        checkBoxCriarEstoque.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                checkBoxCriarEstoqueActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout DivBotoesProdutoLayout = new javax.swing.GroupLayout(DivBotoesProduto);
         DivBotoesProduto.setLayout(DivBotoesProdutoLayout);
         DivBotoesProdutoLayout.setHorizontalGroup(
             DivBotoesProdutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(DivBotoesProdutoLayout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, DivBotoesProdutoLayout.createSequentialGroup()
                 .addGroup(DivBotoesProdutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(DivBotoesProdutoLayout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(checkBoxCriarEstoque))
                     .addGroup(DivBotoesProdutoLayout.createSequentialGroup()
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(botaoVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -329,12 +341,12 @@ public class AddProduto extends javax.swing.JFrame {
                             .addComponent(inputEstoque)
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 445, Short.MAX_VALUE)
                             .addComponent(soutEstoqueDisponivelSelecao, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addGap(100, 100, 100))
+                .addGap(130, 130, 130))
         );
         DivBotoesProdutoLayout.setVerticalGroup(
             DivBotoesProdutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(DivBotoesProdutoLayout.createSequentialGroup()
-                .addContainerGap(44, Short.MAX_VALUE)
+                .addContainerGap(41, Short.MAX_VALUE)
                 .addGroup(DivBotoesProdutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(soutNomeProduto)
                     .addComponent(inputNomeProduto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -350,7 +362,9 @@ public class AddProduto extends javax.swing.JFrame {
                 .addGroup(DivBotoesProdutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(soutEstoque)
                     .addComponent(inputEstoque, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(checkBoxCriarEstoque)
+                .addGap(18, 18, 18)
                 .addGroup(DivBotoesProdutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(soutEstoqueDiponivel)
                     .addComponent(soutEstoqueDisponivelSelecao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -376,15 +390,15 @@ public class AddProduto extends javax.swing.JFrame {
             .addComponent(Header, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(Foother, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(DivMenuProdutoLayout.createSequentialGroup()
-                .addContainerGap(75, Short.MAX_VALUE)
+                .addContainerGap(60, Short.MAX_VALUE)
                 .addComponent(DivBotoesProduto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(75, Short.MAX_VALUE))
+                .addContainerGap(60, Short.MAX_VALUE))
         );
         DivMenuProdutoLayout.setVerticalGroup(
             DivMenuProdutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(DivMenuProdutoLayout.createSequentialGroup()
                 .addComponent(Header, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 55, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 54, Short.MAX_VALUE)
                 .addComponent(DivBotoesProduto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 55, Short.MAX_VALUE)
                 .addComponent(Foother, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -440,28 +454,32 @@ public class AddProduto extends javax.swing.JFrame {
 
         Produto p = new Produto(nomeProduto, quantidade, valorUnitario, nomeEstoque, especificacaoTecnica);
 
-        Estoque estoqueExistente = buscarEstoquePorNome(nomeEstoque);
-        
-        String estoqueSelecionado = (String) soutEstoqueDisponivelSelecao.getSelectedItem();
+        String nomeEstoqueSelecionado = (String) soutEstoqueDisponivelSelecao.getSelectedItem();
+        String nomeEstoqueNovo = inputEstoque.getText();
 
-        if (nomeEstoque.isEmpty() && !estoqueSelecionado.isEmpty() && estoqueSelecionado != null) {
-            p.setNomeEstoque(estoqueSelecionado);
-        } else {
-            if (!nomeEstoque.isEmpty() && estoqueExistente == null) {
-                Estoque novoEstoque = new Estoque(nomeEstoque);
-                Repositorio.estoque.add(novoEstoque);
-            } else if (existeEsoque(estoqueExistente.getNome())) {
+        if (checkBoxCriarEstoque.isSelected()) {
+            if (nomeEstoqueNovo.isEmpty()) {
+                JOptionPane.showMessageDialog(this, "Por favor, insira o nome do novo estoque.");
+                return;
+            }
+            if (existeEsoque(nomeEstoqueNovo)) {
                 JOptionPane.showMessageDialog(this, "Já existe um estoque com esse nome!");
                 return;
             }
+            Estoque novoEstoque = new Estoque(nomeEstoqueNovo);
+            Repositorio.estoque.add(novoEstoque);
+        } else {
+            if (nomeEstoqueSelecionado == null || nomeEstoqueSelecionado.isEmpty()) {
+                JOptionPane.showMessageDialog(this, "Por favor, selecione um estoque existente ou crie um novo.");
+                return;
+            }
+            p.setNomeEstoque(nomeEstoqueSelecionado);
         }
 
         if (naoSalvaVazio(p)) {
             Repositorio.produto.add(p);
-
             JOptionPane.showMessageDialog(this, "Produto cadastrado com sucesso!");
             limpar();
-            
             carregarProdutos();
             new AddProduto().setVisible(true);
             this.dispose();
@@ -473,6 +491,18 @@ public class AddProduto extends javax.swing.JFrame {
     private void soutEstoqueDisponivelSelecaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_soutEstoqueDisponivelSelecaoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_soutEstoqueDisponivelSelecaoActionPerformed
+
+    private void checkBoxCriarEstoqueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkBoxCriarEstoqueActionPerformed
+        checkBoxCriarEstoque.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                if (checkBoxCriarEstoque.isSelected()) {
+                    inputEstoque.setEditable(true);
+                } else {
+                    inputEstoque.setEditable(false);
+                }
+            }
+        });
+    }//GEN-LAST:event_checkBoxCriarEstoqueActionPerformed
 
     /**
      * @param args the command line arguments
@@ -527,6 +557,7 @@ public class AddProduto extends javax.swing.JFrame {
     private javax.swing.JButton botaoListar;
     private javax.swing.JButton botaoVoltar;
     private javax.swing.JLabel c;
+    private javax.swing.JCheckBox checkBoxCriarEstoque;
     private javax.swing.JTextArea inputEspecificacaoTecnica;
     private javax.swing.JTextField inputEstoque;
     private javax.swing.JTextField inputNomeProduto;

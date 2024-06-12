@@ -41,15 +41,15 @@ public class EditarRegistrarVendas extends javax.swing.JFrame {
         soutValorTotalPedido1 = new javax.swing.JLabel();
         inputNumPedido = new javax.swing.JTextField();
         inputValorTotalPedido = new javax.swing.JTextField();
-        inputNomeCliente = new javax.swing.JTextField();
         inputQuantidade = new javax.swing.JTextField();
         inputEnderecoEntrega = new javax.swing.JTextField();
         botaoVoltar = new javax.swing.JButton();
         soutNomeProduto = new javax.swing.JLabel();
-        inputNomeProduto = new javax.swing.JTextField();
         botaoSalvar = new javax.swing.JButton();
         soutDataVenda = new javax.swing.JLabel();
         inputDataVenda = new javax.swing.JTextField();
+        soutClienteDisponivelSelecao = new javax.swing.JComboBox<>();
+        soutProdutoDisponivelSelecao = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Editar vendas");
@@ -149,13 +149,6 @@ public class EditarRegistrarVendas extends javax.swing.JFrame {
             }
         });
 
-        inputNomeCliente.setFont(new java.awt.Font("Consolas", 0, 14)); // NOI18N
-        inputNomeCliente.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                inputNomeClienteActionPerformed(evt);
-            }
-        });
-
         inputQuantidade.setFont(new java.awt.Font("Consolas", 0, 14)); // NOI18N
         inputQuantidade.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -183,13 +176,6 @@ public class EditarRegistrarVendas extends javax.swing.JFrame {
         soutNomeProduto.setFont(new java.awt.Font("Consolas", 0, 14)); // NOI18N
         soutNomeProduto.setText("Nome do produto:");
 
-        inputNomeProduto.setFont(new java.awt.Font("Consolas", 0, 14)); // NOI18N
-        inputNomeProduto.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                inputNomeProdutoActionPerformed(evt);
-            }
-        });
-
         botaoSalvar.setBackground(new java.awt.Color(40, 203, 58));
         botaoSalvar.setFont(new java.awt.Font("Consolas", 0, 14)); // NOI18N
         botaoSalvar.setText("Salvar");
@@ -212,6 +198,15 @@ public class EditarRegistrarVendas extends javax.swing.JFrame {
                 inputDataVendaActionPerformed(evt);
             }
         });
+
+        soutClienteDisponivelSelecao.setFont(new java.awt.Font("Consolas", 0, 14)); // NOI18N
+        soutClienteDisponivelSelecao.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                soutClienteDisponivelSelecaoActionPerformed(evt);
+            }
+        });
+
+        soutProdutoDisponivelSelecao.setFont(new java.awt.Font("Consolas", 0, 14)); // NOI18N
 
         javax.swing.GroupLayout DivBotoesRegistrarVendasLayout = new javax.swing.GroupLayout(DivBotoesRegistrarVendas);
         DivBotoesRegistrarVendas.setLayout(DivBotoesRegistrarVendasLayout);
@@ -236,13 +231,12 @@ public class EditarRegistrarVendas extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addGroup(DivBotoesRegistrarVendasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(inputDataVenda, javax.swing.GroupLayout.DEFAULT_SIZE, 232, Short.MAX_VALUE)
-                            .addGroup(DivBotoesRegistrarVendasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(inputNumPedido, javax.swing.GroupLayout.DEFAULT_SIZE, 232, Short.MAX_VALUE)
-                                .addComponent(inputNomeCliente)
-                                .addComponent(inputQuantidade)
-                                .addComponent(inputValorTotalPedido)
-                                .addComponent(inputEnderecoEntrega)
-                                .addComponent(inputNomeProduto, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                            .addComponent(inputNumPedido, javax.swing.GroupLayout.DEFAULT_SIZE, 232, Short.MAX_VALUE)
+                            .addComponent(inputQuantidade)
+                            .addComponent(inputValorTotalPedido)
+                            .addComponent(inputEnderecoEntrega)
+                            .addComponent(soutClienteDisponivelSelecao, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(soutProdutoDisponivelSelecao, 0, 232, Short.MAX_VALUE))))
                 .addContainerGap(120, Short.MAX_VALUE))
         );
         DivBotoesRegistrarVendasLayout.setVerticalGroup(
@@ -252,14 +246,14 @@ public class EditarRegistrarVendas extends javax.swing.JFrame {
                 .addGroup(DivBotoesRegistrarVendasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(soutNúmeroPedido)
                     .addComponent(inputNumPedido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
                 .addGroup(DivBotoesRegistrarVendasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(soutNomeCliente)
-                    .addComponent(inputNomeCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                    .addComponent(soutClienteDisponivelSelecao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
                 .addGroup(DivBotoesRegistrarVendasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(soutNomeProduto)
-                    .addComponent(inputNomeProduto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(soutProdutoDisponivelSelecao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
                 .addGroup(DivBotoesRegistrarVendasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(inputQuantidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -312,50 +306,46 @@ public class EditarRegistrarVendas extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(DivGerenciarVendas, javax.swing.GroupLayout.DEFAULT_SIZE, 709, Short.MAX_VALUE)
+            .addComponent(DivGerenciarVendas, javax.swing.GroupLayout.DEFAULT_SIZE, 712, Short.MAX_VALUE)
         );
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void inputNumPedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputNumPedidoActionPerformed
+    private void inputDataVendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputDataVendaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_inputNumPedidoActionPerformed
-
-    private void inputValorTotalPedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputValorTotalPedidoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_inputValorTotalPedidoActionPerformed
-
-    private void inputNomeClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputNomeClienteActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_inputNomeClienteActionPerformed
-
-    private void inputQuantidadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputQuantidadeActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_inputQuantidadeActionPerformed
-
-    private void inputEnderecoEntregaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputEnderecoEntregaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_inputEnderecoEntregaActionPerformed
-
-    private void botaoVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoVoltarActionPerformed
-        new ListarRegistrarVendas().setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_botaoVoltarActionPerformed
-
-    private void inputNomeProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputNomeProdutoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_inputNomeProdutoActionPerformed
+    }//GEN-LAST:event_inputDataVendaActionPerformed
 
     private void botaoSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoSalvarActionPerformed
 
         //this.inputEmail.equals(inputEmail.getText());
     }//GEN-LAST:event_botaoSalvarActionPerformed
 
-    private void inputDataVendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputDataVendaActionPerformed
+    private void botaoVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoVoltarActionPerformed
+        new ListarRegistrarVendas().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_botaoVoltarActionPerformed
+
+    private void inputEnderecoEntregaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputEnderecoEntregaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_inputDataVendaActionPerformed
+    }//GEN-LAST:event_inputEnderecoEntregaActionPerformed
+
+    private void inputQuantidadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputQuantidadeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_inputQuantidadeActionPerformed
+
+    private void inputValorTotalPedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputValorTotalPedidoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_inputValorTotalPedidoActionPerformed
+
+    private void inputNumPedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputNumPedidoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_inputNumPedidoActionPerformed
+
+    private void soutClienteDisponivelSelecaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_soutClienteDisponivelSelecaoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_soutClienteDisponivelSelecaoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -405,16 +395,16 @@ public class EditarRegistrarVendas extends javax.swing.JFrame {
     private javax.swing.JLabel c;
     private javax.swing.JTextField inputDataVenda;
     private javax.swing.JTextField inputEnderecoEntrega;
-    private javax.swing.JTextField inputNomeCliente;
-    private javax.swing.JTextField inputNomeProduto;
     private javax.swing.JTextField inputNumPedido;
     private javax.swing.JTextField inputQuantidade;
     private javax.swing.JTextField inputValorTotalPedido;
     private javax.swing.JLabel logo;
+    private javax.swing.JComboBox<String> soutClienteDisponivelSelecao;
     private javax.swing.JLabel soutDataVenda;
     private javax.swing.JLabel soutNomeCliente;
     private javax.swing.JLabel soutNomeProduto;
     private javax.swing.JLabel soutNúmeroPedido;
+    private javax.swing.JComboBox<String> soutProdutoDisponivelSelecao;
     private javax.swing.JLabel soutQuantidade;
     private javax.swing.JLabel soutValorTotalPedido;
     private javax.swing.JLabel soutValorTotalPedido1;
