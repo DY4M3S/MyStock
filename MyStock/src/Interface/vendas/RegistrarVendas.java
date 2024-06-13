@@ -7,15 +7,12 @@ package Interface.vendas;
 import Interface.MenuAdm;
 import Interface.cliente.AddCliente;
 import Repositorio.Repositorio;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.util.HashSet;
 import javax.swing.JOptionPane;
 import ModeloClasse.Produto;
 import ModeloClasse.Cliente;
 import ModeloClasse.Vendas;
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
+import java.text.SimpleDateFormat; 
 import java.util.Date;
 
 /**
@@ -88,6 +85,16 @@ public class RegistrarVendas extends javax.swing.JFrame {
 
         this.inputNumPedido.requestFocus();
     }
+    
+     private boolean verificarVendasDuplicadas(Vendas novaVendas) {
+            System.out.println(novaVendas);
+            for (Vendas v : Repositorio.vendas) {
+            if (v.getNumeroPedido() == novaVendas.getNumeroPedido()) {
+                return true;
+            }
+        }
+        return false;
+    }
 
     private boolean naoSalvaVazio(Vendas v) {
         String dataVenda = inputDataVenda.getText();
@@ -95,10 +102,10 @@ public class RegistrarVendas extends javax.swing.JFrame {
         String numPedido = inputNumPedido.getText();
         String quantidade = inputQuantidade.getText();
         String valorTotal = inputValorTotalPedido.getText();
-        String vendaSelecionada = (String) soutClienteDisponivelSelecao.getSelectedItem();
+        String clienteSelecionada = (String) soutClienteDisponivelSelecao.getSelectedItem();
         String produtoSelecionado = (String) soutProdutoDisponivelSelecao.getSelectedItem();
 
-        if (dataVenda.isEmpty() || enderecoEntrega.isEmpty() || numPedido.isEmpty() || quantidade.isEmpty() || valorTotal.isEmpty() || vendaSelecionada == null || vendaSelecionada.isEmpty() || produtoSelecionado == null || produtoSelecionado.isEmpty()) {
+        if (dataVenda.isEmpty() || enderecoEntrega.isEmpty() || numPedido.equalsIgnoreCase("0") || quantidade.equalsIgnoreCase("0") || valorTotal.equalsIgnoreCase("0") || clienteSelecionada == null || clienteSelecionada.isEmpty() || produtoSelecionado == null || produtoSelecionado.isEmpty()) {
             return false;
         } else {
             return true;
@@ -482,12 +489,12 @@ public class RegistrarVendas extends javax.swing.JFrame {
         int numeroPedido = converterNumPedido(inputNumPedido.getText());
         int quantidade = converterParaInteiro(inputQuantidade.getText());
         float valorTotal = converterParaNumero(inputValorTotalPedido.getText());
-        String cliente = soutClienteDisponivelSelecao.getName();
-        String produto = soutProdutoDisponivelSelecao.getName();
+        String cliente = (String) soutClienteDisponivelSelecao.getSelectedItem();
+        String produto = (String) soutProdutoDisponivelSelecao.getSelectedItem();
         
         Vendas v = new Vendas(cliente,numeroPedido,produto,dataVenda,quantidade,valorTotal,enderecoEntrega);
         
-        if(naoSalvaVazio(v)){
+        if(naoSalvaVazio(v) && !verificarVendasDuplicadas(v)){
             Repositorio.vendas.add(v);
             JOptionPane.showMessageDialog(this, "Pedido cadastrado com sucesso!");
             limpar();

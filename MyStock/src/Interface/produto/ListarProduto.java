@@ -223,7 +223,7 @@ public class ListarProduto extends javax.swing.JFrame {
         Object objeto = this.DivLista.getSelectedValue();
         if (objeto != null) {
         int confirmacao = JOptionPane.showConfirmDialog(this,
-            "Você realmente deseja excluir este funcionário?",
+            "Você realmente deseja excluir este produto?",
             "Confirmar exclusão",
             JOptionPane.YES_NO_OPTION,
             JOptionPane.QUESTION_MESSAGE);

@@ -4,6 +4,11 @@
  */
 package Interface.vendas;
 
+import Repositorio.Repositorio;
+import javax.swing.DefaultListModel;
+import javax.swing.JOptionPane;
+import ModeloClasse.Vendas;
+
 /**
  *
  * @author Laboratorio
@@ -15,8 +20,24 @@ public class ListarRegistrarVendas extends javax.swing.JFrame {
      */
     public ListarRegistrarVendas() {
         initComponents();
+        atualizar();
     }
 
+    public void atualizar() {
+        DefaultListModel model = new DefaultListModel();
+        model.addAll(Repositorio.vendas);
+        this.DivLista.setModel(model);
+    }
+    
+    private void excluirVendas(int confirmacao, Object objeto) {
+
+        if (confirmacao == JOptionPane.YES_OPTION) {
+            Vendas v = (Vendas) objeto;
+            Repositorio.vendas.remove(v);
+            this.atualizar();
+        }
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -199,12 +220,25 @@ public class ListarRegistrarVendas extends javax.swing.JFrame {
     }//GEN-LAST:event_botaoVoltarActionPerformed
 
     private void botaoExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoExcluirActionPerformed
-        // TODO add your handling code here:
+         Object objeto = this.DivLista.getSelectedValue();
+        if (objeto != null) {
+        int confirmacao = JOptionPane.showConfirmDialog(this,
+            "Você realmente deseja excluir este pedido?",
+            "Confirmar exclusão",
+            JOptionPane.YES_NO_OPTION,
+            JOptionPane.QUESTION_MESSAGE);
+            
+            excluirVendas(confirmacao, objeto);
+        }
     }//GEN-LAST:event_botaoExcluirActionPerformed
 
     private void botaoEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoEditarActionPerformed
-        new EditarRegistrarVendas().setVisible(true);
-        this.dispose();
+        Object objeto = this.DivLista.getSelectedValue();
+        if (objeto != null) {
+            Vendas v = (Vendas) objeto;
+            new EditarRegistrarVendas(this, v).setVisible(true);
+            this.dispose();
+        }
     }//GEN-LAST:event_botaoEditarActionPerformed
 
     /**

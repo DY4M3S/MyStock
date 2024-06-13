@@ -4,19 +4,182 @@
  */
 package Interface.vendas;
 
+import ModeloClasse.Cliente;
+import ModeloClasse.Produto;
+import ModeloClasse.Vendas;
+import Repositorio.Repositorio;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.HashSet;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Laboratorio
  */
 public class EditarRegistrarVendas extends javax.swing.JFrame {
 
+    private ListarRegistrarVendas tela;
+    private Vendas v;
+
     /**
      * Creates new form EditarGerenciarVendas
      */
-    public EditarRegistrarVendas() {
+    public EditarRegistrarVendas(ListarRegistrarVendas tela,Vendas v) {
+        this.tela = tela;
+        this.v = v;
         initComponents();
+        carregarVendas();
+        trazerDadosVendas();
     }
 
+    public void carregarVendas() {
+        HashSet<String> clientesDisponiveis = new HashSet<>();
+        HashSet<String> produtosDisponiveis = new HashSet<>();
+
+        for (Vendas v : Repositorio.vendas) {
+            String cliente = v.getCliente();
+            String produto = v.getProduto();
+
+            if (!clientesDisponiveis.contains(cliente)) {
+                this.soutClienteDisponivelSelecao.addItem(cliente);
+                clientesDisponiveis.add(cliente);
+            }
+
+            if (!produtosDisponiveis.contains(produto)) {
+                this.soutProdutoDisponivelSelecao.addItem(produto);
+                produtosDisponiveis.add(produto);
+            }
+        }
+    }
+
+    public void trazerDadosVendas() {
+        this.inputDataVenda.setText(converterParaString(v.getData()));
+        this.inputEnderecoEntrega.setText(v.getEnderecoDeEntrega());
+        this.inputNumPedido.setText(String.valueOf(v.getNumeroPedido()));
+        this.inputQuantidade.setText(String.valueOf(v.getQuantidade()));
+        this.inputValorTotalPedido.setText(String.valueOf(v.getValorTotalDaVenda()));
+        this.soutClienteDisponivelSelecao.setSelectedItem(v.getCliente());
+        this.soutProdutoDisponivelSelecao.setSelectedItem(v.getProduto());
+    }
+
+    private int converterParaInteiro(String numeroString) {
+        try {
+            int numeroInteiro = Integer.parseInt(numeroString);
+            return numeroInteiro;
+        } catch (NumberFormatException ex) {
+            JOptionPane.showMessageDialog(this, "Por favor, no campo Quantidade"
+                    + "\n\nInsira somente números inteiros sem espaços. Letras e caracteres especiais não podem ser inseridos.");
+            return 0;
+        }
+    }
+
+    private int converterNumPedido(String numPedidoString) {
+        try {
+            int numPedidoInteiro = Integer.parseInt(numPedidoString);
+            return numPedidoInteiro;
+        } catch (NumberFormatException ex) {
+            JOptionPane.showMessageDialog(this, "Por favor, insira somente números inteiros no campo Número do Pedido."
+                    + "\n\nLetras, caracteres especiais e espaços não são permitidos.");
+            return 0;
+        }
+    }
+
+    private float converterParaNumero(String numeroString) {
+        try {
+            float numeroFloat = Float.parseFloat(numeroString);
+            return numeroFloat;
+        } catch (NumberFormatException ex) {
+            JOptionPane.showMessageDialog(this, "Por favor, no campo Valor unitário"
+                    + "\n\nInsira somente números decimais( exemplo: 1 ou 1.50) sem espaços. Letras e caracteres especiais não podem ser inseridos.");
+            return 0.0f;
+        }
+    }
+
+    private Date converterParaData(String dataString) {
+        try {
+            SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+            Date data = formato.parse(dataString);
+            return data;
+        } catch (ParseException ex) {
+            JOptionPane.showMessageDialog(this, "Por favor, insira a data e hora no formato dd/MM/yyyy HH:mm:ss.");
+            return null;
+        }
+    }
+    
+    private String converterParaString(Date data) {
+        SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+        return formato.format(data);
+    }
+
+    private void limpar() {
+        this.inputDataVenda.setText("");
+        this.inputEnderecoEntrega.setText("");
+        this.inputNumPedido.setText("");
+        this.inputQuantidade.setText("");
+        this.inputValorTotalPedido.setText("");
+        this.soutClienteDisponivelSelecao.setSelectedItem("");
+        this.soutProdutoDisponivelSelecao.setSelectedItem("");
+
+        this.inputNumPedido.requestFocus();
+    }
+
+    private boolean verificarVendasDuplicadas(Vendas novaVendas) {
+
+        for (Vendas v : Repositorio.vendas) {
+            if (v.getNumeroPedido() == novaVendas.getNumeroPedido()) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private boolean naoSalvaVazio(Vendas v) {
+        String dataVenda = inputDataVenda.getText();
+        String enderecoEntrega = inputEnderecoEntrega.getText();
+        String numPedido = inputNumPedido.getText();
+        String quantidade = inputQuantidade.getText();
+        String valorTotal = inputValorTotalPedido.getText();
+        String vendaSelecionada = (String) soutClienteDisponivelSelecao.getSelectedItem();
+        String produtoSelecionado = (String) soutProdutoDisponivelSelecao.getSelectedItem();
+
+        if (dataVenda.isEmpty() || enderecoEntrega.isEmpty() || numPedido.isEmpty() || quantidade.isEmpty() || valorTotal.isEmpty() || vendaSelecionada == null || vendaSelecionada.isEmpty() || produtoSelecionado == null || produtoSelecionado.isEmpty()) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+    public void carregarClientes() {
+        for (Cliente cliente : Repositorio.cliente) {
+            soutClienteDisponivelSelecao.addItem(cliente.getNome());
+        }
+    }
+
+    public void carregarProdutos() {
+        for (Produto produto : Repositorio.produto) {
+            soutProdutoDisponivelSelecao.addItem(produto.getNome());
+        }
+    }
+    
+   /* private static boolean isFieldEmpty(String field) {
+        return field == null || field.trim().isEmpty();
+    }
+        
+    private static boolean isFieldEmpty(Integer field) {
+        if(field == 0 || field == null){
+             return true;
+        }
+        return false;
+    }
+    
+     private static boolean isFieldEmpty(Float field) {
+        if(field == 0 || field == null){
+             return true;
+        }
+        return false;
+    }*/
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -318,8 +481,40 @@ public class EditarRegistrarVendas extends javax.swing.JFrame {
     }//GEN-LAST:event_inputDataVendaActionPerformed
 
     private void botaoSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoSalvarActionPerformed
+        Date dataVenda = converterParaData(inputDataVenda.getText());
+        String enderecoEntrega = inputEnderecoEntrega.getText();
+        int numeroPedido = converterNumPedido(inputNumPedido.getText());
+        int quantidade = converterParaInteiro(inputQuantidade.getText());
+        float valorTotal = converterParaNumero(inputValorTotalPedido.getText());
+        String cliente = soutClienteDisponivelSelecao.getName();
+        String produto = soutProdutoDisponivelSelecao.getName();
+        
+        Vendas v = new Vendas(cliente,numeroPedido,produto,dataVenda,quantidade,valorTotal,enderecoEntrega);
 
-        //this.inputEmail.equals(inputEmail.getText());
+    if (verificarVendasDuplicadas(v) && v.getNumeroPedido() != v.getNumeroPedido()) {
+        JOptionPane.showMessageDialog(this, "Já existe uma venda com este número de pedido. Por favor, insira um número de pedido único.");
+        return;
+    }
+
+        int confirmar = JOptionPane.showConfirmDialog(this, "Você realmente deseja alterar os dados desta venda?", 
+                "Confirmar alteração",
+                JOptionPane.YES_NO_OPTION);
+
+        if (confirmar == JOptionPane.YES_OPTION) {
+            if (naoSalvaVazio(v)) {
+                Repositorio.vendas.remove(v);
+                Repositorio.vendas.add(v);
+                JOptionPane.showMessageDialog(this, "Venda editada com sucesso!");
+                carregarVendas();
+                new ListarRegistrarVendas().setVisible(true);
+                this.dispose();
+            } else {
+                JOptionPane.showMessageDialog(this, "A venda deve apresentar todos os campos preenchidos corretamente!");
+            }
+        } else {
+            trazerDadosVendas();
+        }
+        
     }//GEN-LAST:event_botaoSalvarActionPerformed
 
     private void botaoVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoVoltarActionPerformed
@@ -378,7 +573,7 @@ public class EditarRegistrarVendas extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new EditarRegistrarVendas().setVisible(true);
+                
             }
         });
     }

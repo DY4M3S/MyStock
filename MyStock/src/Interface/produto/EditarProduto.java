@@ -8,7 +8,6 @@ import ModeloClasse.Estoque;
 import ModeloClasse.Produto;
 import Repositorio.Repositorio;
 import java.util.HashSet;
-import javax.swing.DefaultListModel;
 import javax.swing.JOptionPane;
 
 /**
@@ -26,10 +25,10 @@ public class EditarProduto extends javax.swing.JFrame {
         this.tela = tela;
         this.p = p;
         initComponents();
+        esconderCamposIniciais();
         carregarProdutos();
         trazerDadosProduto();
-        //inputEstoque.setVisible(false);
-        //soutEstoque.setVisible(false);
+        
     }
 
         private Estoque buscarEstoquePorNome(String nomeEstoque) {
@@ -93,7 +92,7 @@ public class EditarProduto extends javax.swing.JFrame {
         }
     
     private boolean naoSalvaVazio(Produto p){
-        if (p.getQuantidade() != 0 && p.getValorUnitario() != 0.0f
+        if (p.getQuantidade() >= 0 && p.getValorUnitario() >= 0.0f
                 && !p.getNome().isEmpty() && !p.getNomeEstoque().isEmpty()
                 && !p.getEspecificacaoTecnica().isEmpty()) {
             return true;
@@ -101,7 +100,12 @@ public class EditarProduto extends javax.swing.JFrame {
             return false;
         }
     }
-
+    
+    private void esconderCamposIniciais() {
+    inputEstoque.setVisible(false); 
+    soutEstoque.setVisible(false);
+}
+    
     private void limpar() {
         this.inputNomeProduto.setText("");
         this.inputQuantidade.setText("");
@@ -112,7 +116,7 @@ public class EditarProduto extends javax.swing.JFrame {
         this.inputNomeProduto.requestFocus();
     }
     
-    private static boolean isFieldEmpty(String field) {
+   /* private static boolean isFieldEmpty(String field) {
         return field == null || field.trim().isEmpty();
     }
         
@@ -128,7 +132,7 @@ public class EditarProduto extends javax.swing.JFrame {
              return true;
         }
         return false;
-    }
+    }*/
     
     /**
      * This method is called from within the constructor to initialize the form.
@@ -431,8 +435,7 @@ public class EditarProduto extends javax.swing.JFrame {
     }//GEN-LAST:event_inputValorUnitarioActionPerformed
 
     private void inputEstoqueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputEstoqueActionPerformed
-        inputEstoque.setVisible(false);
-        soutEstoque.setVisible(false);
+       
     }//GEN-LAST:event_inputEstoqueActionPerformed
 
     private void botaoVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoVoltarActionPerformed

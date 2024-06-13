@@ -245,10 +245,8 @@
                                   <Component id="inputQuantidade" alignment="0" max="32767" attributes="0"/>
                                   <Component id="inputValorTotalPedido" alignment="0" max="32767" attributes="0"/>
                                   <Component id="inputEnderecoEntrega" alignment="0" max="32767" attributes="0"/>
-                                  <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
-                                      <Component id="soutProdutoDisponivelSelecao" alignment="0" pref="231" max="32767" attributes="0"/>
-                                      <Component id="soutClienteDisponivelSelecao" alignment="0" max="32767" attributes="0"/>
-                                  </Group>
+                                  <Component id="soutProdutoDisponivelSelecao" alignment="0" pref="231" max="32767" attributes="0"/>
+                                  <Component id="soutClienteDisponivelSelecao" alignment="0" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
