@@ -14,15 +14,24 @@ import javax.swing.JOptionPane;
  * @author Jason
  */
 public class Login extends javax.swing.JFrame {
- 
+    private Funcionario f;
+    
     /**
      * Creates new form Login
      */
     public Login() {
+        Repositorio.init();
         initComponents();
         
     }
-    
+    private boolean validarInput(String email, String senha) { 
+        for (Funcionario funcionario: Repositorio.funcionario) {
+            if (funcionario.getEmail().equals(email) && funcionario.getSenha().equals(senha)) {
+                return true;
+            }
+        }
+        return false;
+    }
     
     /**
      * This method is called from within the constructor to initialize the form.
@@ -243,20 +252,23 @@ public class Login extends javax.swing.JFrame {
             String email = inputEmail.getText();
             String senha = new String(inputSenha.getPassword());
            
-            Funcionario fun = new Funcionario("a","a");
-            
-        if (Repositorio.administrador.get(0) != null && 
-                Repositorio.administrador.get(0).getEmail().equals(email) &&
-                checkAdm.isSelected() && Repositorio.administrador.get(0).getSenha().equals(senha)) {
-            JOptionPane.showMessageDialog(this, "Login bem-sucedido!");
-            new MenuAdm().setVisible(true);
-            this.dispose();
-        }else if (fun != null && fun.getEmail().equals(email) && fun.getSenha().equals(senha)) {
-            JOptionPane.showMessageDialog(this, "Login de funcionário bem-sucedido!");
-            new MenuAdm().setVisible(true);
-            this.dispose();
+        if (!email.isEmpty() && !senha.isEmpty()) {
+            if (Repositorio.administrador.get(0).getEmail().equalsIgnoreCase(email)
+                    && Repositorio.administrador.get(0).getSenha().equalsIgnoreCase(senha)
+                        && checkAdm.isSelected()) {
+                            
+                            JOptionPane.showMessageDialog(this, "Login bem-sucedido!");
+                            new MenuAdm().setVisible(true);
+                            this.dispose();
+            } else if (validarInput(email, senha) && !checkAdm.isSelected()) {
+                 JOptionPane.showMessageDialog(this, "Login bem-sucedido!");
+                 new MenuAdm().setVisible(true);
+                 this.dispose();
+            } else {
+                JOptionPane.showMessageDialog(this, "O email e senha digita não correspondem a um usuário cadastrado!");
+            }
         } else {
-            JOptionPane.showMessageDialog(this, "Email ou senha incorretos.");
+            JOptionPane.showMessageDialog(this, "O email e senha não podem estar vazios!");
         }
     }//GEN-LAST:event_botaoLoginActionPerformed
 

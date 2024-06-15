@@ -31,12 +31,9 @@ public class Estoque {
     public void setNome(String nome) {
         this.nome = nome;
     }
-    
+
     @Override
     public String toString() {
-        return "Estoque{" + "id=" + id + ", nome=" + nome + '}';
+        return "Estoque{" + "nome=" + nome + ", produtos=" + produtos + '}';
     }
-    
-    
-    
 }

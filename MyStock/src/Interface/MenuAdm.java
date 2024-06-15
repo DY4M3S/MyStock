@@ -7,20 +7,49 @@ package Interface;
 import Interface.vendas.RegistrarVendas;
 import Interface.produto.AddProduto;
 import Interface.funcionario.AddFuncionario;
+import ModeloClasse.Administrador;
+import ModeloClasse.Funcionario;
 import Repositorio.Repositorio;
 /**
  *
  * @author Jason
  */
 public class MenuAdm extends javax.swing.JFrame {
-
+    private Administrador administrador;
+    private Funcionario funcionario;
     /**
      * Creates new form MenuAdm
      */
-    public MenuAdm() {
+   /* public MenuAdm( ) {
         initComponents();
+        esconderCamposIniciais(administrador);
+    }*/
+    
+    public MenuAdm( ) {
+        Repositorio.init();
+        initComponents();
+        //verificarAdministrador();
+        esconderCamposIniciais();
     }
+    
+   /* public MenuAdm(Administrador adm) {
+        this.administrador = adm;
+        initComponents();
+        esconderCamposIniciais(administrador);
+    }*/
 
+    private void esconderCamposIniciais( ) {
+        if (Repositorio.administrador.get(0).IsAdm()) {
+            
+        } else {
+            esconderBotaoAddFuncionario();
+        }
+    }
+    
+    private void  esconderBotaoAddFuncionario() {
+        this.BotaoAddFuncionario.setVisible(false);
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -166,11 +195,11 @@ public class MenuAdm extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, DivBotoesLayout.createSequentialGroup()
                 .addContainerGap(70, Short.MAX_VALUE)
                 .addComponent(BotaoAddFuncionario)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
                 .addComponent(BotaoAddProduto)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
                 .addComponent(BotaoRegistrarVendas)
-                .addGap(18, 18, 18)
+                .addGap(18, 18, Short.MAX_VALUE)
                 .addComponent(BotaoGerarRelatorio)
                 .addGap(0, 70, Short.MAX_VALUE))
         );
@@ -190,9 +219,9 @@ public class MenuAdm extends javax.swing.JFrame {
             DivMenuAdmLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, DivMenuAdmLayout.createSequentialGroup()
                 .addComponent(Header, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 108, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 111, Short.MAX_VALUE)
                 .addComponent(DivBotoes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 107, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 110, Short.MAX_VALUE)
                 .addComponent(Foother, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -280,7 +309,7 @@ public class MenuAdm extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new MenuAdm().setVisible(true);
+                
             }
         });
     }

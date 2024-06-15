@@ -4,19 +4,38 @@
  */
 package Interface;
 
+import ModeloClasse.Administrador;
+import ModeloClasse.Vendas;
+import Repositorio.Repositorio;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.List;
+import javax.swing.JOptionPane;
+import java.text.SimpleDateFormat;
+
 /**
  *
  * @author Jason
  */
 public class GerarRelatorio extends javax.swing.JFrame {
-
+    private javax.swing.JTextField campoDataInicio;
+    private javax.swing.JTextField campoDataFim;
+    private static final SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
     /**
      * Creates new form GerarRelatorio
      */
     public GerarRelatorio() {
         initComponents();
+        campoDataInicio = new javax.swing.JTextField();
+        campoDataFim = new javax.swing.JTextField();
+      
     }
-
+    
+    private boolean verificarAdministrador() {
+        return Repositorio.administrador.size() > 0;
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -34,14 +53,18 @@ public class GerarRelatorio extends javax.swing.JFrame {
         MyStock = new javax.swing.JLabel();
         Todos = new javax.swing.JLabel();
         c = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
         botaoVoltar = new javax.swing.JButton();
-        botaoSalvar = new javax.swing.JButton();
+        botaoGerar = new javax.swing.JButton();
+        DivRelatorio = new javax.swing.JScrollPane();
+        soutRelatorio = new javax.swing.JTextArea();
+        soutDataInicio = new javax.swing.JLabel();
+        soutDataInicio1 = new javax.swing.JLabel();
+        inputDataInicio = new javax.swing.JTextField();
+        inputDataFinal = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Relatório ");
-        setMinimumSize(new java.awt.Dimension(800, 800));
+        setMinimumSize(new java.awt.Dimension(1270, 800));
 
         divLogin.setBackground(new java.awt.Color(255, 255, 255));
         divLogin.setMaximumSize(new java.awt.Dimension(0, 0));
@@ -93,7 +116,7 @@ public class GerarRelatorio extends javax.swing.JFrame {
                 .addComponent(c)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(Todos)
-                .addContainerGap(526, Short.MAX_VALUE))
+                .addContainerGap(847, Short.MAX_VALUE))
         );
         footherLayout.setVerticalGroup(
             footherLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -106,33 +129,6 @@ public class GerarRelatorio extends javax.swing.JFrame {
                 .addContainerGap(47, Short.MAX_VALUE))
         );
 
-        jTable1.setFont(new java.awt.Font("Consolas", 0, 14)); // NOI18N
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null, null, null}
-            },
-            new String [] {
-                "Pedido", "Nome do produto", "Quantidade de itens", "Data da venda", "Valor total do pedido", "Valor total das vendas"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.String.class, java.lang.Integer.class, java.lang.String.class, java.lang.Float.class, java.lang.Double.class
-            };
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        jTable1.setSelectionBackground(new java.awt.Color(40, 203, 58));
-        jScrollPane1.setViewportView(jTable1);
-
         botaoVoltar.setFont(new java.awt.Font("Consolas", 0, 14)); // NOI18N
         botaoVoltar.setText("Voltar");
         botaoVoltar.setBorder(null);
@@ -143,18 +139,36 @@ public class GerarRelatorio extends javax.swing.JFrame {
             }
         });
 
-        botaoSalvar.setBackground(new java.awt.Color(40, 203, 58));
-        botaoSalvar.setFont(new java.awt.Font("Consolas", 0, 14)); // NOI18N
-        botaoSalvar.setText("Download");
-        botaoSalvar.setBorder(null);
-        botaoSalvar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        botaoSalvar.setMaximumSize(new java.awt.Dimension(60, 21));
-        botaoSalvar.setMinimumSize(new java.awt.Dimension(60, 21));
-        botaoSalvar.addActionListener(new java.awt.event.ActionListener() {
+        botaoGerar.setBackground(new java.awt.Color(40, 203, 58));
+        botaoGerar.setFont(new java.awt.Font("Consolas", 0, 14)); // NOI18N
+        botaoGerar.setText("Gerar ");
+        botaoGerar.setBorder(null);
+        botaoGerar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        botaoGerar.setMaximumSize(new java.awt.Dimension(60, 21));
+        botaoGerar.setMinimumSize(new java.awt.Dimension(60, 21));
+        botaoGerar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botaoSalvarActionPerformed(evt);
+                botaoGerarActionPerformed(evt);
             }
         });
+
+        DivRelatorio.setViewportBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        soutRelatorio.setEditable(false);
+        soutRelatorio.setColumns(20);
+        soutRelatorio.setFont(new java.awt.Font("Consolas", 0, 14)); // NOI18N
+        soutRelatorio.setRows(5);
+        DivRelatorio.setViewportView(soutRelatorio);
+
+        soutDataInicio.setFont(new java.awt.Font("Consolas", 0, 14)); // NOI18N
+        soutDataInicio.setText("Data inicial:");
+
+        soutDataInicio1.setFont(new java.awt.Font("Consolas", 0, 14)); // NOI18N
+        soutDataInicio1.setText("Data final:");
+
+        inputDataInicio.setFont(new java.awt.Font("Consolas", 0, 14)); // NOI18N
+
+        inputDataFinal.setFont(new java.awt.Font("Consolas", 0, 14)); // NOI18N
 
         javax.swing.GroupLayout divLoginLayout = new javax.swing.GroupLayout(divLogin);
         divLogin.setLayout(divLoginLayout);
@@ -163,27 +177,41 @@ public class GerarRelatorio extends javax.swing.JFrame {
             .addComponent(header, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(foother, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(divLoginLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1)
-                .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, divLoginLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(botaoVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(botaoSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(50, 50, 50))
+                .addContainerGap(46, Short.MAX_VALUE)
+                .addGroup(divLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(divLoginLayout.createSequentialGroup()
+                        .addComponent(soutDataInicio)
+                        .addGap(18, 18, 18)
+                        .addComponent(inputDataInicio, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(soutDataInicio1)
+                        .addGap(18, 18, 18)
+                        .addComponent(inputDataFinal, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(divLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(divLoginLayout.createSequentialGroup()
+                            .addComponent(botaoVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(18, 18, 18)
+                            .addComponent(botaoGerar, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(DivRelatorio, javax.swing.GroupLayout.PREFERRED_SIZE, 1240, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(47, Short.MAX_VALUE))
         );
         divLoginLayout.setVerticalGroup(
             divLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(divLoginLayout.createSequentialGroup()
                 .addComponent(header, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 438, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 14, Short.MAX_VALUE)
+                .addGap(33, 33, 33)
                 .addGroup(divLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(botaoSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(soutDataInicio)
+                    .addComponent(soutDataInicio1)
+                    .addComponent(inputDataInicio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(inputDataFinal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(33, 33, 33)
+                .addComponent(DivRelatorio, javax.swing.GroupLayout.PREFERRED_SIZE, 345, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(28, 28, 28)
+                .addGroup(divLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(botaoGerar, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(botaoVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 25, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
                 .addComponent(foother, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -191,7 +219,7 @@ public class GerarRelatorio extends javax.swing.JFrame {
         DivGerarRelatorio.setLayout(DivGerarRelatorioLayout);
         DivGerarRelatorioLayout.setHorizontalGroup(
             DivGerarRelatorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(divLogin, javax.swing.GroupLayout.DEFAULT_SIZE, 1012, Short.MAX_VALUE)
+            .addComponent(divLogin, javax.swing.GroupLayout.DEFAULT_SIZE, 1333, Short.MAX_VALUE)
         );
         DivGerarRelatorioLayout.setVerticalGroup(
             DivGerarRelatorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -214,13 +242,42 @@ public class GerarRelatorio extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void botaoVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoVoltarActionPerformed
+        boolean isAdministrador = verificarAdministrador();
         new MenuAdm().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_botaoVoltarActionPerformed
 
-    private void botaoSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoSalvarActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botaoSalvarActionPerformed
+    private void botaoGerarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoGerarActionPerformed
+        try {
+            SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+            String dataInicioStr = inputDataInicio.getText();
+            String dataFimStr = inputDataFinal.getText();
+
+            // Convertendo as strings para Date
+            Date dataInicio = sdf.parse(dataInicioStr + " 00:00:00");
+            Date dataFim = sdf.parse(dataFimStr + " 23:59:59");
+
+            List<Vendas> vendasList = Repositorio.vendas;
+            StringBuilder report = new StringBuilder();
+
+            for (Vendas venda : vendasList) {
+                if (!venda.getData().before(dataInicio) && !venda.getData().after(dataFim)) {
+                    report.append("Cliente: ").append(venda.getCliente()).append("\n");
+                    report.append("Número do Pedido: ").append(venda.getNumeroPedido()).append("\n");
+                    report.append("Produto: ").append(venda.getProduto()).append("\n");
+                    report.append("Data: ").append(sdf.format(venda.getData())).append("\n");
+                    report.append("Quantidade: ").append(venda.getQuantidade()).append("\n");
+                    report.append("Valor Total: ").append(venda.getValorTotalDaVenda()).append("\n");
+                    report.append("Endereço de Entrega: ").append(venda.getEnderecoDeEntrega()).append("\n");
+                    report.append("------------------------------------------------------------\n\n");
+                }
+            }
+
+            soutRelatorio.setText(report.toString());
+        } catch (ParseException e) {
+            JOptionPane.showMessageDialog(this, "Por favor, insira datas válidas no formato dd/MM/yyyy.");
+        }
+    }//GEN-LAST:event_botaoGerarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -262,16 +319,20 @@ public class GerarRelatorio extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel DivGerarRelatorio;
+    private javax.swing.JScrollPane DivRelatorio;
     private javax.swing.JLabel MyStock;
     private javax.swing.JLabel Todos;
-    private javax.swing.JButton botaoSalvar;
+    private javax.swing.JButton botaoGerar;
     private javax.swing.JButton botaoVoltar;
     private javax.swing.JLabel c;
     private javax.swing.JPanel divLogin;
     private javax.swing.JPanel foother;
     private javax.swing.JPanel header;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JTextField inputDataFinal;
+    private javax.swing.JTextField inputDataInicio;
     private javax.swing.JLabel logo;
+    private javax.swing.JLabel soutDataInicio;
+    private javax.swing.JLabel soutDataInicio1;
+    private javax.swing.JTextArea soutRelatorio;
     // End of variables declaration//GEN-END:variables
 }

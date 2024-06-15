@@ -80,7 +80,7 @@ public class AddProduto extends javax.swing.JFrame {
             return 0.0f;
         }
     }
-
+    
     private void limpar() {
         this.inputNomeProduto.setText("");
         this.inputQuantidade.setText("");
@@ -102,7 +102,10 @@ public class AddProduto extends javax.swing.JFrame {
         }
 
     }
-
+    
+    private boolean verificarAdministrador() {
+        return Repositorio.administrador.size() > 0;
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -436,6 +439,7 @@ public class AddProduto extends javax.swing.JFrame {
     }//GEN-LAST:event_inputEstoqueActionPerformed
 
     private void botaoVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoVoltarActionPerformed
+        boolean isAdministrador = verificarAdministrador();
         new MenuAdm().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_botaoVoltarActionPerformed

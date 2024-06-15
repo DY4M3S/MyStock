@@ -26,12 +26,17 @@ public class EditarRegistrarVendas extends javax.swing.JFrame {
     /**
      * Creates new form EditarGerenciarVendas
      */
-    public EditarRegistrarVendas(ListarRegistrarVendas tela,Vendas v) {
+    public EditarRegistrarVendas(ListarRegistrarVendas tela, Vendas v) {
         this.tela = tela;
         this.v = v;
         initComponents();
         carregarVendas();
         trazerDadosVendas();
+        inputQuantidade.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                atualizarValorTotalEPedido();
+            }
+        });
     }
 
     public void carregarVendas() {
@@ -107,7 +112,7 @@ public class EditarRegistrarVendas extends javax.swing.JFrame {
             return null;
         }
     }
-    
+
     private String converterParaString(Date data) {
         SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
         return formato.format(data);
@@ -162,7 +167,58 @@ public class EditarRegistrarVendas extends javax.swing.JFrame {
             soutProdutoDisponivelSelecao.addItem(produto.getNome());
         }
     }
+
+    private void atualizarValorTotalEPedido() {
+        String produtoSelecionado = (String) soutProdutoDisponivelSelecao.getSelectedItem();
+        int quantidade = converterParaInteiro(inputQuantidade.getText());
+
+        if (produtoSelecionado != null && !produtoSelecionado.isEmpty() && quantidade > 0) {
+            Produto produto = null;
+
+            for (Produto p : Repositorio.produto) {
+                if (p.getNome().equals(produtoSelecionado)) {
+                    produto = p;
+                    break;
+                }
+            }
+            float valorTotal = produto.getValorUnitario() * quantidade;
+            inputValorTotalPedido.setText(String.valueOf(valorTotal));
+        }
+    }
+
+    private void decrementarQuantidadeProduto(String nomeProduto, int quantidadeVendida) {
+  
+            if (v.getProduto().equals(nomeProduto)) {
+                System.out.println(quantidadeVendida);
+                System.out.println(v.getQuantidade());
+                
+                if (quantidadeVendida > v.getQuantidade()) {
+                    JOptionPane.showMessageDialog(this, "Quantidade em estoque insuficiente para realizar o pedido.");
+                    return;
+                } else if (quantidadeVendida == v.getQuantidade()) {
+                    v.setQuantidade(quantidadeVendida);
+                } else {
+                  int novaQuantidade = v.getQuantidade() - quantidadeVendida;
+                  v.setQuantidade(novaQuantidade);
+                }
+                
+           
+            }
+        
+    }
     
+    private boolean validarQuantidadeEstoque(int quantidade, Vendas v){
+ 
+             if (quantidade > v.getQuantidade()) {
+                 System.out.println(v);
+                 System.out.println(quantidade);
+                 System.out.println(v.getQuantidade());
+                 System.out.println(Repositorio.produto);
+                 JOptionPane.showMessageDialog(this, "Quantidade em estoque insuficiente para o pedido.");
+                 return false;
+             }
+             return true;
+     }
    /* private static boolean isFieldEmpty(String field) {
         return field == null || field.trim().isEmpty();
     }
@@ -483,33 +539,32 @@ public class EditarRegistrarVendas extends javax.swing.JFrame {
     private void botaoSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoSalvarActionPerformed
         Date dataVenda = converterParaData(inputDataVenda.getText());
         String enderecoEntrega = inputEnderecoEntrega.getText();
-        int numeroPedido = converterNumPedido(inputNumPedido.getText());
         int quantidade = converterParaInteiro(inputQuantidade.getText());
         float valorTotal = converterParaNumero(inputValorTotalPedido.getText());
-        String cliente = soutClienteDisponivelSelecao.getName();
-        String produto = soutProdutoDisponivelSelecao.getName();
-        
-        Vendas v = new Vendas(cliente,numeroPedido,produto,dataVenda,quantidade,valorTotal,enderecoEntrega);
-
-    if (verificarVendasDuplicadas(v) && v.getNumeroPedido() != v.getNumeroPedido()) {
-        JOptionPane.showMessageDialog(this, "Já existe uma venda com este número de pedido. Por favor, insira um número de pedido único.");
-        return;
-    }
+        String cliente = (String) soutClienteDisponivelSelecao.getSelectedItem();
+        String produto = (String) soutProdutoDisponivelSelecao.getSelectedItem();
 
         int confirmar = JOptionPane.showConfirmDialog(this, "Você realmente deseja alterar os dados desta venda?", 
                 "Confirmar alteração",
                 JOptionPane.YES_NO_OPTION);
-
+                atualizarValorTotalEPedido();
         if (confirmar == JOptionPane.YES_OPTION) {
-            if (naoSalvaVazio(v)) {
-                Repositorio.vendas.remove(v);
-                Repositorio.vendas.add(v);
-                JOptionPane.showMessageDialog(this, "Venda editada com sucesso!");
-                carregarVendas();
-                new ListarRegistrarVendas().setVisible(true);
+                
+            if (naoSalvaVazio(v) && validarQuantidadeEstoque(quantidade, v)) {
+                this.v.setCliente(cliente);
+                this.v.setProduto(produto);
+                this.v.setData(dataVenda);
+                this.v.setEnderecoDeEntrega(enderecoEntrega);
+                this.v.setValorTotalDaVenda(valorTotal);
+                JOptionPane.showMessageDialog(this, "Pedido cadastrado com sucesso!");
+                decrementarQuantidadeProduto(produto, quantidade);
+                limpar();
+                carregarProdutos();
+                carregarClientes();
+                new RegistrarVendas().setVisible(true);
                 this.dispose();
             } else {
-                JOptionPane.showMessageDialog(this, "A venda deve apresentar todos os campos preenchidos corretamente!");
+                JOptionPane.showMessageDialog(this, "O pedido deve apresentar todos os campos preenchidos corretamente!");
             }
         } else {
             trazerDadosVendas();

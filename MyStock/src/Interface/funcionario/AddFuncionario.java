@@ -84,6 +84,10 @@ public class AddFuncionario extends javax.swing.JFrame {
             return false;
         }
     }
+    
+    private boolean verificarAdministrador() {
+        return Repositorio.administrador.size() > 0;
+    }
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
@@ -503,6 +507,7 @@ public class AddFuncionario extends javax.swing.JFrame {
     }//GEN-LAST:event_inputNumeroActionPerformed
 
     private void botaoVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoVoltarActionPerformed
+        boolean isAdministrador = verificarAdministrador();
         new MenuAdm().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_botaoVoltarActionPerformed

@@ -28,6 +28,11 @@ public class RegistrarVendas extends javax.swing.JFrame {
         initComponents();
         carregarProdutos();
         carregarClientes();
+        inputQuantidade.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                atualizarValorTotalEPedido();
+            }
+        });
     }
 
     private int converterParaInteiro(String numeroString) {
@@ -123,6 +128,57 @@ public class RegistrarVendas extends javax.swing.JFrame {
             soutProdutoDisponivelSelecao.addItem(produto.getNome());
         }
     }
+    
+    private void atualizarValorTotalEPedido() {
+        String produtoSelecionado = (String) soutProdutoDisponivelSelecao.getSelectedItem();
+        int quantidade = converterParaInteiro(inputQuantidade.getText());
+
+        if (produtoSelecionado != null && !produtoSelecionado.isEmpty() && quantidade > 0) {
+            Produto produto = null;
+
+            for (Produto p : Repositorio.produto) {
+                if (p.getNome().equals(produtoSelecionado)) {
+                    produto = p;
+                    break;
+                }
+            }
+            float valorTotal = produto.getValorUnitario() * quantidade;
+            inputValorTotalPedido.setText(String.valueOf(valorTotal));
+        }
+    }
+
+    private void decrementarQuantidadeProduto(String nomeProduto, int quantidadeVendida) {
+        for (Produto p : Repositorio.produto) {
+            if (p.getNome().equals(nomeProduto)) {
+                int novaQuantidade = p.getQuantidade() - quantidadeVendida;
+                if (novaQuantidade < 0) {
+                    JOptionPane.showMessageDialog(this, "Quantidade em estoque insuficiente para realizar o pedido.");
+                    return;
+                }
+                p.setQuantidade(novaQuantidade);
+                break;
+            }
+        }
+    }
+    
+     private boolean validarQuantidadeEstoque(int quantidade){
+         String produtoSelecionado = (String) soutProdutoDisponivelSelecao.getSelectedItem();
+         Produto produto = null;
+         for (Produto p : Repositorio.produto) {
+             if (p.getNome().equals(produtoSelecionado)) {
+                 produto = p;
+                 break;
+             }
+         }
+         if (produto != null) {
+             if (quantidade > produto.getQuantidade()) {
+                 JOptionPane.showMessageDialog(this, "Quantidade em estoque insuficiente para o pedido.");
+                 return false;
+             }
+             return true;
+         } 
+        return false;
+     }
     
     /**
      * This method is called from within the constructor to initialize the form.
@@ -494,9 +550,11 @@ public class RegistrarVendas extends javax.swing.JFrame {
         
         Vendas v = new Vendas(cliente,numeroPedido,produto,dataVenda,quantidade,valorTotal,enderecoEntrega);
         
-        if(naoSalvaVazio(v) && !verificarVendasDuplicadas(v)){
+        atualizarValorTotalEPedido();
+        if(naoSalvaVazio(v) && !verificarVendasDuplicadas(v) && validarQuantidadeEstoque(quantidade)){
             Repositorio.vendas.add(v);
             JOptionPane.showMessageDialog(this, "Pedido cadastrado com sucesso!");
+            decrementarQuantidadeProduto(produto, quantidade);
             limpar();
             carregarProdutos();
             carregarClientes();
@@ -504,6 +562,7 @@ public class RegistrarVendas extends javax.swing.JFrame {
             this.dispose();
         } else {
             JOptionPane.showMessageDialog(this, "O pedido deve apresentar todos os campos preenchidos corretamente!");
+            return;
         }
     }//GEN-LAST:event_botaoCadastrarActionPerformed
 

@@ -137,9 +137,8 @@ package ModeloClasse;
 
     @Override
     public String toString() {
-        return "Usuario{" + "id=" + id + ", nome=" + nome + ", cpf=" + cpf + ", email=" + email + ", telefone=" + telefone + ", senha=" + senha + ", uf=" + uf + ", cidade=" + cidade + ", endereco=" + endereco + ", numero=" + numero + ", bairro=" + bairro + '}';
+        return "Usuario{" + "nome=" + nome + ", cpf=" + cpf + ", email=" + email + ", telefone=" + telefone + ", senha=" + senha + ", uf=" + uf + ", cidade=" + cidade + ", endereco=" + endereco + ", numero=" + numero + ", bairro=" + bairro + '}';
     }
-    
 } 
 
 

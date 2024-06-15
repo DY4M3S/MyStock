@@ -88,9 +88,9 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="1" attributes="0">
                   <Component id="Header" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="108" max="32767" attributes="0"/>
+                  <EmptySpace pref="111" max="32767" attributes="0"/>
                   <Component id="DivBotoes" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="107" max="32767" attributes="0"/>
+                  <EmptySpace pref="110" max="32767" attributes="0"/>
                   <Component id="Foother" min="-2" max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -241,11 +241,11 @@
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace pref="70" max="32767" attributes="0"/>
                       <Component id="BotaoAddFuncionario" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <EmptySpace pref="18" max="32767" attributes="0"/>
                       <Component id="BotaoAddProduto" min="-2" max="-2" attributes="0"/>
                       <EmptySpace pref="18" max="32767" attributes="0"/>
                       <Component id="BotaoRegistrarVendas" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="32767" attributes="0"/>
                       <Component id="BotaoGerarRelatorio" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="0" pref="70" max="32767" attributes="0"/>
                   </Group>

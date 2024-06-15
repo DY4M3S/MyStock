@@ -62,6 +62,7 @@ public class EditarProduto extends javax.swing.JFrame {
 
         private int converterParaInteiro(String numeroString) {
             try {
+                
                 int numeroInteiro = Integer.parseInt(numeroString);
                 return numeroInteiro;
             } catch (NumberFormatException ex) {

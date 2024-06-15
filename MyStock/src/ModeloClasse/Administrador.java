@@ -12,8 +12,17 @@ public class Administrador {
         this.senha = senha;
     }
 
+    public Administrador(String email, String senha) {
+        this.email = email;
+        this.senha = senha;
+    }
+
+    public void setAdm(boolean Adm) {
+        this.Adm = Adm;
+    }
+
     public boolean IsAdm() {
-        return Adm;
+        return true;
     }
 
     public String getEmail() {
