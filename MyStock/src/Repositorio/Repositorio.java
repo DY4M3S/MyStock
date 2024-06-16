@@ -20,7 +20,6 @@ public class Repositorio {
     public static List<Estoque> estoque = new ArrayList<>();
 
    public static void init() {
-        administrador.add(new Administrador("adm@MyStock.com","adm123")); 
-        
+        administrador.add(new Administrador("adm@MyStock.com","adm123"));   
     }
 }

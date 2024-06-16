@@ -31,11 +31,6 @@ public class GerarRelatorio extends javax.swing.JFrame {
         campoDataFim = new javax.swing.JTextField();
       
     }
-    
-    private boolean verificarAdministrador() {
-        return Repositorio.administrador.size() > 0;
-    }
-    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -242,9 +237,13 @@ public class GerarRelatorio extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void botaoVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoVoltarActionPerformed
-        boolean isAdministrador = verificarAdministrador();
-        new MenuAdm().setVisible(true);
-        this.dispose();
+       if (Repositorio.administrador.get(0).IsAdm()) {
+            new Menu(Repositorio.administrador.get(0)).setVisible(true);
+            this.dispose();
+        } else {
+            new Menu().setVisible(true);
+            this.dispose();
+        }
     }//GEN-LAST:event_botaoVoltarActionPerformed
 
     private void botaoGerarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoGerarActionPerformed

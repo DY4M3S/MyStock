@@ -4,7 +4,7 @@
  */
 package Interface.vendas;
 
-import Interface.MenuAdm;
+import Interface.Menu;
 import Interface.cliente.AddCliente;
 import Repositorio.Repositorio;
 import javax.swing.JOptionPane;
@@ -74,7 +74,6 @@ public class RegistrarVendas extends javax.swing.JFrame {
             Date data = formato.parse(dataString);
             return data;
         } catch (ParseException ex) {
-            JOptionPane.showMessageDialog(this, "Por favor, insira a data e hora no formato dd/MM/yyyy HH:mm:ss.");
             return null;
         }
     }
@@ -513,8 +512,13 @@ public class RegistrarVendas extends javax.swing.JFrame {
     }//GEN-LAST:event_inputValorTotalPedidoActionPerformed
 
     private void botaoVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoVoltarActionPerformed
-        new MenuAdm().setVisible(true);
-        this.dispose();
+        if (Repositorio.administrador.get(0).IsAdm()) {
+            new Menu(Repositorio.administrador.get(0)).setVisible(true);
+            this.dispose();
+        } else {
+            new Menu().setVisible(true);
+            this.dispose();
+        }
     }//GEN-LAST:event_botaoVoltarActionPerformed
 
     private void botaoExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoExcluirActionPerformed
@@ -541,6 +545,12 @@ public class RegistrarVendas extends javax.swing.JFrame {
 
     private void botaoCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoCadastrarActionPerformed
         Date dataVenda = converterParaData(inputDataVenda.getText());
+        
+        if (dataVenda == null) {
+            JOptionPane.showMessageDialog(this, "Por favor, insira  data e hora, no formato de dd/MM/yyyy HH:mm:ss.");
+            return; 
+        }
+        
         String enderecoEntrega = inputEnderecoEntrega.getText();
         int numeroPedido = converterNumPedido(inputNumPedido.getText());
         int quantidade = converterParaInteiro(inputQuantidade.getText());

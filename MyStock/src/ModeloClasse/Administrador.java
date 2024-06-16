@@ -15,6 +15,7 @@ public class Administrador {
     public Administrador(String email, String senha) {
         this.email = email;
         this.senha = senha;
+        this.Adm = false; 
     }
 
     public void setAdm(boolean Adm) {
@@ -22,7 +23,7 @@ public class Administrador {
     }
 
     public boolean IsAdm() {
-        return true;
+        return this.Adm;
     }
 
     public String getEmail() {

@@ -14,40 +14,35 @@ import Repositorio.Repositorio;
  *
  * @author Jason
  */
-public class MenuAdm extends javax.swing.JFrame {
+public class Menu extends javax.swing.JFrame {
     private Administrador administrador;
     private Funcionario funcionario;
-    /**
-     * Creates new form MenuAdm
-     */
-   /* public MenuAdm( ) {
+  
+    public Menu(Administrador administrador) {
+        this.administrador = administrador;
         initComponents();
-        esconderCamposIniciais(administrador);
-    }*/
-    
-    public MenuAdm( ) {
-        Repositorio.init();
-        initComponents();
-        //verificarAdministrador();
-        esconderCamposIniciais();
     }
     
-   /* public MenuAdm(Administrador adm) {
-        this.administrador = adm;
+    public Menu() {
+        this.administrador = null;
         initComponents();
-        esconderCamposIniciais(administrador);
-    }*/
+        esconderCamposIniciais();
+    }
 
     private void esconderCamposIniciais( ) {
-        if (Repositorio.administrador.get(0).IsAdm()) {
-            
-        } else {
+       if (this.administrador == null || !this.administrador.IsAdm()) {
             esconderBotaoAddFuncionario();
         }
     }
     
     private void  esconderBotaoAddFuncionario() {
         this.BotaoAddFuncionario.setVisible(false);
+    }
+    
+     private void logOut() {
+      if (Repositorio.administrador.get(0).IsAdm()) {
+          Repositorio.administrador.get(0).setAdm(false);
+      }
     }
     
     /**
@@ -60,87 +55,26 @@ public class MenuAdm extends javax.swing.JFrame {
     private void initComponents() {
 
         DivMenuAdm = new javax.swing.JPanel();
-        Header = new javax.swing.JPanel();
-        logo = new javax.swing.JLabel();
-        Foother = new javax.swing.JPanel();
-        MyStock = new javax.swing.JLabel();
-        Todos = new javax.swing.JLabel();
-        c = new javax.swing.JLabel();
         DivBotoes = new javax.swing.JPanel();
         BotaoAddFuncionario = new javax.swing.JButton();
         BotaoRegistrarVendas = new javax.swing.JButton();
         BotaoGerarRelatorio = new javax.swing.JButton();
         BotaoAddProduto = new javax.swing.JButton();
+        Foother = new javax.swing.JPanel();
+        MyStock = new javax.swing.JLabel();
+        Todos = new javax.swing.JLabel();
+        c = new javax.swing.JLabel();
+        Header = new javax.swing.JPanel();
+        logo = new javax.swing.JLabel();
         BotaoMenu = new javax.swing.JMenuBar();
         BotaoSistema = new javax.swing.JMenu();
         BotaoLogin = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Menu");
-        setMaximumSize(new java.awt.Dimension(1012, 800));
-        setMinimumSize(new java.awt.Dimension(700, 725));
-        setPreferredSize(new java.awt.Dimension(800, 725));
+        setMinimumSize(new java.awt.Dimension(800, 725));
 
         DivMenuAdm.setBackground(new java.awt.Color(255, 255, 255));
-
-        Header.setBackground(new java.awt.Color(40, 203, 58));
-        Header.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
-        Header.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-
-        logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Logo_dark-removebg-preview 2.png"))); // NOI18N
-
-        javax.swing.GroupLayout HeaderLayout = new javax.swing.GroupLayout(Header);
-        Header.setLayout(HeaderLayout);
-        HeaderLayout.setHorizontalGroup(
-            HeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, HeaderLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(logo)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
-        HeaderLayout.setVerticalGroup(
-            HeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, HeaderLayout.createSequentialGroup()
-                .addContainerGap(10, Short.MAX_VALUE)
-                .addComponent(logo, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(10, Short.MAX_VALUE))
-        );
-
-        Foother.setBackground(new java.awt.Color(40, 203, 58));
-        Foother.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
-
-        MyStock.setFont(new java.awt.Font("Consolas", 0, 18)); // NOI18N
-        MyStock.setText("MyStock ");
-
-        Todos.setFont(new java.awt.Font("Consolas", 2, 18)); // NOI18N
-        Todos.setText("2024 Todos os direitos reservados");
-
-        c.setFont(new java.awt.Font("Consolas", 0, 18)); // NOI18N
-        c.setText("©");
-
-        javax.swing.GroupLayout FootherLayout = new javax.swing.GroupLayout(Foother);
-        Foother.setLayout(FootherLayout);
-        FootherLayout.setHorizontalGroup(
-            FootherLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(FootherLayout.createSequentialGroup()
-                .addGap(50, 50, 50)
-                .addComponent(MyStock)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(c)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Todos)
-                .addContainerGap(308, Short.MAX_VALUE))
-        );
-        FootherLayout.setVerticalGroup(
-            FootherLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(FootherLayout.createSequentialGroup()
-                .addContainerGap(47, Short.MAX_VALUE)
-                .addGroup(FootherLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Todos)
-                    .addComponent(c)
-                    .addComponent(MyStock))
-                .addContainerGap(47, Short.MAX_VALUE))
-        );
 
         DivBotoes.setBackground(new java.awt.Color(255, 255, 255));
         DivBotoes.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
@@ -204,25 +138,82 @@ public class MenuAdm extends javax.swing.JFrame {
                 .addGap(0, 70, Short.MAX_VALUE))
         );
 
+        Foother.setBackground(new java.awt.Color(40, 203, 58));
+        Foother.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+
+        MyStock.setFont(new java.awt.Font("Consolas", 0, 18)); // NOI18N
+        MyStock.setText("MyStock ");
+
+        Todos.setFont(new java.awt.Font("Consolas", 2, 18)); // NOI18N
+        Todos.setText("2024 Todos os direitos reservados");
+
+        c.setFont(new java.awt.Font("Consolas", 0, 18)); // NOI18N
+        c.setText("©");
+
+        javax.swing.GroupLayout FootherLayout = new javax.swing.GroupLayout(Foother);
+        Foother.setLayout(FootherLayout);
+        FootherLayout.setHorizontalGroup(
+            FootherLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(FootherLayout.createSequentialGroup()
+                .addGap(50, 50, 50)
+                .addComponent(MyStock)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(c)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(Todos)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        FootherLayout.setVerticalGroup(
+            FootherLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(FootherLayout.createSequentialGroup()
+                .addContainerGap(47, Short.MAX_VALUE)
+                .addGroup(FootherLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Todos)
+                    .addComponent(c)
+                    .addComponent(MyStock))
+                .addContainerGap(47, Short.MAX_VALUE))
+        );
+
         javax.swing.GroupLayout DivMenuAdmLayout = new javax.swing.GroupLayout(DivMenuAdm);
         DivMenuAdm.setLayout(DivMenuAdmLayout);
         DivMenuAdmLayout.setHorizontalGroup(
             DivMenuAdmLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Foother, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(Header, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(DivMenuAdmLayout.createSequentialGroup()
-                .addContainerGap(144, Short.MAX_VALUE)
+                .addContainerGap(147, Short.MAX_VALUE)
                 .addComponent(DivBotoes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(144, Short.MAX_VALUE))
+                .addContainerGap(129, Short.MAX_VALUE))
+            .addComponent(Foother, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         DivMenuAdmLayout.setVerticalGroup(
             DivMenuAdmLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, DivMenuAdmLayout.createSequentialGroup()
-                .addComponent(Header, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 111, Short.MAX_VALUE)
+                .addContainerGap(52, Short.MAX_VALUE)
                 .addComponent(DivBotoes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 110, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 52, Short.MAX_VALUE)
                 .addComponent(Foother, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+
+        Header.setBackground(new java.awt.Color(40, 203, 58));
+        Header.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        Header.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+
+        logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Logo_dark-removebg-preview 2.png"))); // NOI18N
+
+        javax.swing.GroupLayout HeaderLayout = new javax.swing.GroupLayout(Header);
+        Header.setLayout(HeaderLayout);
+        HeaderLayout.setHorizontalGroup(
+            HeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, HeaderLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(logo)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+        HeaderLayout.setVerticalGroup(
+            HeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, HeaderLayout.createSequentialGroup()
+                .addContainerGap(10, Short.MAX_VALUE)
+                .addComponent(logo, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(10, Short.MAX_VALUE))
         );
 
         BotaoSistema.setText("Sistema");
@@ -243,11 +234,15 @@ public class MenuAdm extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(Header, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(DivMenuAdm, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(DivMenuAdm, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addComponent(Header, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(DivMenuAdm, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -275,6 +270,7 @@ public class MenuAdm extends javax.swing.JFrame {
     }//GEN-LAST:event_BotaoAddProdutoActionPerformed
 
     private void BotaoLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoLoginActionPerformed
+       logOut();
        new Login().setVisible(true);
        this.dispose();
     }//GEN-LAST:event_BotaoLoginActionPerformed
@@ -296,14 +292,15 @@ public class MenuAdm extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(MenuAdm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(MenuAdm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(MenuAdm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(MenuAdm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */

@@ -4,7 +4,7 @@
  */
 package Interface.produto;
 
-import Interface.MenuAdm;
+import Interface.Menu;
 import ModeloClasse.Estoque;
 import ModeloClasse.Produto;
 import Repositorio.Repositorio;
@@ -101,10 +101,6 @@ public class AddProduto extends javax.swing.JFrame {
             return false;
         }
 
-    }
-    
-    private boolean verificarAdministrador() {
-        return Repositorio.administrador.size() > 0;
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -439,8 +435,11 @@ public class AddProduto extends javax.swing.JFrame {
     }//GEN-LAST:event_inputEstoqueActionPerformed
 
     private void botaoVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoVoltarActionPerformed
-        boolean isAdministrador = verificarAdministrador();
-        new MenuAdm().setVisible(true);
+        if (Repositorio.administrador.get(0).IsAdm()) {
+            new Menu(Repositorio.administrador.get(0)).setVisible(true);
+        } else {
+            new Menu().setVisible(true);
+        }
         this.dispose();
     }//GEN-LAST:event_botaoVoltarActionPerformed
 

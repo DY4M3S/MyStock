@@ -4,7 +4,7 @@
  */
 package Interface.funcionario;
 
-import Interface.MenuAdm;
+import Interface.Menu;
 import ModeloClasse.Funcionario;
 import Repositorio.Repositorio;
 import javax.swing.JOptionPane;
@@ -85,9 +85,6 @@ public class AddFuncionario extends javax.swing.JFrame {
         }
     }
     
-    private boolean verificarAdministrador() {
-        return Repositorio.administrador.size() > 0;
-    }
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
@@ -507,9 +504,13 @@ public class AddFuncionario extends javax.swing.JFrame {
     }//GEN-LAST:event_inputNumeroActionPerformed
 
     private void botaoVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoVoltarActionPerformed
-        boolean isAdministrador = verificarAdministrador();
-        new MenuAdm().setVisible(true);
-        this.dispose();
+        if (Repositorio.administrador.get(0).IsAdm()) {
+            new Menu(Repositorio.administrador.get(0)).setVisible(true);
+            this.dispose();
+        } else {
+            new Menu().setVisible(true);
+            this.dispose();
+        }
     }//GEN-LAST:event_botaoVoltarActionPerformed
 
     private void botaoListarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoListarActionPerformed

@@ -30,6 +30,8 @@ public class EditarRegistrarVendas extends javax.swing.JFrame {
         this.tela = tela;
         this.v = v;
         initComponents();
+        carregarProdutos();
+        carregarClientes();
         carregarVendas();
         trazerDadosVendas();
         inputQuantidade.addFocusListener(new java.awt.event.FocusAdapter() {

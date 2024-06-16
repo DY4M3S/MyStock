@@ -255,14 +255,15 @@ public class Login extends javax.swing.JFrame {
         if (!email.isEmpty() && !senha.isEmpty()) {
             if (Repositorio.administrador.get(0).getEmail().equalsIgnoreCase(email)
                     && Repositorio.administrador.get(0).getSenha().equalsIgnoreCase(senha)
-                        && checkAdm.isSelected()) {
-                            
+                        && checkAdm.isSelected()) {                       
                             JOptionPane.showMessageDialog(this, "Login bem-sucedido!");
-                            new MenuAdm().setVisible(true);
+                            Repositorio.administrador.get(0).setAdm(true);
+                            new Menu(Repositorio.administrador.get(0)).setVisible(true);
                             this.dispose();
             } else if (validarInput(email, senha) && !checkAdm.isSelected()) {
                  JOptionPane.showMessageDialog(this, "Login bem-sucedido!");
-                 new MenuAdm().setVisible(true);
+                  Repositorio.administrador.get(0).setAdm(false);
+                 new Menu().setVisible(true);
                  this.dispose();
             } else {
                 JOptionPane.showMessageDialog(this, "O email e senha digita não correspondem a um usuário cadastrado!");
